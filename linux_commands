@@ -1,0 +1,2 @@
+# Arch Linux update command
+sudo pacman -Syu
