@@ -8,4 +8,7 @@ Enable & Start service
 ```
 sudo systemctl enable --now cups.service
 ```
-
+Install printer driver
+```
+yay -S brother-hll2340dw
+```
