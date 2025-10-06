@@ -12,3 +12,7 @@ Install printer driver
 ```
 yay -S brother-hll2340dw
 ```
+Open Cups in browser
+```
+http://localhost:631
+```
