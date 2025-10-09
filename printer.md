@@ -16,3 +16,5 @@ Open Cups in browser
 ```
 http://localhost:631
 ```
+Select administration 
+<img width="1617" height="521" alt="image" src="https://github.com/user-attachments/assets/35865f8c-4817-4607-9813-cbc75fca305e" />
