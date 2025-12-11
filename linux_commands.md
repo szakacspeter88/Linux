@@ -94,6 +94,21 @@ cd -L
   
   Fájl keresése ( töredék névvel ):
   find . -iname "*name"
+
+
+  # Szent Házi feladat
+  
+    1. Feladat
+    Azok a commandok amik fel lettek téve a gitHUBra,
+    Fontosabb kapcsolóit kijegyzetelni
+
+    2. Feladat
+    Máté ad konkrét fileokat amikre rá kell keresni a find paranccsal
+
+    3. Feladat
+    Második oszlopot átnézni a TOP 50 linux parancsból, és kijegyzetelni a fontosabb kapcsolókat
+
+    1 hét Deadline
   
   Fájl keresése ( csak az adott mappában, almappákban nem ):
   find . -maxdepth 1 -iname '*name'
