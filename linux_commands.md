@@ -1,9 +1,12 @@
 # Useful Linux Commands
 ## ls - list files   
+### list all files with all attributes
 ```
 ls -all
 ```
 ## pwd - print work directory
+```
+```
 ## cd - change directory
 ## mkdir - make directory
 ## mv - move / rename
