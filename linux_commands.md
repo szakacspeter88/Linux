@@ -95,6 +95,11 @@ cd -L
   Fájl keresése ( töredék névvel ):
   find . -iname "*name"
 
+  Fájl keresése ( csak az adott mappában, almappákban nem ):
+  find . -maxdepth 1 -iname '*name'
+
+  Mappa keresése:
+  find . -type d -iname '*string*'
 
   # Szent Házi feladat
   
@@ -110,8 +115,4 @@ cd -L
 
     1 hét Deadline
   
-  Fájl keresése ( csak az adott mappában, almappákban nem ):
-  find . -maxdepth 1 -iname '*name'
-
-  Mappa keresése:
-  find . -type d -iname '*string*'
+  
