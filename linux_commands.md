@@ -1,5 +1,8 @@
 # Useful Linux Commands
-## ls - list files
+## ls - list files   
+```
+ls -all
+```
 ## pwd - print work directory
 ## cd - change directory
 ## mkdir - make directory
