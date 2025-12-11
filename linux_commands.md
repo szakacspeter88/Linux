@@ -1,6 +1,6 @@
 # Useful Linux Commands
 ## ls - list files   
-### list all files with all attributes
+#### list all files with all attributes
 ```
 ls -all
 ```
