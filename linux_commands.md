@@ -1,5 +1,5 @@
 # Arch Linux update command
-sudo pacman -Syu
+### sudo pacman -Syu
 
 
 raid
