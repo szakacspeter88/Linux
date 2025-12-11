@@ -49,7 +49,7 @@ cd -L
 ## ln - hard / soft link
 ## clear - clear terminal
 
-ind
+## find
   
   -type : fájltípus
    d : directory
