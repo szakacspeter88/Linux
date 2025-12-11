@@ -5,5 +5,9 @@
 ## mkdir
 ## mv
 ## cp
-## 
+## rm
+## touch
+## ln
+## clear
+
 
