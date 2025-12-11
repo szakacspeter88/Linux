@@ -1,8 +1,13 @@
 # Useful Linux Commands
 ## ls - list files   
 #### list all files with all attributes
+
 ```
 ls -all
+```
+#### list file inodes
+```
+ls -i
 ```
 ## pwd - print work directory
 ```
