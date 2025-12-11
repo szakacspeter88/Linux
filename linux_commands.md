@@ -1,24 +1,19 @@
 # Useful Linux Commands
 ## ls - list files   
-#### list all files with all attributes
+#### list all files with all attributes human readable
 
 ```
-ls -all
+ls -hal
 ```
 #### list file inodes
 ```
 ls -i
 ```
-#### list file inodes
-```
-ls -h
-```
-#### human readable
+#### colored folders and files
 
 ```
 ls --color
 ```
-#### colored folders and files
 
 ## pwd - print work directory
 #### value of current working
