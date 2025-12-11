@@ -49,4 +49,54 @@ cd -L
 ## ln - hard / soft link
 ## clear - clear terminal
 
+ind
+  
+  -type : fájltípus
+   d : directory
+   f : file
+   l : symbolic link
+   c : character device
+    
+    Example: 
+     /dev/tty  : Terminal
+     /dev/null : Null Device
+     /dev/random : Cryptographic Random Numbers
+     /dev/zero : Continuous stream of zeros
+     
+     find /dev -type c -name 'tty*'
+     
+   b : block device
+   
+     find /dev -type b -name 'sd*'
 
+  -name : case sensitive
+  -iname : not case sensitive
+
+  -size : file size 
+   Example: 
+    find . -type f -size +10M : Finds all files that are greater than 10M
+      
+    find . -type f -size -2G : Less than 2 Gigabytes
+
+  -mtime : Modification Time
+   Example:
+    find . -mtime +7 : Modified more than 7 days ago
+    find . -mtime -2 : Modified less than 2 days ago
+    
+  -print : Prints full path of the matched files 
+  
+  -exec : Executes a shell command
+  
+  
+
+  Fájl keresése:
+  find . -iname "filename"
+  
+  Fájl keresése ( töredék névvel ):
+  find . -iname "*name"
+  
+  Fájl keresése ( csak az adott mappában, almappákban nem ):
+  find . -maxdepth 1 -iname '*name'
+
+  Mappa keresése:
+  find . -type d -iname '*string*'
