@@ -189,6 +189,50 @@ clear
 ```
 clear -x
 ```
+## cat
+####
+```
+cat
+```
+#### number each output line, starting with non-zero numbers (number)
+```
+cat −n
+```
+#### only non-empty lines are numbered, empty lines are skipped (number-nonblank)
+```
+cat -b
+```
+#### reduces multiple consecutive blank lines to a single blank line (squeeze-blank)
+```
+cat -s
+```
+#### displays the $ character at the end of each line, marking the end of the line (show-ends)
+```
+cat -E
+```
+#### displays tab characters as ∧I (care I) (show-tabs)
+```
+cat -T
+```
+
+## echo
+
+## less
+
+## man
+
+## uname
+
+## whoami
+
+## tar
+
+## grep
+
+## head
+
+## tail
+
 
 
 ## find
