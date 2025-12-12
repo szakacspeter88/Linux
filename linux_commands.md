@@ -375,6 +375,23 @@ grep -E
 ```
 
 ## head
+#### the head command in Linux/Unix systems is used to print the first few lines (by default the first 10 lines) of a file (or standard input), this command is useful for quickly reviewing the contents of files without loading the entire file
+```
+head
+```
+#### specifies how many lines to print from the beginning of the file (e.g. −n20 is the first 20 lines) (lines)
+```
+head -n
+```
+#### specifies how many bytes to print from the beginning of the file (e.g. −c50 is the first 50 bytes) (bytes)
+```
+head -c
+```
+#### when multiple files are specified, print the filename before the output (verbose)
+```
+head -v
+```
+
 
 ## tail
 
