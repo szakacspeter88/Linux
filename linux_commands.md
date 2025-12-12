@@ -1,7 +1,9 @@
 # Useful Linux Commands
-## ls - list files   
+## ls - list files
+```
+ls
+```
 #### list all files with all attributes human readable
-
 ```
 ls -hal
 ```
@@ -28,15 +30,17 @@ pwd -P
     
 
 ## cd - change directory
-
 ```
-cd -P
+cd
 ```
 The cd -P command skips symbolic links and enters a specified special subfolder, following the physical path.
 ```
-cd -L
+cd -P
 ```
 The −L switch (Logical Mode) instructs the shell to follow the default, logical path during directory navigation.
+```
+cd -L
+```
 
 ## mkdir - make directory
 #### create library hierarchy (parent)
@@ -53,6 +57,9 @@ mkdir -v
 mkdir -m
 ```
 ## mv - move / rename
+```
+mv
+```
 
 #### asks to overwrite if the target file already exists (interactive)
 ```
@@ -76,6 +83,9 @@ mv -b
 ```
 
 ## cp - copy
+```
+cp
+```
 
 #### required when copying directories. Copies the directory and all its subdirectories along with its contents (recursive)
 ```
@@ -108,6 +118,9 @@ cp -u
 ```
 
 ## rm - remove
+```
+rm
+```
 #### required for deleting directories. Deletes the directory and all its contents, including subdirectories and the files within them (recursive)
 ```
 rm -r
@@ -148,7 +161,35 @@ touch -t
 touch -r
 ```
 ## ln - hard / soft link
+```
+ln
+```
+#### create a symbolic link. This is the most important switch, used to specify that we do not want a hard link (symbolic)
+```
+ln −s
+```	
+#### force overwrite: If the link name already exists, overwrite it without confirmation (force)
+```
+ln −f 
+```	
+#### ask to overwrite if the link name already exists (interactive)
+```
+ln −i
+```	
+#### Részletes kimenet: Kiírja az újonnan létrehozott link nevét (verbose)
+```
+ln −v
+```	
+
 ## clear - clear terminal
+```
+clear
+```
+#### the precise purpose of clear−x was to clear the current screen but guarantee that scrolling back to previous output would be preserved, although in modern systems this functionality is already built into the basic clear command
+```
+clear -x
+```
+
 
 ## find
   
