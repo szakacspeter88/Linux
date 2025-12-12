@@ -58,24 +58,25 @@ mkdir -m
 ```
 mv -i
 ```
-####
+#### forces the target file to be overwritten, ignoring the −i option and any permission settings (if possible) (force)
 ```
 mv -f
 ```
-####
+#### prints the names of moved or renamed files to standard output (verbose)
 ```
 mv -v
 ```
-####
+#### only perform the move/rename if the destination file is older than the source file or if the destination file does not exist (update)
 ```
 mv -u
 ```
-####
+#### makes a backup of the target file before overwriting it (backup)
 ```
 mv -b
 ```
 
 ## cp - copy
+
 ## rm - remove
 ## touch - make file
 ## ln - hard / soft link
