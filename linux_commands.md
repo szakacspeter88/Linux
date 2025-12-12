@@ -216,6 +216,18 @@ cat -T
 ```
 
 ## echo
+#### print on terminal
+```
+echo
+```
+#### Ne tegyen sortörést: Megakadályozza, hogy a parancs a kiírt szöveg után automatikusan sortörést illesszen be.(no-newline)
+```
+echo -n
+```
+#### enables the interpretation of special characters (e.g. newline, tab) that begin with a backslash character. (enable-escapes)
+```
+echo -e
+```
 
 ## less
 
