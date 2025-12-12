@@ -77,6 +77,11 @@ mv -b
 
 ## cp - copy
 
+#### required when copying directories. Copies the directory and all its subdirectories along with its contents (recursive)
+```
+cp -r
+```
+
 ## rm - remove
 ## touch - make file
 ## ln - hard / soft link
