@@ -341,19 +341,19 @@ tar -u
 ```
 grep
 ```
-## does not distinguish between uppercase and lowercase letters when searching (ignore-case)
+#### does not distinguish between uppercase and lowercase letters when searching (ignore-case)
 ```
 grep -i
 ```
-## prints lines that DO NOT match the pattern (invert-match)
+#### prints lines that DO NOT match the pattern (invert-match)
 ```
 grep -v
 ```
-## only print the number of hits, not the rows (count)
+#### only print the number of hits, not the rows (count)
 ```
 grep -c
 ```
-## scans the specified directory and all its subdirectories for files (recursive)
+#### scans the specified directory and all its subdirectories for files (recursive)
 ```
 grep -r
 ```
