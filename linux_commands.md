@@ -36,12 +36,14 @@ The cd -P command skips symbolic links and enters a specified special subfolder,
 ```
 cd -L
 ```
+The −L switch (Logical Mode) instructs the shell to follow the default, logical path during directory navigation.
 
 ## mkdir - make directory
 
 ```
-
+mkdir -p
 ```
+## create library hierarchy
 
 ## mv - move / rename
 ## cp - copy
