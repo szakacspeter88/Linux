@@ -32,7 +32,7 @@ pwd -P
 ```
 cd -P
 ```
-
+The cd -P command skips symbolic links and enters a specified special subfolder, following the physical path.
 ```
 cd -L
 ```
@@ -40,6 +40,7 @@ cd -L
 ## mkdir - make directory
 
 ```
+
 ```
 
 ## mv - move / rename
