@@ -280,9 +280,39 @@ man −s
 ```
 uname
 ```
-
-
+#### prints all available system-specific information (the most commonly used switch is) (all)
+```
+uname -a
+```
+#### displays the name of the operating system kernel (e.g. Linux) (kernel name)
+```
+uname -s
+```
+#### displays the system's network name (hostname)(nodename)
+```
+uname -n
+```
+#### prints the kernel release number (e.g. 6.6.6) (kernel-release) 
+```
+uname -r
+```
+#### prints the kernel version (often includes compile time and other data) (kernel-version)
+```
+uname -v
+```
+#### lists the hardware architecture (e.g. x86_64) (machine)
+```
+uname -m
+```
+#### displays the name of the operating system (usually 'GNU/Linux') (operating-system)
+```
+uname -o
+```
 ## whoami
+####
+```
+whoami
+```
 
 ## tar
 
