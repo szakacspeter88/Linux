@@ -276,6 +276,10 @@ man -w
 man −s
 ```	
 ## uname
+#### the uname (unix name) command in Linux/Unix systems is used to display system-related information (such as kernel name, network hostname, kernel version, hardware type, etc.)
+```
+uname
+```
 
 
 ## whoami
