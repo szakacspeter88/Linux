@@ -82,6 +82,31 @@ mv -b
 cp -r
 ```
 
+#### asks to overwrite if the target file already exists (interactive)
+```
+cp -i
+```
+
+#### forces the target file to be overwritten if necessary (force)
+```
+cp -f
+```
+
+#### prints the names of the files being copied to standard output (verbose)
+```
+cp -v
+```
+
+#### it preserves all original attributes (owner, timestamps, permissions) and also performs recursive copying. Ideal for backups (archive)
+```
+cp -a
+```
+
+#### only copies if the destination file is older than the source file or if the destination file does not exist (update)
+```
+cp -u
+```
+
 ## rm - remove
 ## touch - make file
 ## ln - hard / soft link
