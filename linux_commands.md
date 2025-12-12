@@ -39,13 +39,42 @@ cd -L
 The −L switch (Logical Mode) instructs the shell to follow the default, logical path during directory navigation.
 
 ## mkdir - make directory
-
+#### create library hierarchy (parent)
 ```
 mkdir -p
 ```
-## create library hierarchy
 
+#### notifies the user of each created directory (verbose)
+```
+mkdir -v
+```
+#### It allows you to specify the permissions (mode) of the directory at the moment of creation.
+```
+mkdir -m
+```
 ## mv - move / rename
+
+#### asks to overwrite if the target file already exists (interactive)
+```
+mv -i
+```
+####
+```
+mv -f
+```
+####
+```
+mv -v
+```
+####
+```
+mv -u
+```
+####
+```
+mv -b
+```
+
 ## cp - copy
 ## rm - remove
 ## touch - make file
