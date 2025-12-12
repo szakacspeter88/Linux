@@ -228,8 +228,27 @@ echo -n
 ```
 echo -e
 ```
-
 ## less
+####
+```
+less
+```
+#### displays the line numbers of the file in the left margin (line-numbers)
+```
+less -N
+```
+#### search without distinction: Searching (in the file, with the / or ? commands) is not case-sensitive. (ignore-case)
+```
+less -i
+```
+#### does not wrap excessively long lines into new lines, but hides the end of the line (you can see it by scrolling to the right) (chop-long-lines)
+```
+less -S
+```
+#### if the file is shorter than one screen of the terminal, it exits immediately (does not wait for a command) (quit-if-one-screen)
+```
+less -F
+```
 
 ## man
 
