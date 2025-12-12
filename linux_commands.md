@@ -392,10 +392,23 @@ head -c
 head -v
 ```
 
-
 ## tail
-
-
+#### the tail command, as the opposite of head, is used in Linux/Unix systems to print the last few lines (10 by default) of files, which is especially useful for viewing log files
+```
+tail
+```
+#### specifies how many lines to print from the end of the file (e.g. −n20 for the last 20 lines) (lines)
+```
+tail -n
+```
+#### this is the most important switch, which after writing the file, tail does not exit, but remains open and prints every new line (which is written to the end of the file) to the terminal immediately. (follow)
+```
+tail -f
+```
+#### specifies how many bytes to print from the end of the file (bytes)
+```
+tail -c
+```
 
 ## find
   
