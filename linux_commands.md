@@ -229,7 +229,7 @@ echo -n
 echo -e
 ```
 ## less
-####
+#### the command is an extremely useful tool in Linux/Unix systems that allows you to page through files (or the output of other commands) in a page-by-page, interactive manner in the terminal, without having to load the entire file into memory (like the vi or nano editors do).
 ```
 less
 ```
