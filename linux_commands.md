@@ -336,18 +336,43 @@ tar -t
 tar -u
 ```
 ## grep
-####
-```
-```
-−i	ignore-case	Kis- és nagybetű figyelmen kívül hagyása: Nem tesz különbséget a kis- és nagybetűk között a keresés során.
-−v	invert-match	Inverz keresés: Kiírja azokat a sorokat, amelyek NEM illeszkednek a mintához.
-−c	count	Találatok száma: Csak a találatok számát írja ki, nem a sorokat.
-−r	recursive	Rekurzív keresés: Átvizsgálja a megadott könyvtárat és annak minden alkönyvtárát a fájlokban.
-−l	files-with-matches	Fájlnevek listázása: Csak azoknak a fájloknak a nevét írja ki, amelyek tartalmaznak találatot.
-−n	line-number	Sorszámozás: Minden találat előtt kiírja a sor sorszámát.
-−w	word-regexp	Teljes szó keresése: Csak akkor ad találatot, ha a minta teljes szónak felel meg.
-−E	extended-regexp	Kibővített reguláris kifejezések: Engedélyezi a modern, kibővített reguláris kifejezések használatát (pl. egrep).
+#### the grep (Global Regular Expression Print) command is the most important tool for text searching on Linux/Unix systems, the command scans files or standard input (e.g. the output of another command) and prints lines that match a specified pattern (regular expression)
 
+```
+grep
+```
+## does not distinguish between uppercase and lowercase letters when searching (ignore-case)
+```
+grep -i
+```
+## prints lines that DO NOT match the pattern (invert-match)
+```
+grep -v
+```
+## only print the number of hits, not the rows (count)
+```
+grep -c
+```
+## scans the specified directory and all its subdirectories for files (recursive)
+```
+grep -r
+```
+#### csak azoknak a fájloknak a nevét írja ki, amelyek tartalmaznak találatot (files-with-matches)
+```
+grep -l
+```
+#### prints the line number before each hit (line-number)
+```
+grep -n
+```
+#### only returns a match if the pattern matches a complete word (word-regexp)
+```
+grep -w
+```
+#### extended regular expressions: Enables the use of modern, extended regular expressions (e.g. egrep)
+```
+grep -E
+```
 
 ## head
 
