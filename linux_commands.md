@@ -271,7 +271,7 @@ man -a
 ```
 man -w
 ```
-#### Lehetővé teszi, hogy megadja, melyik szekcióban keresse a parancsot (sections)
+#### allows you to specify which section to search for the command in (sections)
 ```
 man −s
 ```	
