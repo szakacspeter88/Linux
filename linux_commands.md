@@ -314,11 +314,40 @@ uname -o
 whoami
 ```
 
-####
-
 ## tar
-
+####
+```
+tar
+```
+#### create a new archive (tar file) from the specified files/directories (create)
+```
+tar -c
+```
+#### extracting content from an existing archive (extract)
+```
+tar -x
+```
+#### lists the contents of the archive without extracting it (list)
+```
+tar -t
+```
+#### only add files to the archive that are better than those in the archive (update)
+```
+tar -u
+```
 ## grep
+####
+```
+```
+−i	ignore-case	Kis- és nagybetű figyelmen kívül hagyása: Nem tesz különbséget a kis- és nagybetűk között a keresés során.
+−v	invert-match	Inverz keresés: Kiírja azokat a sorokat, amelyek NEM illeszkednek a mintához.
+−c	count	Találatok száma: Csak a találatok számát írja ki, nem a sorokat.
+−r	recursive	Rekurzív keresés: Átvizsgálja a megadott könyvtárat és annak minden alkönyvtárát a fájlokban.
+−l	files-with-matches	Fájlnevek listázása: Csak azoknak a fájloknak a nevét írja ki, amelyek tartalmaznak találatot.
+−n	line-number	Sorszámozás: Minden találat előtt kiírja a sor sorszámát.
+−w	word-regexp	Teljes szó keresése: Csak akkor ad találatot, ha a minta teljes szónak felel meg.
+−E	extended-regexp	Kibővített reguláris kifejezések: Engedélyezi a modern, kibővített reguláris kifejezések használatát (pl. egrep).
+
 
 ## head
 
