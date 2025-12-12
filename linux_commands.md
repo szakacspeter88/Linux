@@ -3,7 +3,7 @@
 ```
 ls
 ```
-#### list all files with all attributes human readable
+##### list all files with all attributes human readable
 ```
 ls -hal
 ```
