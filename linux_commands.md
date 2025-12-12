@@ -309,10 +309,12 @@ uname -m
 uname -o
 ```
 ## whoami
-####
+#### the whoami command is one of the simplest and most specific Linux/Unix commands. It does one thing: it displays the effective username of the current user (the logged in user who issued the command)
 ```
 whoami
 ```
+
+####
 
 ## tar
 
