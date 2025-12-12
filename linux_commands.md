@@ -108,7 +108,45 @@ cp -u
 ```
 
 ## rm - remove
+#### required for deleting directories. Deletes the directory and all its contents, including subdirectories and the files within them (recursive)
+```
+rm -r
+```
+#### it asks the user for confirmation before deleting each file/directory.(interactive)
+```
+rm -i
+```
+#### deletes without confirmation (does not ask for read-only files either), never use it with −r (−rf) unless you are 100% sure of your intentions!** (force)
+```
+rm -f
+```
+#### prints the names of the files that were just deleted to standard output
+(verbose)
+```
+rm -v
+```
+
 ## touch - make file
+#### only the access timestamp is modified. The modification timestamp remains untouched (atime)
+```
+touch -a
+```
+#### only the modification timestamp is modified. The access timestamp remains intact (mtime)
+```
+touch -m
+```
+#### if the specified file does not exist, do not create it, just silently ignore it (no-create)
+```
+touch -c
+```
+#### allows you to use a specific time instead of the current time (timestamp)
+```
+touch -t
+```
+#### another file uses a timestamp for modification instead of the current time (reference)
+```
+touch -r
+```
 ## ln - hard / soft link
 ## clear - clear terminal
 
