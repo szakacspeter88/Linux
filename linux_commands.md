@@ -251,31 +251,32 @@ less -F
 ```
 
 ## man
-## manual
+#### manual
 ```
 man
 ```
-## searches for the specified keyword in the manual descriptions. Useful if you don't know the exact name of a command (apropos)
+#### searches for the specified keyword in the manual descriptions. Useful if you don't know the exact name of a command (apropos)
 ```
 man -k
 ```
-## prints the name of the command and a short, one-line description (if it exists) (whatis)
+#### prints the name of the command and a short, one-line description (if it exists) (whatis)
 ```
 man -f
 ```
-## displays all manual pages with the specified name (regardless of section) (all)
+#### displays all manual pages with the specified name (regardless of section) (all)
 ```
 man -a
 ```
-## prints the exact filesystem path to the manual page instead of opening it.
+#### prints the exact filesystem path to the manual page instead of opening it.
 ```
 man -w
 ```
-## Lehetővé teszi, hogy megadja, melyik szekcióban keresse a parancsot (sections)
+#### Lehetővé teszi, hogy megadja, melyik szekcióban keresse a parancsot (sections)
 ```
 man −s
 ```	
 ## uname
+
 
 ## whoami
 
