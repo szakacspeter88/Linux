@@ -473,7 +473,11 @@ cmp -l
 ```
 cmp -n
 ```
-
+## comm
+#### The comm command displays the common and different lines between two pre-sorted text files in three columns.
+```
+comm
+```
 
 
 # find
