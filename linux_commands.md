@@ -415,6 +415,43 @@ tail -f
 ```
 tail -c
 ```
+## diff
+#### the diff command compares the contents of two text files line by line and displays the minimum set of edits (add, delete, modify) that can be used to transform the first file into the second file.
+```
+diff
+```
+#### the most popular, concise, readable format with (+ and - signs) (Unified)
+```
+diff -u:  
+```
+#### shows the differences with 3 lines of context (context)
+```
+diff -c
+```
+#### when comparing directories, traverse subdirectories (recursive)
+```
+diff -r
+```
+####  szóközök figyelmen kívül hagyása. Mellőzi a szóközök/tabulátorok számának változásait (whitespace)
+```
+diff -w
+```
+#### ignores the addition/deletion of blank lines
+```
+diff -B
+```
+#### case-insensitive comparison
+```
+diff -i
+```
+#### only indicates if there is a difference, but does not print the details (quiet)
+```
+diff -q
+```
+#### side-by-side output (side-by-side)
+```
+diff -y
+```
 
 # find
   
