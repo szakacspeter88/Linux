@@ -478,7 +478,41 @@ cmp -n
 ```
 comm
 ```
+Switch   Meaning         Hide Column
+-1       Hide column     Only rows in file1
+-2       Hide column     Only rows in file2
+-3       Hide column     Same rows in both files
 
+
+Column (1): Lines that are only in the first file (file1)
+Column (2): Lines that are only in the second file (file2)
+Column (3): Lines that are in both files
+
+Practical examples of using switches:
+
+comm   -12 file1 file2: Shows only lines that are the same in both files (hides columns 1 and 2)
+comm    -3 file1 file2: Shows only lines that are different in the two files (shows columns 1 and 2)
+
+(don't really undestand this btw.)
+
+## export
+#### the export command is used to make a shell variable available (export it) to **child processes** (e.g., scripts, programs) launched from the current shell, thus turning it into an environment variable
+```
+export
+```
+#### Print all exported variables. Lists all names and values of environment variables that are currently marked for export in the shell, in a format that can be reused as input	(export -p)
+```
+export -p
+```
+#### Unmark/Unexport a variable. Removes the export property from the variable, meaning it remains a shell variable but will not be passed to child processes. 
+(This is generally done using the unset command for environment variables, but -n removes the export attribute specifically).	export -n MY_VAR
+```
+export -n
+```
+#### Export functions. Used to export shell functions (though function export is often disabled by default in modern shells like bash for security reasons)      
+```
+export -f
+```
 
 # find
   
