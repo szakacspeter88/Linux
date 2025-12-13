@@ -33,7 +33,6 @@ pwd -L
 ```
 pwd -P
 ```
-    
 
 # cd - change directory
 ```
@@ -452,6 +451,30 @@ diff -q
 ```
 diff -y
 ```
+## cmp
+#### the cmp (compare) command compares two files byte by byte and only reports the location and line of the first difference where the contents of the two files differ, or if one file is a prefix of the other
+```
+cmp
+```
+#### (Silent / Csendes mód): Ez a leggyakrabban használt kapcsoló szkriptekben.
+Nem ír ki semmilyen üzenetet, hanem csak a visszatérési kóddal jelzi az eredményt:
+0: A fájlok megegyeznek.
+1: A fájlok különböznek.
+2: Hiba történt (pl. nem található fájl).
+```
+cmp -s
+``` 
+#### Kiírja az összes eltérő bájtot (byte) és a pozíciójukat.
+Mindkét fájlból megmutatja az eltérő bájtok decimális értékét is (verbose)
+```
+cmp -l
+```
+#### The cmp command with the -n switch compares only the first specified number of bytes from the beginning of the files, while with the --ignore-initial=skip_number switch it skips the specified number of bytes at the beginning of the files and compares only the parts that follow. (Byte limit)
+```
+cmp -n
+```
+
+
 
 # find
   
