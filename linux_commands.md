@@ -456,20 +456,20 @@ diff -y
 ```
 cmp
 ```
-#### (Silent / Csendes mód): Ez a leggyakrabban használt kapcsoló szkriptekben.
-Nem ír ki semmilyen üzenetet, hanem csak a visszatérési kóddal jelzi az eredményt:
-0: A fájlok megegyeznek.
-1: A fájlok különböznek.
-2: Hiba történt (pl. nem található fájl).
+#### this is the most commonly used switch in scripts
+it does not print any messages, but only indicates the result with the return code:
+0: the files are the same.
+1: the files are different.
+2: an error occurred (e.g. file not found).
+(silent)
 ```
 cmp -s
 ``` 
-#### Kiírja az összes eltérő bájtot (byte) és a pozíciójukat.
-Mindkét fájlból megmutatja az eltérő bájtok decimális értékét is (verbose)
+#### prints all the different bytes and their positions, also shows the decimal value of the different bytes from both files (verbose)
 ```
 cmp -l
 ```
-#### The cmp command with the -n switch compares only the first specified number of bytes from the beginning of the files, while with the --ignore-initial=skip_number switch it skips the specified number of bytes at the beginning of the files and compares only the parts that follow. (Byte limit)
+#### the cmp command with the -n switch compares only the first specified number of bytes from the beginning of the files, while with the --ignore-initial=skip_number switch it skips the specified number of bytes at the beginning of the files and compares only the parts that follow. (byte limit)
 ```
 cmp -n
 ```
