@@ -1,5 +1,8 @@
 # Useful Linux Commands
-## ls - list files
+
+
+
+# ls - list files
 ```
 ls
 ```
@@ -17,7 +20,10 @@ ls -i
 ls --color
 ```
 
-## pwd - print work directory
+# pwd - print work directory
+```
+pwd
+```
 #### value of current working
 ```
 pwd -L
@@ -29,7 +35,7 @@ pwd -P
 ```
     
 
-## cd - change directory
+# cd - change directory
 ```
 cd
 ```
@@ -42,7 +48,7 @@ The −L switch (Logical Mode) instructs the shell to follow the default, logica
 cd -L
 ```
 
-## mkdir - make directory
+# mkdir - make directory
 #### create library hierarchy (parent)
 ```
 mkdir -p
@@ -56,7 +62,7 @@ mkdir -v
 ```
 mkdir -m
 ```
-## mv - move / rename
+# mv - move / rename
 ```
 mv
 ```
@@ -82,7 +88,7 @@ mv -u
 mv -b
 ```
 
-## cp - copy
+# cp - copy
 ```
 cp
 ```
@@ -117,7 +123,7 @@ cp -a
 cp -u
 ```
 
-## rm - remove
+# rm - remove
 ```
 rm
 ```
@@ -139,7 +145,7 @@ rm -f
 rm -v
 ```
 
-## touch - make file
+# touch - make file
 #### only the access timestamp is modified. The modification timestamp remains untouched (atime)
 ```
 touch -a
@@ -160,7 +166,7 @@ touch -t
 ```
 touch -r
 ```
-## ln - hard / soft link
+# ln - hard / soft link
 ```
 ln
 ```
@@ -181,7 +187,7 @@ ln −i
 ln −v
 ```	
 
-## clear - clear terminal
+# clear - clear terminal
 ```
 clear
 ```
@@ -189,7 +195,7 @@ clear
 ```
 clear -x
 ```
-## cat
+# cat
 ####
 ```
 cat
@@ -215,7 +221,7 @@ cat -E
 cat -T
 ```
 
-## echo
+# echo
 #### print on terminal
 ```
 echo
@@ -228,7 +234,7 @@ echo -n
 ```
 echo -e
 ```
-## less
+# less
 #### the command is an extremely useful tool in Linux/Unix systems that allows you to page through files (or the output of other commands) in a page-by-page, interactive manner in the terminal, without having to load the entire file into memory (like the vi or nano editors do).
 ```
 less
@@ -250,7 +256,7 @@ less -S
 less -F
 ```
 
-## man
+# man
 #### manual
 ```
 man
@@ -275,7 +281,7 @@ man -w
 ```
 man −s
 ```	
-## uname
+# uname
 #### the uname (unix name) command in Linux/Unix systems is used to display system-related information (such as kernel name, network hostname, kernel version, hardware type, etc.)
 ```
 uname
@@ -308,13 +314,13 @@ uname -m
 ```
 uname -o
 ```
-## whoami
+# whoami
 #### the whoami command is one of the simplest and most specific Linux/Unix commands. It does one thing: it displays the effective username of the current user (the logged in user who issued the command)
 ```
 whoami
 ```
 
-## tar
+# tar
 ####
 ```
 tar
@@ -335,7 +341,7 @@ tar -t
 ```
 tar -u
 ```
-## grep
+# grep
 #### the grep (Global Regular Expression Print) command is the most important tool for text searching on Linux/Unix systems, the command scans files or standard input (e.g. the output of another command) and prints lines that match a specified pattern (regular expression)
 
 ```
@@ -374,7 +380,7 @@ grep -w
 grep -E
 ```
 
-## head
+# head
 #### the head command in Linux/Unix systems is used to print the first few lines (by default the first 10 lines) of a file (or standard input), this command is useful for quickly reviewing the contents of files without loading the entire file
 ```
 head
@@ -392,7 +398,7 @@ head -c
 head -v
 ```
 
-## tail
+# tail
 #### the tail command, as the opposite of head, is used in Linux/Unix systems to print the last few lines (10 by default) of files, which is especially useful for viewing log files
 ```
 tail
@@ -410,7 +416,7 @@ tail -f
 tail -c
 ```
 
-## find
+# find
   
   -type : fájltípus
    d : directory
