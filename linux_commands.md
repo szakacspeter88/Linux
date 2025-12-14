@@ -597,6 +597,80 @@ unzip -x
 unzip -P
 ```
 ## ssh
+#### Secure Shell (SSH) is a critical network protocol used for secure data communication between two network devices. In Linux, we can securely connect to remote machines using the ssh command.
+```
+ssh [felhasználónév]@[kiszolgáló_cím]
+```
+#### Example: If you want to connect to server.example.com with username chef:
+```
+ssh chef@szerver.example.com
+```
+The system will then ask you to enter your password.
+#### Specify Option. Allows you to specify a configuration option directly from the command line. Extremely flexible.
+```
+ssh -o
+```
+#### Example
+```
+ssh -o ConnectTimeout=10 user@host
+```
+#### Disable pseudo-terminal. Useful if you only want to run a single command on the remote machine and don't need an interactive shell.
+```
+ssh -T
+```
+#### Example
+```
+ssh -T user@host "ls -la"
+```
+#### Send to background. Sends the SSH connection to the background immediately after authentication. Often used in conjunction with port forwarding (-L, -D, -R).
+```
+ssh -f
+```
+#### Example
+```
+ssh -f -N -L 8080:host:80 user@host
+```
+#### No remote command execution. It only establishes and maintains the connection, typically for tunneling purposes (port forwarding).
+```
+ssh -N
+```
+#### Example
+```
+ssh -N user@host
+```
+#### Remote Port Forwarding. Forwards a port on a remote machine to a local destination.
+```
+ssh -R
+```
+#### Example
+```
+ssh -R 8080:localhost:80 user@host
+```
+#### Dynamic Port Forwarding. Creates a SOCKS proxy. It sends all traffic through the local port through an encrypted tunnel to the remote server,
+from where it is forwarded to its final destination (commonly used in a VPN-like manner).
+```
+ssh -D
+```
+#### Example
+```
+ssh -D 1080 user@host
+```
+#### Verbose mode. With one, two or three switches you get more and more diagnostic information. Essential when troubleshooting.
+```
+ssh -v
+```
+####
+```
+ssh -vv
+```
+####
+```
+ssh -vvv
+```
+### Example
+```
+ssh -vvv user@host
+```
 ## service
 ## ps
 
