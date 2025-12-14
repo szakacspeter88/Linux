@@ -513,6 +513,12 @@ export -n
 ```
 export -f
 ```
+## zip
+## unzip
+## ssh
+## service
+## ps
+
 
 # find
   
