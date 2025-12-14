@@ -672,6 +672,33 @@ ssh -vvv
 ssh -vvv user@host
 ```
 ## service
+#### The service command is a service management tool used in Linux systems. As I mentioned earlier, 
+the service command does not have traditional lettered switches (such as -a or -p) like other Linux commands. 
+Instead, it expects commands (operations) or service-specific options.
+```
+service
+```
+#### start	Starts the specified system service.
+```
+sudo service [name_of_system_service] start
+```
+#### stop	Stops the specified system service
+```
+sudo service [name_of_system_service] stop
+```
+#### restart Quick stop and start, e.g. after configuration changes.
+```
+sudo service [name_of_system_service] restart
+```
+#### status It shows the current status of the service (whether it is running, how long it has been running,
+its main process identifier (PID), etc.). This is the most commonly used command.
+```
+service [name_of_system_service] status
+```
+#### reload Reloads the service configuration without stopping running processes. (Only works for services that support it.)
+```
+sudo service [name_of_system_service] reload
+```
 ## ps
 
 
