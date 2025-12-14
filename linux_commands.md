@@ -705,7 +705,61 @@ The output of the command is a snapshot of the processes on the system.
 ```
 ps
 ```
+#### A (All users): Processes belonging to all users. u (User-oriented format): Detailed, user-friendly format.
+x (Process with no controlling tty): Shows processes not connected to the terminal. BSD Style
+```
+ps aux
+```
+#### e (Every process): Every process. f (Full-format listing): Full listing, 
+including the command with full path and arguments, and the PPID (parent process identifier). Unix Style
+```
+ps -ef
+```
+#### Specify a list of columns. Allows you to customize the output, e.g. pid,ppid,cmd,%mem. Unix Style
+```
+ps -o [columns]
+```
+#### Sort by one or more fields. The - (minus) sign indicates descending order. GNU Style
+```
+--sort=[field]
+```
+#### Process tree display. A visual representation of the hierarchy of processes. GNU Style
+```
+ps --forest
+```
+#### Show Threads. It also shows individual threads under the main process. 
+BSD Style/Unix 
+```
+ps -H
+```
+#### Example BSD Style
+```
+ps -eLf
+```
+or
+```
+ps -m
+```
+#### Example Unix Style
+```
+ps -fm
+```
+#### Wide format. Prevents line truncation so the entire command line is visible. Can be used multiple times: ps -ww.
+#### Example Unix
+```
+ps -w
+```
+or
+#### Example GNU Style
+```
+ps --width N
+```
+#### Example command
+```
+ps aux -ww
+```
 
+*** Don't really understand this ps things
 
 # find
   
