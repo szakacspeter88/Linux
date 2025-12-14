@@ -790,6 +790,19 @@ TÍPUS                 (pl. df -t ext4 csak az ext4 típusúakat mutatja).
 output 
 
 #### mount
+
+-t                    Fájlrendszer típusa. Meghatározza a csatlakoztatandó fájlrendszer típusát
+TÍPUS                 (pl. ext4, vfat, ntfs, nfs, cifs).",mount -t ntfs /dev/sdb1 /mnt/pendrive
+
+-o                    Csatolási opciók. Lehetővé teszi több, vesszővel elválasztott beállítás megadását. 
+OPCIÓK                Ez a legfontosabb kapcsoló, lásd alább.","mount -o ro,nodev /dev/sda1 /mnt/backup"
+-a,                   Összes csatolás. Megpróbálja csatlakoztatni az összes olyan fájlrendszert, 
+                      amely a /etc/fstab fájlban szerepel és az ""auto"" opcióval van megjelölve.",mount -a
+-r,                   Csak olvasási (Read-Only) mód. Ugyanaz, mint az -o ro. 
+                      Megakadályozza az adatok módosítását a csatlakoztatott eszközön.",mount -r /dev/sdb1 /mnt/usb
+-w,                   Írási (Read/Write) mód. Ugyanaz, mint az -o rw. Ez az alapértelmezett.",
+-L CÍMKE,"Címke alapján csatolás. Az eszköz helyett annak a fájlrendszernek a címkéjét (Label) adhatja meg, amelyet csatlakoztatni szeretne.",mount -L ADATOK /mnt/data
+-U UUID,UUID alapján csatolás. Az eszköz helyett annak a fájlrendszernek az egyedi azonosítóját (UUID) adhatja meg. Ez a legmegbízhatóbb módszer.,mount -U 1234-ABCD /mnt/hosszu
 #### chmod
 #### chown
 #### chown
