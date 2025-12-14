@@ -514,6 +514,52 @@ export -n
 export -f
 ```
 ## zip
+#### The zip command is an extremely versatile tool for compressing files and managing archives. 
+Below I summarize the most important and commonly used switches (options) that can be used to perform most tasks.
+```
+zip
+```
+#### Compresses recursively. This is essential for archiving directories, as it ensures that subfolders and their contents are included in the ZIP file.
+```
+zip -r
+```
+#### Exclude files. You can exclude certain file types or patterns from compression. You can specify multiple patterns separated by spaces.
+```
+zip -x <example>
+```
+#### Encryption (password protection). When executing the command, it asks for a password to protect the contents of the archive.
+```
+zip -e
+```
+#### Maximum compression. Use this if you want the smallest possible file size (but slower). The default is -6.
+```
+zip -9
+```
+#### No compression. It just archives the files, but does not compress them. This is the fastest.
+```
+zip -0
+```
+#### Update. Adds/updates only files in the archive that are new or have changed from the version within the archive.
+```
+zip -u
+```
+#### Delete from archive. Deletes one or more files from inside an existing ZIP file.
+```
+zip -d <file>
+```
+#### Move. Creates the archive and then deletes the original source files.
+```
+zip -m
+```
+#### Silent mode. Suppresses output, only providing feedback on errors. (Ideal for scripts.)
+```
+zip -q
+```
+#### Read a list of files from standard input. This is often used in conjunction with the output of other commands (find, grep).
+```
+zip -@
+```
+
 ## unzip
 ## ssh
 ## service
