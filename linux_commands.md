@@ -493,7 +493,7 @@ Practical examples of using switches:
 comm   -12 file1 file2: Shows only lines that are the same in both files (hides columns 1 and 2)
 comm    -3 file1 file2: Shows only lines that are different in the two files (shows columns 1 and 2)
 
-(don't really undestand this btw.)
+#(don't really undestand this btw.)
 
 ## export
 #### the export command is used to make a shell variable available (export it) to **child processes** (e.g., scripts, programs) launched from the current shell, thus turning it into an environment variable
@@ -759,7 +759,7 @@ ps --width N
 ps aux -ww
 ```
 
-*** Don't really understand this ps things
+#*** Don't really understand this ps things
 
 # find
   
