@@ -559,8 +559,43 @@ zip -q
 ```
 zip -@
 ```
-
 ## unzip
+#### The unzip command is a basic tool for extracting (decompressing) the contents of .zip files on Linux/Unix systems.
+```
+unzip
+```
+#### Specify the destination directory. The files will be extracted here.
+```
+unzip -d
+```
+#### Listing. Shows the contents of the ZIP file without extracting it.
+```
+unzip -l
+```
+#### Overwrite. Overwrites existing files without confirmation.
+```
+unzip -o
+```
+#### Never Overwrite. Only extract files that do not already exist in the destination directory.
+```
+unzip -n
+```
+#### Quiet mode. Suppresses normal output, only showing errors.
+```
+unzip -q
+```
+#### Testing. Checks the integrity of the ZIP file to make sure it is not corrupted.
+```
+unzip -t
+```
+#### Exclusion. Exclude certain files or patterns from packaging.
+```
+unzip -x
+```
+#### Password. Specifies the password for encrypted files (capital P!)
+```
+unzip -P
+```
 ## ssh
 ## service
 ## ps
