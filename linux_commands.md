@@ -758,6 +758,28 @@ ps --width N
 ```
 ps aux -ww
 ```
+#### kill and killall
+#### df
+#### mount
+#### chmod
+#### chown
+#### chown
+#### ipconfig
+#### traceroute
+#### wget
+#### ufw
+#### iptables
+
+#### apt, pacman, yum, rpm
+#### sudo
+#### cal
+#### alias
+#### dd
+#### wheris
+#### whatis
+#### top
+#### useradd
+#### passwd
 
 #*** Don't really understand this ps things
 
