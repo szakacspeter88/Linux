@@ -770,6 +770,25 @@ ps aux -ww
 -w,                   --wait: Várja meg, amíg a folyamatok leállnak, mielőtt kilépne a parancs.
 
 #### df
+
+-h,                   --human-readable
+                      Emberi szemmel olvasható formátum. A méreteket a megfelelő, könnyen értelmezhető egységekben
+                      (pl. GB, MB) jeleníti meg. (A legfontosabb kapcsoló!)
+-T,                   --print-type 
+                      "Kiírja a fájlrendszer típusát (pl. ext4, xfs, tmpfs). 
+                      Nagyon hasznos a rendszerpartíciók azonosításához."
+-a,                   --all,"Az összes fájlrendszert megjeleníti, beleértve a 0 blokk méretű,
+                      speciális (ál) fájlrendszereket is (pl. /proc, /sys)."    
+-i,                   --inodes
+                      A blokkhasználat helyett az inode-használati statisztikát jeleníti meg 
+                      (hány fájl hozható még létre). Fontos, ha kevés a szabad inode."
+-x                    --exclude-type=TÍPUS,Kihagyja a megadott fájlrendszer típusokat a listából (pl. df -x tmpfs
+TÍPUS                 kihagyja az összes ideiglenes fájlrendszert).
+-t                    --type=TÍPUS,Csak a megadott fájlrendszer típusokat jeleníti meg 
+TÍPUS                 (pl. df -t ext4 csak az ext4 típusúakat mutatja).
+--                    --output[=MEZŐK],"A kimeneti oszlopok testreszabása (pl. source, size, used, avail)."
+output 
+
 #### mount
 #### chmod
 #### chown
