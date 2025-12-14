@@ -700,6 +700,11 @@ service [name_of_system_service] status
 sudo service [name_of_system_service] reload
 ```
 ## ps
+#### The ps (process status) command is a basic tool in Linux and other Unix-like operating systems that displays the current status of currently running processes.
+The output of the command is a snapshot of the processes on the system.
+```
+ps
+```
 
 
 # find
