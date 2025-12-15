@@ -759,16 +759,26 @@ ps --width N
 ps aux -ww
 ```
 #### kill and killall
-
--s                    JELZÉS vagy -JELZÉS: A küldendő jelzés megadása (ugyanaz, mint a kill-nél).
-
--i,                   --interactive: Interaktív mód. Megerősítést kér minden egyes folyamat 
-                      leállítása előtt. (Nagyon ajánlott, ha nem biztos a célpontban!)
-
--u,                   --user USER: Csak az adott felhasználó által futtatott folyamatokat állítja le.
-
--w,                   --wait: Várja meg, amíg a folyamatok leállnak, mielőtt kilépne a parancs.
-
+####
+```
+kill
+```
+#### JELZÉS vagy -JELZÉS: A küldendő jelzés megadása (ugyanaz, mint a kill-nél).
+```
+kill -s
+```                  
+#### Interaktív mód. Megerősítést kér minden egyes folyamat leállítása előtt. (Nagyon ajánlott, ha nem biztos a célpontban!) --interactive
+```
+kill -i
+```
+#### USER: Csak az adott felhasználó által futtatott folyamatokat állítja le. --user 
+```
+kill -u
+```
+#### Várja meg, amíg a folyamatok leállnak, mielőtt kilépne a parancs --wait
+```
+kill -w
+```
 #### df
 
 -h,                   --human-readable
