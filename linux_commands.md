@@ -780,9 +780,12 @@ kill -u
 kill -w
 ```
 #### df
+Emberi szemmel olvasható formátum. A méreteket megfelelő, könnyen értelmezhető egységekben --human-readable
+```
+df -h,
+```
 
--h,                   --human-readable
-                      Emberi szemmel olvasható formátum. A méreteket a megfelelő, könnyen értelmezhető egységekben
+          
                       (pl. GB, MB) jeleníti meg. (A legfontosabb kapcsoló!)
 -T,                   --print-type 
                       "Kiírja a fájlrendszer típusát (pl. ext4, xfs, tmpfs). 
