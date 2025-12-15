@@ -791,26 +791,105 @@ output
 
 #### mount
 
--t                    Fájlrendszer típusa. Meghatározza a csatlakoztatandó fájlrendszer típusát
-TÍPUS                 (pl. ext4, vfat, ntfs, nfs, cifs).",mount -t ntfs /dev/sdb1 /mnt/pendrive
+-t                              Fájlrendszer típusa. Meghatározza a csatlakoztatandó fájlrendszer típusát
+TÍPUS                           (pl. ext4, vfat, ntfs, nfs, cifs).",mount -t ntfs /dev/sdb1 /mnt/pendrive
 
--o                    Csatolási opciók. Lehetővé teszi több, vesszővel elválasztott beállítás megadását. 
-OPCIÓK                Ez a legfontosabb kapcsoló, lásd alább.","mount -o ro,nodev /dev/sda1 /mnt/backup"
--a,                   Összes csatolás. Megpróbálja csatlakoztatni az összes olyan fájlrendszert, 
-                      amely a /etc/fstab fájlban szerepel és az ""auto"" opcióval van megjelölve.",mount -a
--r,                   Csak olvasási (Read-Only) mód. Ugyanaz, mint az -o ro. 
-                      Megakadályozza az adatok módosítását a csatlakoztatott eszközön.",mount -r /dev/sdb1 /mnt/usb
--w,                   Írási (Read/Write) mód. Ugyanaz, mint az -o rw. Ez az alapértelmezett.",
--L CÍMKE,"Címke alapján csatolás. Az eszköz helyett annak a fájlrendszernek a címkéjét (Label) adhatja meg, amelyet csatlakoztatni szeretne.",mount -L ADATOK /mnt/data
--U UUID,UUID alapján csatolás. Az eszköz helyett annak a fájlrendszernek az egyedi azonosítóját (UUID) adhatja meg. Ez a legmegbízhatóbb módszer.,mount -U 1234-ABCD /mnt/hosszu
+-o                              Csatolási opciók. Lehetővé teszi több, vesszővel elválasztott beállítás megadását. 
+OPCIÓK                          Ez a legfontosabb kapcsoló, lásd alább.","mount -o ro,nodev /dev/sda1 /mnt/backup"
+-a,                             Összes csatolás. Megpróbálja csatlakoztatni az összes olyan fájlrendszert, 
+                                amely a /etc/fstab fájlban szerepel és az ""auto"" opcióval van megjelölve.",mount -a
+-r,                             Csak olvasási (Read-Only) mód. Ugyanaz, mint az -o ro. 
+                                Megakadályozza az adatok módosítását a csatlakoztatott eszközön.",mount -r /dev/sdb1 /mnt/usb
+-w,                             Írási (Read/Write) mód. Ugyanaz, mint az -o rw. Ez az alapértelmezett.",
+-L CÍMKE,                       Címke alapján csatolás. Az eszköz helyett annak a fájlrendszernek a címkéjét (Label) adhatja meg, amelyet csatlakoztatni szeretne.
+                                mount -L ADATOK /mnt/data
+-U                              UUID,UUID alapján csatolás. Az eszköz helyett annak a fájlrendszernek az egyedi azonosítóját (UUID) adhatja meg. 
+                                Ez a legmegbízhatóbb módszer.,mount -U 1234-ABCD /mnt/hosszu
 #### chmod
+
+-R,                             Rekurzív mód: Az engedélyek módosítása a megadott könyvtárban és az összes benne lévő alkönyvtárban és fájlban.
+-v,                             Részletes mód: Kiírja minden egyes módosított fájl nevét és az elvégzett műveletet.
+-c,                             Csak azoknak a fájloknak a kiírása, amelyeken tényleges változás történt.
+--                              Egy másik fájl engedélyeit veszi mintának, és azokat állítja be a célfájlon (a megadott engedélyeket felülírja).
+reference=FÁJL 
+
 #### chown
-#### chown
-#### ipconfig
-#### traceroute
-#### wget
+-R,                             Rekurzív mód: A tulajdonos és/vagy csoport módosítása a megadott könyvtárban és az összes benne lévő alkönyvtárban és fájlban.
+                                Ez a legfontosabb kapcsoló.
+-v,                             Részletes mód: Kiírja minden egyes módosított fájl nevét és az elvégzett műveletet.
+-c,                             Csak azoknak a fájloknak a kiírása, amelyeken tényleges változás történt.
+--                              Csak akkor végzi el a módosítást, ha a fájl aktuális tulajdonosa és csoportja megfelel a megadottnak.
+from=JELENLEGI_TULAJ:
+JELENLEGI_CSOP
+--                              Egy másik fájl tulajdonosát és csoportját veszi mintának, és azokat állítja be a célfájlon.
+reference=REFERENCIA_FÁJL
+
+#### ipconfig                   Kapcsoló,Leírás
+
+(paraméter nélkül),             Megjeleníti az alapvető hálózati konfigurációs információkat: IPv4 és IPv6 címek, 
+                                alhálózati maszk és alapértelmezett átjáró minden adapterhez.
+/all,                           Részletes konfiguráció: Megjeleníti az összes hálózati adapter teljes TCP/IP konfigurációs adatait, beleértve a fizikai (MAC) címet, a DHCP-                                       kiszolgálót, a DNS-kiszolgálót és a bérleti időket is.
+/release                        IP-cím felszabadítása: Felszabadítja az aktuálisan kiosztott IPv4-címet a DHCP-kiszolgálótól. Ezzel az adapter ideiglenesen cím nélkül marad.
+/renew                          IP-cím megújítása: Új IP-címet kér a DHCP-kiszolgálótól. Ezt gyakran a /release parancs után futtatják, amikor hálózati hibaelhárítás történik.
+/flushdns,                      DNS gyorsítótár ürítése: Törli és visszaállítja a DNS-feloldó gyorsítótár tartalmát. 
+                                Ez akkor hasznos, ha a számítógép egy régebbi (esetleg hibás) IP-címet tárol egy adott domain névhez.
+/displaydns                     Megjeleníti a DNS-feloldó gyorsítótár tartalmát, azaz azokat a domain neveket és a hozzájuk tartozó IP-címeket, 
+                                amelyeket a számítógép korábban feloldott és eltárolt.
+/registerdns,                   Erőlteti az összes DHCP-bérlet megújítását, és újból regisztrálja a DNS-neveket a DNS-kiszolgálónál.
+
+
+#### traceroute                
+
+        
+-n,                             Ne oldja fel a címeket (No name resolution): Megakadályozza az IP-címek domain névvé fordítását (fordított DNS lookup). 
+                                Ez jelentősen gyorsítja a futási időt, mivel elkerüli a DNS-lekérdezéseket. Nagyon gyakran használt kapcsoló.
+-I,                             ICMP protokoll használata (ICMP mode): Kényszeríti a traceroute-ot, hogy ICMP ECHO csomagokat használjon a hagyományos UDP csomagok helyett 
+                                (mint a ping). Gyakran szükséges, ha az útvonalon lévő tűzfalak blokkolják az UDP-t.
+-T,                             TCP protokoll használata (TCP mode): TCP SYN csomagokat használ (mint a legtöbb webes kommunikáció). 
+                                Hasznos a tűzfalak tesztelésére egy adott porton (pl. 80-as HTTP porton).
+-p                              PORT,Port megadása: Csak UDP és TCP módokban (a -U vagy -T kapcsolókkal) használható. 
+                                Megadja a célszámítógépen használandó célport számát (pl. -p 80).
+-q N                            Lekérdezések száma (Queries): Beállítja, hogy hányszor (N) küldjön csomagot minden egyes hophoz (alapértelmezés szerint 3).
+-m MAX_TTL,                     Maximális hop-ok (Max TTL): Beállítja a maximális Time To Live (TTL) értékét, azaz a routerek maximális számát a cél elérése előtt
+                                (alapértelmezés szerint 30)."             
+
+#### wget                       
+                              
+--no-clobber,-nc,                     Ne írja felül: Megakadályozza, hogy a wget felülírjon egy meglévő, azonos nevű fájlt. Ha a fájl létezik, kihagyja a letöltést.
+--continue,-c,                        Folytatás: Folytatja a megszakított letöltést. Nagyon hasznos nagy fájlok esetén, ha a kapcsolat megszakad.
+--limit-rate=RATE,-r RATE,            Sebességkorlátozás: Korlátozza a letöltési sebességet a megadott értékre (pl. 200k a 200 kilobyte/másodpercre).
+--tries=NUMBER,-t NUMBER,             Újrapróbálkozások száma: Beállítja, hányszor próbálja meg újra a letöltést, ha hiba lép fel (alapértelmezés szerint 20).
+--background,-b,                      Háttérben futás: A letöltést a háttérben indítja el. A kimenetet egy wget-log nevű fájlba írja.
+--input-file=FILE,-i FILE,            Fájlból való letöltés: Egy szöveges fájlban (FILE) felsorolt URL-eket tölti le soronként.
+--output-file=FILE,-o FILE,           Naplózás fájlba: Az összes üzenetet (hibákat, státuszt) a megadott fájlba írja ki a konzol helyett.
+--recursive,-r,Rekurzív letöltés:     Letölti az oldal összes linkjét (mélységtől függően). Ideális weboldalak másolására (mirroring).
+--level=DEPTH,-l DEPTH                Rekurzivitás mélysége: Rekurzív letöltésnél beállítja a maximális mélységet (pl. -l 2). Az -l inf korlátlan mélységet jelent.
+--no-parent,-np,                      Szülőkönyvtárak kihagyása: Rekurzív letöltéskor nem követi a linkeket, amelyek a kezdőkönyvtáron kívülre mutatnak.
+--mirror,-m,Weboldal tükrözése:       Gyorsító parancs a wget -r -l inf --no-clobber --no-host-directories beállításokhoz. Tökéletes teljes weboldalak másolásához.
+--user-agent=STRING,-U STRING,        User Agent beállítása: Elküldi a megadott User Agent (STRING) információt a szervernek. 
+                                      Néha szükséges, ha a szerver korlátozza a wget alapértelmezett beállításait.
+--directory-                          A letöltött fájlokat a megadott könyvtárba helyezi.
+prefix=DIR,-P DIR,Célkönyvtár        
+                  
 #### ufw
-#### iptables
+
+sudo ufw                              Megjeleníti a tűzfal aktuális állapotát (aktív vagy inaktív) és az összes érvényes szabályt.
+status
+sudo ufw                              Részletes állapotot mutat, beleértve az alapértelmezett bejövő és kimenő politikákat.
+status verbose
+sudo ufw                              Bekapcsolja a tűzfalat. Figyelem! Ezzel a parancssal azonnal életbe lépnek az összes beállított szabályok. 
+enable                                Ha nincs beállítva SSH-hozzáférés engedélyezése, kizárhatja magát a rendszerből.
+sudo ufw disable                      Kikapcsolja a tűzfalat.
+sudo ufw reset                        Visszaállítja a tűzfalat az alapértelmezett beállításokra, és töröl minden szabályt.
+
+#### iptables                         
+-A	--append	                        Hozzáadás: Hozzáad egy szabályt a megadott lánc végéhez.
+-I	--insert	                        Beszúrás: Beszúr egy szabályt a megadott lánc elejére (vagy a megadott sorszám elé).
+-D	--delete	                        Törlés: Töröl egy szabályt (a pontos szabályleírással vagy sorszámmal).
+-L	--list	                          Listázás: Kilistázza a szabályokat a megadott láncban/táblában.
+-F	--flush	                          Összes törlése: Eltávolít minden szabályt a megadott láncból/táblából.
+-P	--policy	                        Alapértelmezett politika: Beállítja a lánc alapértelmezett viselkedését (pl. DROP, ACCEPT).
+-t	--table	                          Táblázat kiválasztása: Megadja, melyik táblán dolgozzon (ha elhagyjuk, alapértelmezett a filter).
 
 #### apt, pacman, yum, rpm
 #### sudo
