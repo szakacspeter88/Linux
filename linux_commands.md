@@ -342,7 +342,6 @@ tar -u
 ```
 # grep
 #### the grep (Global Regular Expression Print) command is the most important tool for text searching on Linux/Unix systems, the command scans files or standard input (e.g. the output of another command) and prints lines that match a specified pattern (regular expression)
-
 ```
 grep
 ```
@@ -421,7 +420,7 @@ diff
 ```
 #### the most popular, concise, readable format with (+ and - signs) (Unified)
 ```
-diff -u:  
+diff -u  
 ```
 #### shows the differences with 3 lines of context (context)
 ```
@@ -1185,37 +1184,35 @@ iptables --table
 ```	                          
 #### apt, pacman, yum, rpm
 
-#### Az apt a Debian, Ubuntu, Linux Mint és más Debian alapú disztribúciók szabványos és modern csomagkezelő rendszere. Maga az apt a háttérben dolgozó alacsony szintű eszközöket (főként a dpkg-t) kezeli, de sokkal felhasználóbarátabb, intelligensebb felületet biztosít.
+#### Apt is the standard and modern package management system for Debian, Ubuntu, Linux Mint, and other Debian-based distributions. Apt itself handles the low-level tools (mainly dpkg) that work in the background, but provides a much more user-friendly, intelligent interface.
 
-#### A yum a régebbi Red Hat alapú disztribúciók (RHEL, CentOS, Fedora) hagyományos csomagkezelője. A modern rendszerekben a yum-ot fokozatosan felváltotta a dnf (Dandified YUM), de a parancsok szintaxisa nagyon hasonló maradt.
+#### yum is the traditional package manager for older Red Hat-based distributions (RHEL, CentOS, Fedora). In modern systems, yum has gradually been replaced by dnf (Dandified YUM), but the syntax of the commands remains very similar.
 
-#### A pacman az Arch Linux és az Arch alapú disztribúciók (pl. Manjaro) alapvető csomagkezelője. A gyorsaságáról és az egyszerű parancsszintaxisáról ismert.
+#### Pacman is the default package manager for Arch Linux and Arch-based distributions (e.g. Manjaro). It is known for its speed and simple command syntax.
 
-#### Az rpm egy alacsony szintű csomagkezelő rendszer, amelyet a Red Hat alapú disztribúciók használnak (pl. Fedora, RHEL, CentOS). Míg a yum és a dnf az rpm fölé épül, és kezeli a függőségeket, az rpm parancs közvetlenül az egyes .rpm kiterjesztésű fájlok kezelésére szolgál.
+#### rpm is a low-level package management system used by Red Hat-based distributions (e.g. Fedora, RHEL, CentOS). While yum and dnf are built on top of rpm and manage dependencies, the rpm command is used to directly manage individual files with the .rpm extension.
 
 #### sudo 
 
-A sudo (SuperUser DO) egy kulcsfontosságú parancs a Linux és Unix-szerű operációs rendszerekben. A célja, hogy egy engedélyezett felhasználó ideiglenesen a root (rendszergazda) felhasználó jogosultságaival hajthasson végre parancsokat.
+sudo (SuperUser DO) is a key command in Linux and Unix-like operating systems. Its purpose is to allow an authorized user to temporarily execute commands with the privileges of the root (administrator) user.
 
-1. A Rendszergazda Szerepköre (Root)
+1. The Role of the System Administrator (Root)
 
-A Linux/Unix rendszerekben a root a legmagasabb jogosultságú felhasználó. A root mindent megtehet a rendszeren: telepíthet szoftvert, módosíthat rendszerfájlokat, és akár tönkre is teheti a rendszert.
+In Linux/Unix systems, root is the highest-privileged user. Root can do anything on the system: install software, modify system files, and even crash the system.
 
-2. A Biztonsági Probléma
+2. The Security Problem
 
-A legtöbb felhasználó nem jelentkezik be közvetlenül root-ként a mindennapi munkához, mert:
+Most users do not log in directly as root for everyday work because:
+Security: If a program is run as root and is malicious or buggy, it can cause unlimited damage to the system.
+Avoidable errors: It is more difficult to make an accidental error (e.g. deleting an important system file) if the user is working with limited privileges.
 
-Biztonság: Ha egy programot root-ként futtatnak, és az rosszindulatú vagy hibás, akkor korlátlan károkat okozhat a rendszerben.
+3. The sudo Solution
 
-Elkerülhető hibák: Nehezebb véletlen hibát (pl. fontos rendszerfájl törlése) elkövetni, ha korlátozott jogosultsággal dolgozik a felhasználó.
-
-3. A sudo Megoldása
-
-A sudo hidalja át ezt a problémát:
-Ideiglenes emelés: Lehetővé teszi a felhasználók számára, hogy szükség esetén csak arra a parancsra kapjanak root jogosultságot, amely előtt a sudo parancsot elhelyezik
-Auditálhatóság: A sudo használatát a rendszer naplózza, így pontosan tudható, melyik felhasználó és mikor futtatott rendszergazdai parancsot
-Hitelesítés: A sudo használatához a felhasználónak be kell írnia a saját jelszavát, nem a root jelszavát (ez egy konfigurációs beállítástól függ, de általában így működik)
-Példa: A apt update parancs csak a csomaglistát frissíti, de a apt install parancs a rendszerfájlokat módosítja, ezért elé kell írni a sudo-t
+Sudo overcomes this problem:
+Temporary elevation: Allows users to gain root privileges only for the command preceded by sudo, if necessary
+Auditability: The use of sudo is logged, so it is known exactly which user ran an administrative command and when
+Authentication: To use sudo, the user must enter their own password, not the root password (this depends on a configuration setting, but usually works this way)
+Example: The apt update command only updates the package list, but the apt install command modifies system files, so it must be preceded by sudo
 
 #### cal
 #### The cal command is used in Linux/Unix systems to display the calendar on the command line.
@@ -1224,13 +1221,13 @@ a specific month, or even an entire year, right in the terminal.
 ```
 cal
 ```
-Kapcsoló,             Leírás,                                                                                          Példa
--3,                   Megjeleníti az előző, az aktuális és a következő hónapot együtt.,                                cal -3
--A N                  Megjeleníti az aktuális hónapot és az azt követő N hónapot (After).,                             cal -A 2
--B N                  Megjeleníti az aktuális hónapot és az azt megelőző N hónapot (Before).                           cal -B 1
--y,                   Megjeleníti az aktuális év naptárát (ugyanaz, mint a cal ÉV paraméter nélkül).                   cal -y
--j,                   Julián naptár (Julian Calendar) formátumban jeleníti meg az évet/hónapot, azaz a napok                                
-                      sorszámát 1-től 365-ig (vagy 366-ig).                                                            cal -j
+Switch                Description                                                                                      Example
+-3,                   Displays the previous, current, and next month together                                          cal -3
+-A N                  Displays the current month and the following N months (After)                                    cal -A 2
+-B N                  Displays the current month and the N months before it (Before)                                   cal -B 1
+-y,                   Displays the calendar for the current year (same as cal without the YEAR parameter).             cal -y
+-j,                   Displays the year/month in Julian Calendar format, i.e. the days                                 cal -j                                number from 1 to 365 (or 366).
+                                                                                                                       
 
 #### alias
 #### The command is all about efficiency and convenience. It is used to replace frequently used, long, or difficult-to-type commands, reducing the chance of typing errors and speeding up the workflow.
@@ -1239,7 +1236,7 @@ Kapcsoló,             Leírás,                                                
 alias név='parancs [kapcsolók és argumentumok]'
 ```
 or
-#### Alias létrehozása a teljes rendszer frissítésére
+#### Create an alias to update the entire system
 ```
 alias updateall='sudo apt update && sudo apt upgrade -y'
 ```
@@ -1300,7 +1297,8 @@ Would you like to review some more basic filesystem commands, like chmod or chow
 -s                            Forrásfájlok                        Csak a forráskód fájlokat keresi.
 -u                            Szokatlan bejegyzések               Olyan parancsokat keres, amelyeknél a megadott típusú 
                                                                   (pl. -m-mel csak man-lap) bejegyzés hiányzik. 
-                                                                  Például: whereis -m -u * az aktuális könyvtárban azokat a                                                                         fájlokat mutatja, amelyekhez nincs man-lap."
+                                                                  Például: whereis -m -u * az aktuális könyvtárban azokat a
+                                                                  fájlokat mutatja, amelyekhez nincs man-lap."
 -B                            Bináris keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
                                                                   ahol a bináris fájlokat keresi. 
                                                                   Ezt a kapcsolót a -f kapcsolónak kell követnie.
@@ -1315,6 +1313,7 @@ Would you like to review some more basic filesystem commands, like chmod or chow
                                                                   már a keresendő fájlnevek.
 #### whatis
 ####The whatis command in the Linux operating system is used to display a short, one-line description of a given command or program. This description is taken from the database of manual (man) pages. Essentially, it queries the database used by the man command and returns only the name of the command and a short description (the contents of the NAME section of the man page), without opening the full manual page.
+
 Kapcsoló                        Jelentés (Cél)                                Leírás
 -w,                             Wildcard (helyettesítő karakterek),           Lehetővé teszi helyettesítő karakterek 
                                                                               (*, ?) használatát a kereséshez. Ezzel a kapcsolóval kereshetünk
