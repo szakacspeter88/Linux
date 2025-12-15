@@ -1259,26 +1259,22 @@ The command's name originally stood for "Copy and Convert", which is derived fro
 dd
 ```
 #### The essence and dangers of the dd command
-1. Raw Data Transfer (Bit-precise Copy)
+#### 1. Raw Data Transfer (Bit-precise Copy)
 dd copies a raw data stream from the source (Input File, if=) to the destination (Output File, of=). This means that it does not care about the file system structure (unlike the cp command). This makes it suitable for:
 Cloning entire disks: You can simply copy the entire contents of one hard drive to another, sector by sector.
 Creating bootable USB drives: Often used to burn ISO disk images to a USB drive.
 Creating backups: You can create a backup of an entire partition to a file.
-
 2. Conversion
 The command can also convert (transform) data during copying. For example:
 From ASCII to EBCDIC or vice versa (old).
 Converting from lowercase to uppercase.
 Jump from the beginning of the file to the specified number of bytes (skipping the header).
-
 Dangers of the DD Command
 dd is often called the "disk destroyer". Because it directly manipulates physical devices and does not ask for confirmation, a simple typo in the of= (Output File) parameter can be fatal:
 For example: If you mistype the target partition and type of=/dev/sdb instead of of=/dev/sda, you could overwrite your entire main system drive.
-
 Key dd switches (parameters)
-
 The dd command does not use the traditional -k or --switch format, but key-value pairs.
-Parameter              FullName,                      Description
+Parameter              FullName                       Description
 if=FILE,               Input File                     The input source (file, device, partition).
 of=FILE                Output File                    The output destination (file, device, partition).
 bs=BYTES               Block Size                     Sets the input and output block sizes (e.g. 1M is 1 
