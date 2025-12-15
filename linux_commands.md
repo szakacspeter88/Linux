@@ -1296,7 +1296,7 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 Would you like to review some more basic filesystem commands, like chmod or chown?
 
 #### wheris
-Kapcsoló                      Jelentés (Cél)                      Leírás
+#### Kapcsoló                 Jelentés (Cél)                      Leírás
 -b                            Bináris fájlok                      Csak a futtatható (bináris) fájlokat keresi.
 -m                            Kézikönyv lapok (man)               Csak a kézikönyv (man) lapokat keresi.
 -s                            Forrásfájlok                        Csak a forráskód fájlokat keresi.
