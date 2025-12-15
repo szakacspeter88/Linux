@@ -1296,6 +1296,25 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 Would you like to review some more basic filesystem commands, like chmod or chown?
 
 #### wheris
+Kapcsoló                      Jelentés (Cél)                      Leírás
+-b                            Bináris fájlok                      Csak a futtatható (bináris) fájlokat keresi.
+-m                            Kézikönyv lapok (man)               Csak a kézikönyv (man) lapokat keresi.
+-s                            Forrásfájlok                        Csak a forráskód fájlokat keresi.
+-u                            Szokatlan bejegyzések               Olyan parancsokat keres, amelyeknél a megadott típusú 
+                                                                  (pl. -m-mel csak man-lap) bejegyzés hiányzik. 
+                                                                  Például: whereis -m -u * az aktuális könyvtárban azokat a                                                                         fájlokat mutatja, amelyekhez nincs man-lap."
+-B                            Bináris keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
+                                                                  ahol a bináris fájlokat keresi. 
+                                                                  Ezt a kapcsolót a -f kapcsolónak kell követnie.
+-M                            Man-lap keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
+                                                                  ahol a kézikönyv lapokat keresi.
+                                                                  Ezt a kapcsolót a -f kapcsolónak kell követnie.
+-S                            Forrás keresési útvonal             Meghatározza vagy korlátozza a könyvtárakat,
+                                                                  ahol a forrásfájlokat keresi.
+                                                                  Ezt a kapcsolót a -f kapcsolónak kell követnie.
+-f                            Fájlnév kezdetének jelzése          Megszakítja a -B, -M vagy -S kapcsolókkal megadott
+                                                                  könyvtárlistát, és jelzi, hogy a rákövetkező argumentumok
+                                                                  már a keresendő fájlnevek.
 #### whatis
 #### top
 #### useradd
