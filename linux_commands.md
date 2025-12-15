@@ -721,7 +721,7 @@ ps -o [columns]
 ```
 #### Sort by one or more fields. The - (minus) sign indicates descending order. GNU Style
 ```
---sort=[field]
+ps --sort=[field]
 ```
 #### Process tree display. A visual representation of the hierarchy of processes. GNU Style
 ```
@@ -811,29 +811,59 @@ Csak a megadott fájlrendszer típusokat jeleníti meg --type=TÍPUS
 df -t
 ```
 
-#### mount
-
--t                              Fájlrendszer típusa. Meghatározza a csatlakoztatandó fájlrendszer típusát
-TÍPUS                           (pl. ext4, vfat, ntfs, nfs, cifs).",mount -t ntfs /dev/sdb1 /mnt/pendrive
-
--o                              Csatolási opciók. Lehetővé teszi több, vesszővel elválasztott beállítás megadását. 
-OPCIÓK                          Ez a legfontosabb kapcsoló, lásd alább.","mount -o ro,nodev /dev/sda1 /mnt/backup"
--a,                             Összes csatolás. Megpróbálja csatlakoztatni az összes olyan fájlrendszert, 
-                                amely a /etc/fstab fájlban szerepel és az ""auto"" opcióval van megjelölve.",mount -a
--r,                             Csak olvasási (Read-Only) mód. Ugyanaz, mint az -o ro. 
-                                Megakadályozza az adatok módosítását a csatlakoztatott eszközön.",mount -r /dev/sdb1 /mnt/usb
--w,                             Írási (Read/Write) mód. Ugyanaz, mint az -o rw. Ez az alapértelmezett.",
--L CÍMKE,                       Címke alapján csatolás. Az eszköz helyett annak a fájlrendszernek a címkéjét (Label) adhatja meg, amelyet csatlakoztatni szeretne.
-                                mount -L ADATOK /mnt/data
--U                              UUID,UUID alapján csatolás. Az eszköz helyett annak a fájlrendszernek az egyedi azonosítóját (UUID) adhatja meg. 
-                                Ez a legmegbízhatóbb módszer.,mount -U 1234-ABCD /mnt/hosszu
-#### chmod
-
--R,                             Rekurzív mód: Az engedélyek módosítása a megadott könyvtárban és az összes benne lévő alkönyvtárban és fájlban.
--v,                             Részletes mód: Kiírja minden egyes módosított fájl nevét és az elvégzett műveletet.
--c,                             Csak azoknak a fájloknak a kiírása, amelyeken tényleges változás történt.
---                              Egy másik fájl engedélyeit veszi mintának, és azokat állítja be a célfájlon (a megadott engedélyeket felülírja).
-reference=FÁJL 
+## mount
+####
+#### Fájlrendszer típusa. Meghatározza a csatlakoztatandó fájlrendszer típusát (pl. ext4, vfat, ntfs, nfs,                  cifs).",mount -t ntfs /dev/sdb1 /mnt/pendrive
+```
+mount -t
+```
+#### -t TÍPUS                          
+#### Csatolási opciók. Lehetővé teszi több, vesszővel elválasztott beállítás megadását. 
+Ez a legfontosabb kapcsoló, lásd alább.","mount -o ro,nodev /dev/sda1 /mnt/backup"
+```
+mount -o
+```
+#### -o OPCIÓK
+#### Összes csatolás. Megpróbálja csatlakoztatni az összes olyan fájlrendszert, amely a /etc/fstab fájlban szerepel és az ""auto"" opcióval van megjelölve.",mount -a
+```
+mount -a
+```
+#### Csak olvasási (Read-Only) mód. Ugyanaz, mint az -o ro. Megakadályozza az adatok módosítását a csatlakoztatott         eszközön.",mount -r /dev/sdb1 /mnt/usb -r
+```
+mount -r
+```
+#### Írási (Read/Write) mód. Ugyanaz, mint az -o rw. Ez az alapértelmezett.
+```
+mount -w
+```
+#### Címke alapján csatolás. Az eszköz helyett annak a fájlrendszernek a címkéjét (Label) adhatja meg, 
+amelyet csatlakoztatni szeretne. mount -L ADATOK /mnt/data
+```
+mount -L
+```
+#### UUID,UUID alapján csatolás. Az eszköz helyett annak a fájlrendszernek az egyedi azonosítóját (UUID) adhatja meg. Ez a legmegbízhatóbb módszer.,mount -U 1234-ABCD /mnt/hosszu                       
+```
+mount -U
+```                              
+## chmod
+####
+#### Rekurzív mód: Az engedélyek módosítása a megadott könyvtárban és az összes benne lévő alkönyvtárban és fájlban.
+```
+chmod -R
+```
+#### Részletes mód: Kiírja minden egyes módosított fájl nevét és az elvégzett műveletet.                            
+```
+chmod -v
+```
+#### Csak azoknak a fájloknak a kiírása, amelyeken tényleges változás történt.                           
+```
+chmod -c
+```
+#### Egy másik fájl engedélyeit veszi mintának, és azokat állítja be a célfájlon (a megadott engedélyeket felülírja). 
+```                          
+chmod --
+reference=FÁJL
+```
 
 #### chown
 -R,                             Rekurzív mód: A tulajdonos és/vagy csoport módosítása a megadott könyvtárban és az összes benne lévő alkönyvtárban és fájlban.
@@ -850,7 +880,7 @@ reference=REFERENCIA_FÁJL
 
 (paraméter nélkül),             Megjeleníti az alapvető hálózati konfigurációs információkat: IPv4 és IPv6 címek, 
                                 alhálózati maszk és alapértelmezett átjáró minden adapterhez.
-/all,                           Részletes konfiguráció: Megjeleníti az összes hálózati adapter teljes TCP/IP konfigurációs adatait, beleértve a fizikai (MAC) címet, a DHCP-                                       kiszolgálót, a DNS-kiszolgálót és a bérleti időket is.
+/all,                           Részletes konfiguráció: Megjeleníti az összes hálózati adapter teljes TCP/IP konfigurációs adatait, beleértve a fizikai (MAC) címet, a DHCP- kiszolgálót, a DNS-kiszolgálót és a bérleti időket is.
 /release                        IP-cím felszabadítása: Felszabadítja az aktuálisan kiosztott IPv4-címet a DHCP-kiszolgálótól. Ezzel az adapter ideiglenesen cím nélkül marad.
 /renew                          IP-cím megújítása: Új IP-címet kér a DHCP-kiszolgálótól. Ezt gyakran a /release parancs után futtatják, amikor hálózati hibaelhárítás történik.
 /flushdns,                      DNS gyorsítótár ürítése: Törli és visszaállítja a DNS-feloldó gyorsítótár tartalmát. 
