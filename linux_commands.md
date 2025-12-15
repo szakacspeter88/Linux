@@ -1283,7 +1283,7 @@ dd is often called the "disk destroyer". Because it directly manipulates physica
 
 For example: If you mistype the target partition and type of=/dev/sdb instead of of=/dev/sda, you could overwrite your entire main system drive.
 
-🛠️ Key dd switches (parameters)
+Key dd switches (parameters)
 
 The dd command does not use the traditional -k or --switch format, but key-value pairs.
 #### wheris
