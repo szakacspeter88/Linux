@@ -780,7 +780,7 @@ kill -u
 kill -w
 ```
 ## df
-####
+#### A df (disk free) parancs a Linux/Unix rendszereken arra szolgál, hogy megjelenítse a csatlakoztatott fájlrendszerek (partíciók, hálózati megosztások, stb.) szabad lemezterületét és a kihasználtságát.
 ```
 df
 ```
@@ -813,7 +813,9 @@ df -t
 ```
 
 ## mount
-####
+#### A mount parancs alapvető funkciója a Linux/Unix rendszerekben az, hogy csatlakoztasson (vagy rögzítsen) egy tárolóeszközön lévő fájlrendszert a rendszer fájlrendszer-hierarchiájába.
+Egyszerűbben megfogalmazva: A mount parancs teszi lehetővé, hogy a számítógép operációs rendszere hozzáférjen egy adott adathordozón (pl. merevlemez-partíción, USB pendrive-on, CD-n, hálózati megosztáson) tárolt adatokhoz.
+
 #### Fájlrendszer típusa. Meghatározza a csatlakoztatandó fájlrendszer típusát (pl. ext4, vfat, ntfs, nfs,                  cifs).",mount -t ntfs /dev/sdb1 /mnt/pendrive
 ```
 mount -t
@@ -930,38 +932,149 @@ ipconfig /registerdns
 ```
 
 #### traceroute                
+#### A traceroute (vagy tracert Windows alatt) parancs arra szolgál, hogy megmutassa, milyen útvonalon halad át egy IP-csomag a forrásgéptől a célgépig. Gyakorlatilag a két pont közötti hálózati útvonal minden egyes routerét (hop) listázza, és megméri az oda-vissza utazási időt.
+Ez elengedhetetlen eszköz a hálózati hibaelhárításban és a késleltetés (latency) forrásának azonosításában.
 
-        
--n,                             Ne oldja fel a címeket (No name resolution): Megakadályozza az IP-címek domain névvé fordítását (fordított DNS lookup). 
-                                Ez jelentősen gyorsítja a futási időt, mivel elkerüli a DNS-lekérdezéseket. Nagyon gyakran használt kapcsoló.
--I,                             ICMP protokoll használata (ICMP mode): Kényszeríti a traceroute-ot, hogy ICMP ECHO csomagokat használjon a hagyományos UDP csomagok helyett 
-                                (mint a ping). Gyakran szükséges, ha az útvonalon lévő tűzfalak blokkolják az UDP-t.
--T,                             TCP protokoll használata (TCP mode): TCP SYN csomagokat használ (mint a legtöbb webes kommunikáció). 
-                                Hasznos a tűzfalak tesztelésére egy adott porton (pl. 80-as HTTP porton).
--p                              PORT,Port megadása: Csak UDP és TCP módokban (a -U vagy -T kapcsolókkal) használható. 
-                                Megadja a célszámítógépen használandó célport számát (pl. -p 80).
--q N                            Lekérdezések száma (Queries): Beállítja, hogy hányszor (N) küldjön csomagot minden egyes hophoz (alapértelmezés szerint 3).
--m MAX_TTL,                     Maximális hop-ok (Max TTL): Beállítja a maximális Time To Live (TTL) értékét, azaz a routerek maximális számát a cél elérése előtt
-                                (alapértelmezés szerint 30)."             
+```
+traceroute
+```
+#### Ne oldja fel a címeket (No name resolution): Megakadályozza az IP-címek domain névvé                                  fordítását (fordított DNS lookup).
+```        
+traceroute -n
+```
 
-#### wget                       
-                              
---no-clobber,-nc,                     Ne írja felül: Megakadályozza, hogy a wget felülírjon egy meglévő, azonos nevű fájlt. Ha a fájl létezik, kihagyja a letöltést.
---continue,-c,                        Folytatás: Folytatja a megszakított letöltést. Nagyon hasznos nagy fájlok esetén, ha a kapcsolat megszakad.
---limit-rate=RATE,-r RATE,            Sebességkorlátozás: Korlátozza a letöltési sebességet a megadott értékre (pl. 200k a 200 kilobyte/másodpercre).
---tries=NUMBER,-t NUMBER,             Újrapróbálkozások száma: Beállítja, hányszor próbálja meg újra a letöltést, ha hiba lép fel (alapértelmezés szerint 20).
---background,-b,                      Háttérben futás: A letöltést a háttérben indítja el. A kimenetet egy wget-log nevű fájlba írja.
---input-file=FILE,-i FILE,            Fájlból való letöltés: Egy szöveges fájlban (FILE) felsorolt URL-eket tölti le soronként.
---output-file=FILE,-o FILE,           Naplózás fájlba: Az összes üzenetet (hibákat, státuszt) a megadott fájlba írja ki a konzol helyett.
---recursive,-r,Rekurzív letöltés:     Letölti az oldal összes linkjét (mélységtől függően). Ideális weboldalak másolására (mirroring).
---level=DEPTH,-l DEPTH                Rekurzivitás mélysége: Rekurzív letöltésnél beállítja a maximális mélységet (pl. -l 2). Az -l inf korlátlan mélységet jelent.
---no-parent,-np,                      Szülőkönyvtárak kihagyása: Rekurzív letöltéskor nem követi a linkeket, amelyek a kezdőkönyvtáron kívülre mutatnak.
---mirror,-m,Weboldal tükrözése:       Gyorsító parancs a wget -r -l inf --no-clobber --no-host-directories beállításokhoz. Tökéletes teljes weboldalak másolásához.
---user-agent=STRING,-U STRING,        User Agent beállítása: Elküldi a megadott User Agent (STRING) információt a szervernek. 
-                                      Néha szükséges, ha a szerver korlátozza a wget alapértelmezett beállításait.
---directory-                          A letöltött fájlokat a megadott könyvtárba helyezi.
-prefix=DIR,-P DIR,Célkönyvtár        
-                  
+#### ICMP protokoll használata (ICMP mode): Kényszeríti a traceroute-ot, hogy ICMP ECHO csomagokat használjon a            hagyományos UDP csomagok helyett (mint a ping). Gyakran szükséges, ha az útvonalon lévő tűzfalak blokkolják az        UDP-t
+
+```
+traceroute -I
+```
+#### TCP protokoll használata (TCP mode): TCP SYN csomagokat használ (mint a legtöbb webes kommunikáció). Hasznos a        tűzfalak tesztelésére egy adott porton (pl. 80-as HTTP porton).
+```                               
+traceroute -T
+```                             
+#### Port megadása: Csak UDP és TCP módokban (a -U vagy -T kapcsolókkal) használható. 
+Megadja a célszámítógépen használandó célport számát (pl. -p 80).
+```
+traceroute -p PORT
+```
+#### Lekérdezések száma (Queries): Beállítja, hogy hányszor (N) küldjön csomagot minden                                    egyes hophoz (alapértelmezés szerint 3).
+```
+traceroute -q N
+```
+#### Maximális hop-ok (Max TTL): Beállítja a maximális Time To Live (TTL) értékét, azaz a                                  routerek maximális számát a cél elérése előtt (alapértelmezés szerint 30).
+```
+traceroute -m MAX_TTL
+```
+
+#### wget
+#### Ez a legfontosabb tulajdonsága. A wget el tud indulni a háttérben, és folytathatja a letöltést, még akkor is, ha a felhasználó kijelentkezik a rendszerről (például SSH-n keresztül). Ez ideálissá teszi nagyméretű fájlok, vagy hosszú ideig tartó rekurzív letöltések indítására szerver környezetben.
+```
+wget
+```
+#### Ne írja felül: Megakadályozza, hogy a wget felülírjon egy meglévő, azonos nevű                                        fájlt. Ha a fájl létezik, kihagyja a letöltést.    
+```
+wget --no-clobber
+```
+or
+```
+wget -nc
+```
+#### Folytatás: Folytatja a megszakított letöltést. Nagyon hasznos nagy fájlok                                             esetén, ha a kapcsolat megszakad.
+```
+wget --continue
+```
+or
+```
+wget -c
+```
+#### Sebességkorlátozás: Korlátozza a letöltési sebességet a megadott értékre (pl.                                         200k a 200 kilobyte/másodpercre).
+```
+wget --limit-rate=RATE
+```
+or
+```
+wget -r RATE
+```            
+#### Újrapróbálkozások száma: Beállítja, hányszor próbálja meg újra a letöltést, ha                                        hiba lép fel (alapértelmezés szerint 20).
+```
+wget --tries=NUMBER
+```
+or
+```
+wget -t NUMBER
+```
+#### Háttérben futás: A letöltést a háttérben indítja el. A kimenetet egy wget-log                                         nevű fájlba írja.
+```
+wget --background
+```
+or
+```
+wget -b
+```
+#### Fájlból való letöltés: Egy szöveges fájlban (FILE) felsorolt URL-eket tölti le                                        soronként.
+```
+wget --input-file=FILE
+```
+or
+```
+wget -i FILE
+```
+#### Naplózás fájlba: Az összes üzenetet (hibákat, státuszt) a megadott fájlba írja                                        ki a konzol helyett.
+```
+wget --output-file=FILE
+```
+or
+```
+wget -o FILE
+```
+#### Rekurzív letöltés: Letölti az oldal összes linkjét (mélységtől függően). Ideális weboldalak                           másolására (mirroring).
+```
+wget --recursive
+```
+or
+```
+wget -r
+```
+#### Rekurzivitás mélysége: Rekurzív letöltésnél beállítja a maximális mélységet                                           (pl. -l 2). Az -l inf korlátlan mélységet jelent.   
+```
+wget --level=DEPTH
+```
+or
+```
+wget -l DEPTH
+```
+#### Szülőkönyvtárak kihagyása: Rekurzív letöltéskor nem követi a linkeket, amelyek                                        a kezdőkönyvtáron kívülre mutatnak.
+```
+wget --no-parent
+```
+or
+```
+wget -np
+```
+#### Weboldal tükrözése: Gyorsító parancs a wget -r -l inf --no-clobber --no-host-directories                              beállításokhoz. Tökéletes teljes weboldalak másolásához.
+```
+wget --mirror
+```
+or
+```
+wget -m
+```
+#### User Agent beállítása: Elküldi a megadott User Agent (STRING) információt a szervernek. Néha szükséges, ha a szerver korlátozza a wget alapértelmezett beállításait.
+```
+wget --user-agent=STRING
+```
+or
+```
+wget -U STRING 
+```       
+#### A letöltött fájlokat a megadott könyvtárba helyezi.
+```
+wget --directory-prefix=DIR
+```
+or
+```
+wget -P DIR        
+```                  
 #### ufw
 
 sudo ufw                              Megjeleníti a tűzfal aktuális állapotát (aktív vagy inaktív) és az összes érvényes szabályt.
