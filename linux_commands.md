@@ -779,28 +779,37 @@ kill -u
 ```
 kill -w
 ```
-#### df
-Emberi szemmel olvasható formátum. A méreteket megfelelő, könnyen értelmezhető egységekben --human-readable
+## df
+####
 ```
-df -h,
 ```
-
-          
-                      (pl. GB, MB) jeleníti meg. (A legfontosabb kapcsoló!)
--T,                   --print-type 
-                      "Kiírja a fájlrendszer típusát (pl. ext4, xfs, tmpfs). 
-                      Nagyon hasznos a rendszerpartíciók azonosításához."
--a,                   --all,"Az összes fájlrendszert megjeleníti, beleértve a 0 blokk méretű,
-                      speciális (ál) fájlrendszereket is (pl. /proc, /sys)."    
--i,                   --inodes
-                      A blokkhasználat helyett az inode-használati statisztikát jeleníti meg 
-                      (hány fájl hozható még létre). Fontos, ha kevés a szabad inode."
--x                    --exclude-type=TÍPUS,Kihagyja a megadott fájlrendszer típusokat a listából (pl. df -x tmpfs
-TÍPUS                 kihagyja az összes ideiglenes fájlrendszert).
--t                    --type=TÍPUS,Csak a megadott fájlrendszer típusokat jeleníti meg 
-TÍPUS                 (pl. df -t ext4 csak az ext4 típusúakat mutatja).
---                    --output[=MEZŐK],"A kimeneti oszlopok testreszabása (pl. source, size, used, avail)."
-output 
+#### Emberi szemmel olvasható formátum. A méreteket megfelelő, könnyen értelmezhető egységekben
+(pl. GB, MB) jeleníti meg. (A legfontosabb kapcsoló!) --human-readable
+```
+df -h
+```
+#### Kiírja a fájlrendszer típusát (pl. ext4, xfs, tmpfs). 
+Nagyon hasznos a rendszerpartíciók azonosításához --print-type 
+```
+df -T
+```
+#### Az összes fájlrendszert megjeleníti, beleértve a 0 blokk méretű,speciális (ál) fájlrendszereket is (pl. /proc, /sys) --all         
+```
+df -a
+```                    
+#### A lemezterület helyett a szabad inode-okat (index node-ok) és a kihasználtságot mutatja. (Fontos, ha a lemez megtelt kis fájlokkal).
+```
+df -i
+```
+#### Kihagyja a megadott fájlrendszer típusokat a listából (pl. df -x tmpfs)  --exclude-type=TÍPUS
+```
+df -x
+```                  
+#### kihagyja az összes ideiglenes fájlrendszert).
+Csak a megadott fájlrendszer típusokat jeleníti meg --type=TÍPUS
+```
+df -t
+```
 
 #### mount
 
