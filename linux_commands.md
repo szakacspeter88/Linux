@@ -758,6 +758,8 @@ ps --width N
 ```
 ps aux -ww
 ```
+#*** Don't really understand this ps things
+
 #### kill and killall
 ####
 ```
@@ -1316,12 +1318,83 @@ Would you like to review some more basic filesystem commands, like chmod or chow
                                                                   könyvtárlistát, és jelzi, hogy a rákövetkező argumentumok
                                                                   már a keresendő fájlnevek.
 #### whatis
+####The whatis command in the Linux operating system is used to display a short, one-line description of a given command or program. This description is taken from the database of manual (man) pages. Essentially, it queries the database used by the man command and returns only the name of the command and a short description (the contents of the NAME section of the man page), without opening the full manual page.
+Kapcsoló                        Jelentés (Cél)                                Leírás
+-w,                             Wildcard (helyettesítő karakterek),           Lehetővé teszi helyettesítő karakterek 
+                                                                              (*, ?) használatát a kereséshez. Ezzel a kapcsolóval kereshetünk
+                                                                              például minden olyan parancsra, amelyik a ""mount"" szóval
+                                                                              kezdődik."
+-r                              Reguláris kifejezések                         A keresési mintát reguláris kifejezésként kezeli.
+-l                              Lokalizáció kihagyása                         Alapértelmezés szerint a whatis megpróbálja a helyi
+                                                                              nyelven írt man-lapokat is megkeresni.
+                                                                              Ez a kapcsoló ezt a viselkedést kikapcsolja.
+**-s                            Szekciók korlátozása                          Csak a megadott man-lap szekciókban (pl. 1, 8, 3) keres.
+lista                                                                         A man-lapok szekciói különböző kategóriákat jelentenek
+                                                                              (1=általános parancsok, 8=rendszeradminisztrációs 
+                                                                              parancsok stb.) 
 #### top
+#### A top parancs a Linux operációs rendszer egyik legfontosabb eszköze, amely valós időben, interaktívan mutatja a rendszer aktuális állapotát. Lényegében egy dinamikus megjelenítés a futó folyamatokról, a CPU terhelésről, a memóriahasználatról és a kernel terhelésről (load average). Rendszergazdák és felhasználók számára is alapvető fontosságú a teljesítmény problémák azonosításában és a rendszer erőforrásainak monitorozásában.
+Kapcsoló                              Jelentés                                      Leírás
+-d sec                                Delay (Frissítési idő)                        Megadja a képernyőfrissítés időintervallumát másodpercben.
+                                                                                    (Alapértelmezett: 3.0 másodperc). Pl.: top -d 1
+-p PID                                PID monitorozás                               Csak a megadott folyamatazonosító(k) (PID) által jelölt 
+                                                                                    folyamatokat figyeli. Pl.: top -p 1234
+-u user                               Felhasználó szűrése                           Csak az adott felhasználóhoz tartozó folyamatokat jeleníti meg.
+                                                                                    Pl.: top -u chef
+-n num                                Iterációk száma                               Megadja, hányszor frissítse a képernyőt, mielőtt kilép.
+                                                                                    Pl.: top -n 1 (csak egyszer jeleníti meg, majd kilép)
+-H                                    Szálak megjelenítése                          A folyamatok helyett az egyes szálakat (threads) jeleníti meg.
+                                                                                    (Fontos a részletesebb elemzéshez).
+-b                                    Batch mód                                     Nem interaktív, kötegelt mód. Ez a mód ideális
+                                                                                    a top kimenetének fájlba való átirányítására
+                                                                                    vagy szkriptekben való felhasználásra."
 #### useradd
+#### The useradd (also known as adduser in some distributions) command in the Linux operating system is used to create a new user account. This command performs all the basic configuration steps required to add a user: it adds the user to the system, creates an encrypted entry for the user's password (although setting the password requires a separate command, see below), creates the user's home directory, and sets the default shell.
+Kapcsoló                        Teljes név                              Leírás
+-m                              --create-home                           Létrehozza a felhasználó saját (home) könyvtárát. 
+                                                                        Ez a leggyakrabban használt kapcsoló, mivel a legtöbb esetben szükség van
+                                                                        saját könyvtárra. (Egyes disztribúciókban ez az alapértelmezett viselkedés.)
+-d dir                          --home dir                              Meghatározza a felhasználó saját könyvtárának (home directory) elérési
+                                                                        útját a szokásos /home/felhasználónév helyett.
+-g group                        --gid group                             Megadja a felhasználó elsődleges csoportját (primary group) 
+                                                                        (csoportnévvel vagy GID-vel). Ez a csoport lesz a felhasználó 
+                                                                        alapértelmezett csoportja.
+-G groups                       --groups groups                         Meghatározza azokat a kiegészítő csoportokat (secondary groups)
+                                                                        (vesszővel elválasztva), amelyekhez a felhasználó tartozni fog.
+-s shell                        --shell shell                           Meghatározza a felhasználó alapértelmezett rendszerhéját (shell) 
+                                                                        (pl. /bin/bash, /bin/zsh, vagy /sbin/nologin a csak 
+                                                                        szolgáltatásokhoz használt fiókoknál).
+-u uid                          --uid uid                               Megadja a felhasználó egyedi azonosítóját (UID).
+                                                                        Általában a rendszer automatikusan kiosztja, de néha manuálisan
+                                                                        is be kell állítani (pl. hálózati megosztásoknál).
+-c comment                      --comment comment                       Kommentárt (például a felhasználó teljes nevét vagy leírást) ad a fiókhoz,
+                                                                        amely a /etc/passwd fájlban jelenik meg.
+-e date                         --expiredate date                       Megadja, hogy mikor jár le a felhasználói fiók (éééé-hh-nn formátumban).
+-f days                         --inactive days                         Megadja a jelszó lejárta utáni inaktivitási napok számát,
+                                                                        amíg a fiók végleg letiltásra kerül.
+-N                              --no-user-group                         Megakadályozza, hogy a parancs létrehozzon egy azonos nevű csoportot
+                                                                        a felhasználó elsődleges csoportjaként.
 #### passwd
+#### The passwd command is the basic tool for changing passwords for user accounts in the Linux operating system. The command manages the entry of a user's encrypted password in the /etc/shadow file, and also allows administrators to set or change passwords for other users, and to manage password policies (such as expiration dates)
+Kapcsoló                          Teljes név                    Jogosultság                     Leírás
+-l,                               --lock                        root                            Letiltja (lezárja) a felhasználó jelszavát. Ez megakadályozza,
+                                                                                                hogy a felhasználó a jelszavával bejelentkezzen. 
+                                                                                                A jelszó elé egy ! kerül az /etc/shadow fájlban."
+-u                                --unlock                      root                            Feloldja (engedélyezi) a zárolt jelszót. Visszaállítja a
+                                                                                                jelszóbejegyzést a lezárás előtti állapotba.
+-d                                --delete                      root                            Törli a felhasználó jelszavát. A felhasználó jelszó nélkül
+                                                                                                jelentkezhet be (nem javasolt, csak speciális esetekben).
+-e                                --expire                      root                            Azonnal lejárttá teszi a felhasználó jelszavát. 
+                                                                                                A felhasználó a következő bejelentkezéskor
+                                                                                                kénytelen lesz új jelszót megadni.
+-x days                           --maximum days                root                            Beállítja a maximum napok számát, ameddig a jelszó használható 
+                                                                                                (lejárat előtti érvényesség). Ha 0, nincs lejárati idő.
+-n days                           --minimum days                root                            Beállítja a minimum napok számát, amíg a jelszó nem változtatható meg újra.
+-i days                           --inactive days               root                            Beállítja az inaktivitási napok számát a jelszó lejárta után.
+                                                                                                Ha ez letelik, a fiók végleg letiltásra kerül.
+-S                                --status                      bárki                           Megjeleníti a felhasználó jelszavának állapotát 
+                                                                                                (utolsó módosítás, minimum/maximum érvényességi idők, inaktivitás).
 
-
-#*** Don't really understand this ps things
 
 # find
   
