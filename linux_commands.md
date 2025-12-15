@@ -1210,16 +1210,25 @@ Elkerülhető hibák: Nehezebb véletlen hibát (pl. fontos rendszerfájl törl�
 3. A sudo Megoldása
 
 A sudo hidalja át ezt a problémát:
-
 Ideiglenes emelés: Lehetővé teszi a felhasználók számára, hogy szükség esetén csak arra a parancsra kapjanak root jogosultságot, amely előtt a sudo parancsot elhelyezik
-
 Auditálhatóság: A sudo használatát a rendszer naplózza, így pontosan tudható, melyik felhasználó és mikor futtatott rendszergazdai parancsot
-
 Hitelesítés: A sudo használatához a felhasználónak be kell írnia a saját jelszavát, nem a root jelszavát (ez egy konfigurációs beállítástól függ, de általában így működik)
-
 Példa: A apt update parancs csak a csomaglistát frissíti, de a apt install parancs a rendszerfájlokat módosítja, ezért elé kell írni a sudo-t
 
 #### cal
+#### The cal command is used in Linux/Unix systems to display the calendar on the command line.
+This is a very simple but useful utility that allows you to quickly view the calendar for the current month, 
+a specific month, or even an entire year, right in the terminal.
+```
+cal
+```
+Kapcsoló,             Leírás,                                                                                          Példa
+-3,                   Megjeleníti az előző, az aktuális és a következő hónapot együtt.,                                cal -3
+-A N                  Megjeleníti az aktuális hónapot és az azt követő N hónapot (After).,                             cal -A 2
+-B N                  Megjeleníti az aktuális hónapot és az azt megelőző N hónapot (Before).                           cal -B 1
+-y,                   Megjeleníti az aktuális év naptárát (ugyanaz, mint a cal ÉV paraméter nélkül).                   cal -y
+-j,                   Julián naptár (Julian Calendar) formátumban jeleníti meg az évet/hónapot, azaz a napok                                
+                      sorszámát 1-től 365-ig (vagy 366-ig).                                                            cal -j
 #### alias
 #### dd
 #### wheris
