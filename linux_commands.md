@@ -993,11 +993,11 @@ traceroute -m MAX_TTL
 ```
 
 #### wget
-#### Ez a legfontosabb tulajdonsága. A wget el tud indulni a háttérben, és folytathatja a letöltést, még akkor is, ha a felhasználó kijelentkezik a rendszerről (például SSH-n keresztül). Ez ideálissá teszi nagyméretű fájlok, vagy hosszú ideig tartó rekurzív letöltések indítására szerver környezetben.
+#### This is its most important feature. wget can run in the background and continue downloading even if the user logs out of the system (for example, via SSH). This makes it ideal for starting large files or long-running recursive downloads in a server environment.
 ```
 wget
 ```
-#### Ne írja felül: Megakadályozza, hogy a wget felülírjon egy meglévő, azonos nevű                                        fájlt. Ha a fájl létezik, kihagyja a letöltést.    
+#### Do not overwrite: Prevents wget from overwriting an existing file with the same name. If the file exists, it will skip the download.    
 ```
 wget --no-clobber
 ```
@@ -1005,7 +1005,7 @@ or
 ```
 wget -nc
 ```
-#### Folytatás: Folytatja a megszakított letöltést. Nagyon hasznos nagy fájlok                                             esetén, ha a kapcsolat megszakad.
+#### Resume: Resumes an interrupted download. Very useful for large files if the connection is lost.
 ```
 wget --continue
 ```
@@ -1013,7 +1013,7 @@ or
 ```
 wget -c
 ```
-#### Sebességkorlátozás: Korlátozza a letöltési sebességet a megadott értékre (pl.                                         200k a 200 kilobyte/másodpercre).
+#### Speed ​​Limit: Limits the download speed to the specified value (e.g. 200k for 200 kilobytes per second).
 ```
 wget --limit-rate=RATE
 ```
@@ -1021,7 +1021,7 @@ or
 ```
 wget -r RATE
 ```            
-#### Újrapróbálkozások száma: Beállítja, hányszor próbálja meg újra a letöltést, ha                                        hiba lép fel (alapértelmezés szerint 20).
+#### Number of retries: Sets the number of times to retry the download if an error occurs (20 by default).
 ```
 wget --tries=NUMBER
 ```
@@ -1029,7 +1029,7 @@ or
 ```
 wget -t NUMBER
 ```
-#### Háttérben futás: A letöltést a háttérben indítja el. A kimenetet egy wget-log                                         nevű fájlba írja.
+#### Run in background: Starts the download in the background. The output is written to a file named wget-log.
 ```
 wget --background
 ```
@@ -1037,7 +1037,7 @@ or
 ```
 wget -b
 ```
-#### Fájlból való letöltés: Egy szöveges fájlban (FILE) felsorolt URL-eket tölti le                                        soronként.
+#### Download from file: Downloads URLs listed in a text file (FILE) line by line.
 ```
 wget --input-file=FILE
 ```
@@ -1045,7 +1045,7 @@ or
 ```
 wget -i FILE
 ```
-#### Naplózás fájlba: Az összes üzenetet (hibákat, státuszt) a megadott fájlba írja                                        ki a konzol helyett.
+#### Log to file: Writes all messages (errors, status) to the specified file instead of the console.
 ```
 wget --output-file=FILE
 ```
@@ -1053,7 +1053,7 @@ or
 ```
 wget -o FILE
 ```
-#### Rekurzív letöltés: Letölti az oldal összes linkjét (mélységtől függően). Ideális weboldalak                           másolására (mirroring).
+#### Recursive download: Downloads all links on the page (depending on depth). Ideal for mirroring websites.
 ```
 wget --recursive
 ```
@@ -1061,7 +1061,7 @@ or
 ```
 wget -r
 ```
-#### Rekurzivitás mélysége: Rekurzív letöltésnél beállítja a maximális mélységet                                           (pl. -l 2). Az -l inf korlátlan mélységet jelent.   
+#### Recursion depth: Sets the maximum depth for recursive downloads (e.g. -l 2). -l inf means unlimited depth.
 ```
 wget --level=DEPTH
 ```
@@ -1069,7 +1069,7 @@ or
 ```
 wget -l DEPTH
 ```
-#### Szülőkönyvtárak kihagyása: Rekurzív letöltéskor nem követi a linkeket, amelyek                                        a kezdőkönyvtáron kívülre mutatnak.
+#### Skip parent directories: When recursively downloading, links that point outside the starting directory are not followed.
 ```
 wget --no-parent
 ```
@@ -1077,7 +1077,7 @@ or
 ```
 wget -np
 ```
-#### Weboldal tükrözése: Gyorsító parancs a wget -r -l inf --no-clobber --no-host-directories                              beállításokhoz. Tökéletes teljes weboldalak másolásához.
+#### Web Page Mirroring: A speedup command for wget -r -l inf --no-clobber --no-host-directories. Perfect for copying entire web pages.
 ```
 wget --mirror
 ```
@@ -1085,7 +1085,7 @@ or
 ```
 wget -m
 ```
-#### User Agent beállítása: Elküldi a megadott User Agent (STRING) információt a szervernek. Néha szükséges, ha a szerver korlátozza a wget alapértelmezett beállításait.
+#### Set User Agent: Sends the specified User Agent (STRING) information to the server. Sometimes it is necessary for the server to restrict the default settings of wget.
 ```
 wget --user-agent=STRING
 ```
@@ -1093,7 +1093,7 @@ or
 ```
 wget -U STRING 
 ```       
-#### A letöltött fájlokat a megadott könyvtárba helyezi.
+#### It places the downloaded files in the specified directory.
 ```
 wget --directory-prefix=DIR
 ```
@@ -1102,30 +1102,30 @@ or
 wget -P DIR        
 ```                  
 #### ufw
-#### Megjeleníti a tűzfal aktuális állapotát (aktív vagy inaktív) és az összes érvényes szabályt.
+#### Displays the current status of the firewall (active or inactive) and all valid rules.
 ```
 sudo ufw status
 ```
-#### Részletes állapotot mutat, beleértve az alapértelmezett bejövő és kimenő politikákat.
+#### Shows detailed status, including default inbound and outbound policies.
 ```
 sudo ufw status verbose
 ```
-#### Bekapcsolja a tűzfalat. Figyelem! Ezzel a parancssal azonnal életbe lépnek az összes beállított szabályok. 
+#### Turns on the firewall. Warning! This command immediately takes effect for all configured rules.
 ```
 sudo ufw                              
 enable
 ```
-####  Ha nincs beállítva SSH-hozzáférés engedélyezése, kizárhatja magát a rendszerből. Kikapcsolja a tűzfalat.
+####  If SSH access is not configured to be allowed, you can lock yourself out of the system. Turns off the firewall.
 ```
 sudo ufw disable
 ```
-#### Visszaállítja a tűzfalat az alapértelmezett beállításokra, és töröl minden szabályt.
+#### Resets the firewall to default settings and deletes all rules.
 ```                         
 sudo ufw reset                        
 ```
 #### iptables
-####
-#### Hozzáadás: Hozzáad egy szabályt a megadott lánc végéhez.
+#### iptables is a command-line tool in Linux operating systems used to configure a firewall and network packet filtering framework based on a kernel module called netfilter.
+#### Append: Adds a rule to the end of the specified chain.
 ```
 iptables -A
 ```
@@ -1133,7 +1133,7 @@ or
 ```
 iptables --append
 ```
-#### Beszúrás: Beszúr egy szabályt a megadott lánc elejére (vagy a megadott sorszám elé).
+#### Insert: Inserts a rule at the beginning of the specified chain (or before the specified sequence number).
 ```
 iptables -I
 ```
@@ -1141,7 +1141,7 @@ or
 ```
 iptables --insert
 ```
-#### Törlés: Töröl egy szabályt (a pontos szabályleírással vagy sorszámmal).                   
+#### Delete: Deletes a rule (with the exact rule description or number).                  
 ```
 iptables -D	
 ```
@@ -1149,7 +1149,7 @@ or
 ```
 iptables --delete
 ```
-#### Listázás: Kilistázza a szabályokat a megadott láncban/táblában.
+#### Listing: Lists the rules in the specified chain/table.
 ```
 iptables -L
 ```
@@ -1157,7 +1157,7 @@ or
 ```
 iptables --list
 ```
-#### Összes törlése: Eltávolít minden szabályt a megadott láncból/táblából.           
+#### Delete All: Removes all rules from the specified chain/table.         
 ```
 iptables -F
 ```
@@ -1165,7 +1165,7 @@ or
 ```
 iptables --flush
 ```
-#### Alapértelmezett politika: Beállítja a lánc alapértelmezett viselkedését (pl. DROP, ACCEPT).
+#### Default Policy: Sets the default behavior of the chain (e.g. DROP, ACCEPT).
 ```
 iptables -P
 ```
@@ -1173,7 +1173,7 @@ or
 ```
 iptables --policy
 ```
-#### Táblázat kiválasztása: Megadja, melyik táblán dolgozzon (ha elhagyjuk, alapértelmezett a filter).
+#### Table selection: Specifies which table to work on (if omitted, filter is the default).
 ```      
 iptables -t
 ```
