@@ -1229,8 +1229,63 @@ Kapcsoló,             Leírás,                                                
 -y,                   Megjeleníti az aktuális év naptárát (ugyanaz, mint a cal ÉV paraméter nélkül).                   cal -y
 -j,                   Julián naptár (Julian Calendar) formátumban jeleníti meg az évet/hónapot, azaz a napok                                
                       sorszámát 1-től 365-ig (vagy 366-ig).                                                            cal -j
+
 #### alias
+#### The command is all about efficiency and convenience. It is used to replace frequently used, long, or difficult-to-type commands, reducing the chance of typing errors and speeding up the workflow.
+#### Example
+```
+alias név='parancs [kapcsolók és argumentumok]'
+```
+or
+#### Alias létrehozása a teljes rendszer frissítésére
+```
+alias updateall='sudo apt update && sudo apt upgrade -y'
+```
+#### Example
+```
+ alias ls='ls --color=auto'
+```
+or
+```
+# alias ll='ls -l'
+```
 #### dd
+#### The dd command is an extremely powerful and versatile utility in Linux/Unix systems, primarily used for bit-accurate copying and converting of files, partitions, or entire media.
+The command's name originally stood for "Copy and Convert", which is derived from an early operating system (JCL) term, rather than the terms "disk dump" or "disk duplicate", although its function is related to these.
+
+```
+dd
+```
+#### The essence and dangers of the dd command
+1. Raw Data Transfer (Bit-precise Copy)
+
+dd copies a raw data stream from the source (Input File, if=) to the destination (Output File, of=). This means that it does not care about the file system structure (unlike the cp command). This makes it suitable for:
+
+Cloning entire disks: You can simply copy the entire contents of one hard drive to another, sector by sector.
+
+Creating bootable USB drives: Often used to burn ISO disk images to a USB drive.
+
+Creating backups: You can create a backup of an entire partition to a file.
+
+2. Conversion
+
+The command can also convert (transform) data during copying. For example:
+
+From ASCII to EBCDIC or vice versa (old).
+
+Converting from lowercase to uppercase.
+
+Jump from the beginning of the file to the specified number of bytes (skipping the header).
+
+Dangers of the DD Command
+
+dd is often called the "disk destroyer". Because it directly manipulates physical devices and does not ask for confirmation, a simple typo in the of= (Output File) parameter can be fatal:
+
+For example: If you mistype the target partition and type of=/dev/sdb instead of of=/dev/sda, you could overwrite your entire main system drive.
+
+🛠️ Key dd switches (parameters)
+
+The dd command does not use the traditional -k or --switch format, but key-value pairs.
 #### wheris
 #### whatis
 #### top
