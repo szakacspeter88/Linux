@@ -1258,34 +1258,43 @@ dd
 ```
 #### The essence and dangers of the dd command
 1. Raw Data Transfer (Bit-precise Copy)
-
 dd copies a raw data stream from the source (Input File, if=) to the destination (Output File, of=). This means that it does not care about the file system structure (unlike the cp command). This makes it suitable for:
-
 Cloning entire disks: You can simply copy the entire contents of one hard drive to another, sector by sector.
-
 Creating bootable USB drives: Often used to burn ISO disk images to a USB drive.
-
 Creating backups: You can create a backup of an entire partition to a file.
 
 2. Conversion
-
 The command can also convert (transform) data during copying. For example:
-
 From ASCII to EBCDIC or vice versa (old).
-
 Converting from lowercase to uppercase.
-
 Jump from the beginning of the file to the specified number of bytes (skipping the header).
 
 Dangers of the DD Command
-
 dd is often called the "disk destroyer". Because it directly manipulates physical devices and does not ask for confirmation, a simple typo in the of= (Output File) parameter can be fatal:
-
 For example: If you mistype the target partition and type of=/dev/sdb instead of of=/dev/sda, you could overwrite your entire main system drive.
 
 Key dd switches (parameters)
 
 The dd command does not use the traditional -k or --switch format, but key-value pairs.
+Parameter              FullName,                      Description
+if=FILE,               Input File                     The input source (file, device, partition).
+of=FILE                Output File                    The output destination (file, device, partition).
+bs=BYTES               Block Size                     Sets the input and output block sizes (e.g. 1M is 1 
+                                                      megabyte). Important for speed.
+count=N                                               Copies only N blocks (of the block size specified by bs).
+
+skip=N                                                Skip the first N input blocks.
+seek=N                                                Skip the first N output blocks 
+                                                      (from the beginning of the target file).
+conv=CONV              Convert                        Special conversion options (e.g. notrunc, sync).
+#### Common Usage Example
+To make an Ubuntu ISO image bootable on a USB drive:
+```
+sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
+```
+#### (Where sdX is the target USB drive, not its partition!) 
+Would you like to review some more basic filesystem commands, like chmod or chown?
+
 #### wheris
 #### whatis
 #### top
