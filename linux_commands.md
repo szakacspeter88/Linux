@@ -782,6 +782,7 @@ kill -w
 ## df
 ####
 ```
+df
 ```
 #### Emberi szemmel olvasható formátum. A méreteket megfelelő, könnyen értelmezhető egységekben
 (pl. GB, MB) jeleníti meg. (A legfontosabb kapcsoló!) --human-readable
