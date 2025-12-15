@@ -867,29 +867,67 @@ reference=FÁJL
 ```
 
 #### chown
--R,                             Rekurzív mód: A tulajdonos és/vagy csoport módosítása a megadott könyvtárban és az összes benne lévő alkönyvtárban és fájlban.
-                                Ez a legfontosabb kapcsoló.
--v,                             Részletes mód: Kiírja minden egyes módosított fájl nevét és az elvégzett műveletet.
--c,                             Csak azoknak a fájloknak a kiírása, amelyeken tényleges változás történt.
---                              Csak akkor végzi el a módosítást, ha a fájl aktuális tulajdonosa és csoportja megfelel a megadottnak.
+#### Rekurzív mód: A tulajdonos és/vagy csoport módosítása a megadott könyvtárban és az összes benne lévő                                alkönyvtárban és fájlban. Ez a legfontosabb kapcsoló.
+  
+```
+chwon -R
+```                             
+#### Részletes mód: Kiírja minden egyes módosított fájl nevét és az elvégzett műveletet.                          
+```
+chown -v
+```                            
+#### Csak azoknak a fájloknak a kiírása, amelyeken tényleges változás történt.
+```
+chown -c
+```
+#### Csak akkor végzi el a módosítást, ha a fájl aktuális tulajdonosa és csoportja megfelel a megadottnak.
+
+--                          
 from=JELENLEGI_TULAJ:
 JELENLEGI_CSOP
---                              Egy másik fájl tulajdonosát és csoportját veszi mintának, és azokat állítja be a célfájlon.
+
+#### Egy másik fájl tulajdonosát és csoportját veszi mintának, és azokat állítja be a célfájlon.
+--                              
 reference=REFERENCIA_FÁJL
 
-#### ipconfig                   Kapcsoló,Leírás
-
-(paraméter nélkül),             Megjeleníti az alapvető hálózati konfigurációs információkat: IPv4 és IPv6 címek, 
-                                alhálózati maszk és alapértelmezett átjáró minden adapterhez.
-/all,                           Részletes konfiguráció: Megjeleníti az összes hálózati adapter teljes TCP/IP konfigurációs adatait, beleértve a fizikai (MAC) címet, a DHCP- kiszolgálót, a DNS-kiszolgálót és a bérleti időket is.
-/release                        IP-cím felszabadítása: Felszabadítja az aktuálisan kiosztott IPv4-címet a DHCP-kiszolgálótól. Ezzel az adapter ideiglenesen cím nélkül marad.
-/renew                          IP-cím megújítása: Új IP-címet kér a DHCP-kiszolgálótól. Ezt gyakran a /release parancs után futtatják, amikor hálózati hibaelhárítás történik.
-/flushdns,                      DNS gyorsítótár ürítése: Törli és visszaállítja a DNS-feloldó gyorsítótár tartalmát. 
-                                Ez akkor hasznos, ha a számítógép egy régebbi (esetleg hibás) IP-címet tárol egy adott domain névhez.
-/displaydns                     Megjeleníti a DNS-feloldó gyorsítótár tartalmát, azaz azokat a domain neveket és a hozzájuk tartozó IP-címeket, 
-                                amelyeket a számítógép korábban feloldott és eltárolt.
-/registerdns,                   Erőlteti az összes DHCP-bérlet megújítását, és újból regisztrálja a DNS-neveket a DNS-kiszolgálónál.
-
+#### ipconfig
+#### Megjeleníti az alapvető hálózati konfigurációs információkat: IPv4 és IPv6 címek, alhálózati maszk és alapértelmezett átjáró minden adapterhez.
+```
+ipconfig
+```
+#### Részletes konfiguráció: Megjeleníti az összes hálózati adapter teljes TCP/IP                                          konfigurációs adatait, beleértve a fizikai (MAC) címet, a DHCP-kiszolgálót, a DNS-                                    kiszolgálót és a bérleti időket is.
+```            
+ipconfig /all                            
+```
+#### IP-cím felszabadítása: Felszabadítja az aktuálisan kiosztott IPv4-címet a DHCP-
+kiszolgálótól. Ezzel az adapter ideiglenesen cím nélkül marad.
+```
+ipconfig /release
+```
+#### IP-cím megújítása: Új IP-címet kér a DHCP-kiszolgálótól. 
+Ezt gyakran a /release parancs után futtatják, amikor hálózati hibaelhárítás történik.                    
+```
+/renew
+```
+#### DNS gyorsítótár ürítése: Törli és visszaállítja a DNS-feloldó gyorsítótár tartalmát. Ez akkor hasznos,
+ha a számítógép egy régebbi (esetleg hibás) IP-címet tárol egy adott domain névhez.
+```
+ipconfig
+```
+#### DNS gyorsítótár ürítése: Törli és visszaállítja a DNS-feloldó gyorsítótár tartalmát. 
+Ez akkor hasznos, ha a számítógép egy régebbi (esetleg hibás) IP-címet tárol egy adott domain névhez.
+```
+ipconfig /flushdns
+```                      
+#### Megjeleníti a DNS-feloldó gyorsítótár tartalmát, azaz azokat a domain neveket
+és a hozzájuk tartozó IP-címeket, amelyeket a számítógép korábban feloldott és eltárolt.
+```
+ipconfig /displaydns
+```                 
+#### Erőlteti az összes DHCP-bérlet megújítását, és újból regisztrálja a DNS-neveket a DNS-kiszolgálónál.
+```
+ipconfig /registerdns                  
+```
 
 #### traceroute                
 
