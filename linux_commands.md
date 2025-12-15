@@ -1191,7 +1191,34 @@ iptables --table
 
 #### Az rpm egy alacsony szintű csomagkezelő rendszer, amelyet a Red Hat alapú disztribúciók használnak (pl. Fedora, RHEL, CentOS). Míg a yum és a dnf az rpm fölé épül, és kezeli a függőségeket, az rpm parancs közvetlenül az egyes .rpm kiterjesztésű fájlok kezelésére szolgál.
 
-#### sudo
+#### sudo 
+
+A sudo (SuperUser DO) egy kulcsfontosságú parancs a Linux és Unix-szerű operációs rendszerekben. A célja, hogy egy engedélyezett felhasználó ideiglenesen a root (rendszergazda) felhasználó jogosultságaival hajthasson végre parancsokat.
+
+1. A Rendszergazda Szerepköre (Root)
+
+A Linux/Unix rendszerekben a root a legmagasabb jogosultságú felhasználó. A root mindent megtehet a rendszeren: telepíthet szoftvert, módosíthat rendszerfájlokat, és akár tönkre is teheti a rendszert.
+
+2. A Biztonsági Probléma
+
+A legtöbb felhasználó nem jelentkezik be közvetlenül root-ként a mindennapi munkához, mert:
+
+Biztonság: Ha egy programot root-ként futtatnak, és az rosszindulatú vagy hibás, akkor korlátlan károkat okozhat a rendszerben.
+
+Elkerülhető hibák: Nehezebb véletlen hibát (pl. fontos rendszerfájl törlése) elkövetni, ha korlátozott jogosultsággal dolgozik a felhasználó.
+
+3. A sudo Megoldása
+
+A sudo hidalja át ezt a problémát:
+
+Ideiglenes emelés: Lehetővé teszi a felhasználók számára, hogy szükség esetén csak arra a parancsra kapjanak root jogosultságot, amely előtt a sudo parancsot elhelyezik
+
+Auditálhatóság: A sudo használatát a rendszer naplózza, így pontosan tudható, melyik felhasználó és mikor futtatott rendszergazdai parancsot
+
+Hitelesítés: A sudo használatához a felhasználónak be kell írnia a saját jelszavát, nem a root jelszavát (ez egy konfigurációs beállítástól függ, de általában így működik)
+
+Példa: A apt update parancs csak a csomaglistát frissíti, de a apt install parancs a rendszerfájlokat módosítja, ezért elé kell írni a sudo-t
+
 #### cal
 #### alias
 #### dd
