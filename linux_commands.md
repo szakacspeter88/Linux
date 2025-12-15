@@ -763,205 +763,231 @@ ps aux -ww
 ```
 kill
 ```
-#### JELZÉS vagy -JELZÉS: A küldendő jelzés megadása (ugyanaz, mint a kill-nél).
+#### SIGNAL or -SIGNAL: Specify the signal to send (same as kill).
 ```
 kill -s
 ```                  
-#### Interaktív mód. Megerősítést kér minden egyes folyamat leállítása előtt. (Nagyon ajánlott, ha nem biztos a célpontban!) --interactive
+#### Interactive mode. Asks for confirmation before killing each process. (Highly recommended if you are unsure of the target!)
 ```
 kill -i
 ```
-#### USER: Csak az adott felhasználó által futtatott folyamatokat állítja le. --user 
+or
+```
+kill --interactive
+```
+#### USER: Only stops processes running by the specified user.
 ```
 kill -u
 ```
-#### Várja meg, amíg a folyamatok leállnak, mielőtt kilépne a parancs --wait
+or
+```
+kill --user
+```
+#### Wait for processes to stop before exiting the command
 ```
 kill -w
 ```
+or
+```
+kill --wait
+```
 ## df
-#### A df (disk free) parancs a Linux/Unix rendszereken arra szolgál, hogy megjelenítse a csatlakoztatott fájlrendszerek (partíciók, hálózati megosztások, stb.) szabad lemezterületét és a kihasználtságát.
+#### The df (disk free) command on Linux/Unix systems is used to display the free disk space and usage of mounted file systems (partitions, network shares, etc.).
 ```
 df
 ```
-#### Emberi szemmel olvasható formátum. A méreteket megfelelő, könnyen értelmezhető egységekben
-(pl. GB, MB) jeleníti meg. (A legfontosabb kapcsoló!) --human-readable
+#### Human readable format. Displays sizes in appropriate, easy-to-understand units
+(e.g. GB, MB). (The most important switch!)
 ```
 df -h
 ```
-#### Kiírja a fájlrendszer típusát (pl. ext4, xfs, tmpfs). 
-Nagyon hasznos a rendszerpartíciók azonosításához --print-type 
+or
+```
+df --human-readable
+```
+#### It lists the filesystem type (e.g. ext4, xfs, tmpfs).
+Very useful for identifying system partitions
 ```
 df -T
 ```
-#### Az összes fájlrendszert megjeleníti, beleértve a 0 blokk méretű,speciális (ál) fájlrendszereket is (pl. /proc, /sys) --all         
+or
+```
+df --print-type
+```
+#### Displays all file systems, including special (pseudo) file systems with 0 block size (e.g. /proc, /sys)      
 ```
 df -a
-```                    
-#### A lemezterület helyett a szabad inode-okat (index node-ok) és a kihasználtságot mutatja. (Fontos, ha a lemez megtelt kis fájlokkal).
+```
+or
+```
+df -all
+```
+#### Instead of disk space, it shows free inodes (index nodes) and utilization. (Important if the disk is full of small files).
 ```
 df -i
 ```
-#### Kihagyja a megadott fájlrendszer típusokat a listából (pl. df -x tmpfs)  --exclude-type=TÍPUS
+#### Excludes specified filesystem types from the list (e.g. df -x tmpfs)
 ```
 df -x
-```                  
-#### kihagyja az összes ideiglenes fájlrendszert).
-Csak a megadott fájlrendszer típusokat jeleníti meg --type=TÍPUS
+```
+or
+```
+df --exclude-type=TÍPUS
+```
+#### Skips all temporary file systems).
+Only displays the specified file system types 
 ```
 df -t
 ```
-
+or
+```
+df --type=TÍPUS
+```
 ## mount
-#### A mount parancs alapvető funkciója a Linux/Unix rendszerekben az, hogy csatlakoztasson (vagy rögzítsen) egy tárolóeszközön lévő fájlrendszert a rendszer fájlrendszer-hierarchiájába.
-Egyszerűbben megfogalmazva: A mount parancs teszi lehetővé, hogy a számítógép operációs rendszere hozzáférjen egy adott adathordozón (pl. merevlemez-partíción, USB pendrive-on, CD-n, hálózati megosztáson) tárolt adatokhoz.
+#### The basic function of the mount command in Linux/Unix systems is to mount (or attach) a file system on a storage device into the system's file system hierarchy.
+In simpler terms: The mount command allows the computer's operating system to access data stored on a given storage medium (e.g., a hard disk partition, a USB flash drive, a CD, a network share).
 
-#### Fájlrendszer típusa. Meghatározza a csatlakoztatandó fájlrendszer típusát (pl. ext4, vfat, ntfs, nfs,                  cifs).",mount -t ntfs /dev/sdb1 /mnt/pendrive
+#### File system type. Specifies the type of file system to mount (e.g. ext4, vfat, ntfs, nfs, cifs).",mount -t ntfs /dev/sdb1 /mnt/pendrive
 ```
 mount -t
 ```
-#### -t TÍPUS                          
-#### Csatolási opciók. Lehetővé teszi több, vesszővel elválasztott beállítás megadását. 
-Ez a legfontosabb kapcsoló, lásd alább.","mount -o ro,nodev /dev/sda1 /mnt/backup"
+#### -t TYPE                          
+#### Mount options. Allows you to specify multiple options separated by commas.
+This is the most important switch, see below. mount -o ro,nodev /dev/sda1 /mnt/backup
 ```
 mount -o
 ```
-#### -o OPCIÓK
-#### Összes csatolás. Megpróbálja csatlakoztatni az összes olyan fájlrendszert, amely a /etc/fstab fájlban szerepel és az ""auto"" opcióval van megjelölve.",mount -a
+#### -o OPTIONS
+#### Mount all. Attempts to mount all file systems listed in /etc/fstab and marked with the ""auto"" option.",mount -a
 ```
 mount -a
 ```
-#### Csak olvasási (Read-Only) mód. Ugyanaz, mint az -o ro. Megakadályozza az adatok módosítását a csatlakoztatott         eszközön.",mount -r /dev/sdb1 /mnt/usb -r
+#### Read-Only mode. Same as -o ro. Prevents modification of data on the attached device.",mount -r /dev/sdb1 /mnt/usb -r
 ```
 mount -r
 ```
-#### Írási (Read/Write) mód. Ugyanaz, mint az -o rw. Ez az alapértelmezett.
+#### Read/Write mode. Same as -o rw. This is the default.
 ```
 mount -w
 ```
-#### Címke alapján csatolás. Az eszköz helyett annak a fájlrendszernek a címkéjét (Label) adhatja meg, 
-amelyet csatlakoztatni szeretne. mount -L ADATOK /mnt/data
+#### Mount by label. Instead of the device, you can specify the label of the file system you want to mount. mount -L DATA /mnt/data
 ```
 mount -L
 ```
-#### UUID,UUID alapján csatolás. Az eszköz helyett annak a fájlrendszernek az egyedi azonosítóját (UUID) adhatja meg. Ez a legmegbízhatóbb módszer.,mount -U 1234-ABCD /mnt/hosszu                       
+#### UUID,Mount by UUID. Instead of the device, you can specify the unique identifier (UUID) of that file system. This is the most reliable method.,mount -U 1234-ABCD /mnt/length                    
 ```
 mount -U
 ```                              
 ## chmod
-####
-#### Rekurzív mód: Az engedélyek módosítása a megadott könyvtárban és az összes benne lévő alkönyvtárban és fájlban.
+#### The chmod (change mode) command is used in Linux/Unix operating systems to change the access permissions (rights) of files and directories.
+This command is essential for system security and user access control, as it determines who can do what with a given file or directory.
+
+#### Recursive mode: Change permissions on the specified directory and all subdirectories and files within it.
 ```
 chmod -R
 ```
-#### Részletes mód: Kiírja minden egyes módosított fájl nevét és az elvégzett műveletet.                            
+#### Verbose mode: Lists the name of each modified file and the action performed.                            
 ```
 chmod -v
 ```
-#### Csak azoknak a fájloknak a kiírása, amelyeken tényleges változás történt.                           
+#### Only list files that have actually been changed.                           
 ```
 chmod -c
 ```
-#### Egy másik fájl engedélyeit veszi mintának, és azokat állítja be a célfájlon (a megadott engedélyeket felülírja). 
+#### It takes the permissions of another file as a sample and sets them on the target file (overriding the specified permissions). 
 ```                          
 chmod --
-reference=FÁJL
+reference=FILE
 ```
 
 #### chown
-#### Rekurzív mód: A tulajdonos és/vagy csoport módosítása a megadott könyvtárban és az összes benne lévő                                alkönyvtárban és fájlban. Ez a legfontosabb kapcsoló.
-  
+#### Recursive mode: Change the owner and/or group of the specified directory and all subdirectories and files within it. This is the most important switch. 
 ```
 chwon -R
 ```                             
-#### Részletes mód: Kiírja minden egyes módosított fájl nevét és az elvégzett műveletet.                          
+#### Verbose mode: Lists the name of each modified file and the action performed.                         
 ```
 chown -v
 ```                            
-#### Csak azoknak a fájloknak a kiírása, amelyeken tényleges változás történt.
+#### Only list files that have actually been changed.
 ```
 chown -c
 ```
-#### Csak akkor végzi el a módosítást, ha a fájl aktuális tulajdonosa és csoportja megfelel a megadottnak.
+#### Only makes the change if the current owner and group of the file match the specified one.
 
 --                          
 from=JELENLEGI_TULAJ:
 JELENLEGI_CSOP
 
-#### Egy másik fájl tulajdonosát és csoportját veszi mintának, és azokat állítja be a célfájlon.
+#### It takes the owner and group of another file as a sample and sets them on the target file.
 --                              
 reference=REFERENCIA_FÁJL
 
 #### ipconfig
-#### Megjeleníti az alapvető hálózati konfigurációs információkat: IPv4 és IPv6 címek, alhálózati maszk és alapértelmezett átjáró minden adapterhez.
+#### Displays basic network configuration information: IPv4 and IPv6 addresses, subnet mask, and default gateway for each adapter.
 ```
 ipconfig
 ```
-#### Részletes konfiguráció: Megjeleníti az összes hálózati adapter teljes TCP/IP                                          konfigurációs adatait, beleértve a fizikai (MAC) címet, a DHCP-kiszolgálót, a DNS-                                    kiszolgálót és a bérleti időket is.
+#### Detailed Configuration: Displays complete TCP/IP configuration information for all network adapters, including physical (MAC) address, DHCP server, DNS server, and lease times.
 ```            
 ipconfig /all                            
 ```
-#### IP-cím felszabadítása: Felszabadítja az aktuálisan kiosztott IPv4-címet a DHCP-
-kiszolgálótól. Ezzel az adapter ideiglenesen cím nélkül marad.
+#### Release IP Address: Releases the currently assigned IPv4 address from the DHCP server. This temporarily leaves the adapter without an address.
 ```
 ipconfig /release
 ```
-#### IP-cím megújítása: Új IP-címet kér a DHCP-kiszolgálótól. 
-Ezt gyakran a /release parancs után futtatják, amikor hálózati hibaelhárítás történik.                    
+#### IP Address Renewal: Requests a new IP address from the DHCP server.
+This is often run after the /release command when troubleshooting network issues.                 
 ```
 /renew
 ```
-#### DNS gyorsítótár ürítése: Törli és visszaállítja a DNS-feloldó gyorsítótár tartalmát. Ez akkor hasznos,
-ha a számítógép egy régebbi (esetleg hibás) IP-címet tárol egy adott domain névhez.
+#### Flush DNS Cache: Clears and resets the contents of the DNS resolver cache. This is useful if your computer is storing an older (possibly incorrect) IP address for a particular domain name.
 ```
 ipconfig
 ```
-#### DNS gyorsítótár ürítése: Törli és visszaállítja a DNS-feloldó gyorsítótár tartalmát. 
-Ez akkor hasznos, ha a számítógép egy régebbi (esetleg hibás) IP-címet tárol egy adott domain névhez.
+#### Flush DNS Cache: Clears and resets the contents of the DNS resolver cache.
+This is useful if your computer is storing an older (possibly incorrect) IP address for a particular domain name.
 ```
 ipconfig /flushdns
 ```                      
-#### Megjeleníti a DNS-feloldó gyorsítótár tartalmát, azaz azokat a domain neveket
-és a hozzájuk tartozó IP-címeket, amelyeket a számítógép korábban feloldott és eltárolt.
+#### Displays the contents of the DNS resolver cache, i.e. the domain names and their associated IP addresses that the computer has previously resolved and stored.
 ```
 ipconfig /displaydns
 ```                 
-#### Erőlteti az összes DHCP-bérlet megújítását, és újból regisztrálja a DNS-neveket a DNS-kiszolgálónál.
+#### Forces all DHCP leases to be renewed and re-registers DNS names with the DNS server.
 ```
 ipconfig /registerdns                  
 ```
 
 #### traceroute                
-#### A traceroute (vagy tracert Windows alatt) parancs arra szolgál, hogy megmutassa, milyen útvonalon halad át egy IP-csomag a forrásgéptől a célgépig. Gyakorlatilag a két pont közötti hálózati útvonal minden egyes routerét (hop) listázza, és megméri az oda-vissza utazási időt.
-Ez elengedhetetlen eszköz a hálózati hibaelhárításban és a késleltetés (latency) forrásának azonosításában.
+#### The traceroute (or tracert in Windows) command is used to show the path an IP packet takes from a source machine to a destination machine. It essentially lists each router (hop) in the network path between two points and measures the round trip time. This is an essential tool for troubleshooting network problems and identifying the source of latency.
 
 ```
 traceroute
 ```
-#### Ne oldja fel a címeket (No name resolution): Megakadályozza az IP-címek domain névvé                                  fordítását (fordított DNS lookup).
+#### Do not resolve addresses (No name resolution): Prevents the translation of IP addresses into domain names             (reverse DNS lookup).
 ```        
 traceroute -n
 ```
 
-#### ICMP protokoll használata (ICMP mode): Kényszeríti a traceroute-ot, hogy ICMP ECHO csomagokat használjon a            hagyományos UDP csomagok helyett (mint a ping). Gyakran szükséges, ha az útvonalon lévő tűzfalak blokkolják az        UDP-t
+#### Use ICMP protocol (ICMP mode): Forces traceroute to use ICMP ECHO packets instead of traditional UDP packets          (like ping). Often needed if firewalls in the path block UDP
 
 ```
 traceroute -I
 ```
-#### TCP protokoll használata (TCP mode): TCP SYN csomagokat használ (mint a legtöbb webes kommunikáció). Hasznos a        tűzfalak tesztelésére egy adott porton (pl. 80-as HTTP porton).
+#### Use TCP protocol (TCP mode): TCP uses SYN packets (like most web communication). Useful for testing firewalls on      a specific port (e.g. HTTP port 80).
 ```                               
 traceroute -T
 ```                             
-#### Port megadása: Csak UDP és TCP módokban (a -U vagy -T kapcsolókkal) használható. 
-Megadja a célszámítógépen használandó célport számát (pl. -p 80).
+#### Specify port: Only available in UDP and TCP modes (with the -U or -T switches). Specifies the destination port number to use on the target computer (e.g. -p 80).
 ```
 traceroute -p PORT
 ```
-#### Lekérdezések száma (Queries): Beállítja, hogy hányszor (N) küldjön csomagot minden                                    egyes hophoz (alapértelmezés szerint 3).
+#### Number of Queries: Sets the number of times (N) to send a packet to each hop (default 3).
 ```
 traceroute -q N
 ```
-#### Maximális hop-ok (Max TTL): Beállítja a maximális Time To Live (TTL) értékét, azaz a                                  routerek maximális számát a cél elérése előtt (alapértelmezés szerint 30).
+#### Maximum Hops (Max TTL): Sets the maximum Time To Live (TTL) value, i.e. the maximum number of routers before reaching the destination (30 by default).
 ```
 traceroute -m MAX_TTL
 ```
