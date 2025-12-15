@@ -1076,25 +1076,85 @@ or
 wget -P DIR        
 ```                  
 #### ufw
-
-sudo ufw                              Megjeleníti a tűzfal aktuális állapotát (aktív vagy inaktív) és az összes érvényes szabályt.
-status
-sudo ufw                              Részletes állapotot mutat, beleértve az alapértelmezett bejövő és kimenő politikákat.
-status verbose
-sudo ufw                              Bekapcsolja a tűzfalat. Figyelem! Ezzel a parancssal azonnal életbe lépnek az összes beállított szabályok. 
-enable                                Ha nincs beállítva SSH-hozzáférés engedélyezése, kizárhatja magát a rendszerből.
-sudo ufw disable                      Kikapcsolja a tűzfalat.
-sudo ufw reset                        Visszaállítja a tűzfalat az alapértelmezett beállításokra, és töröl minden szabályt.
-
-#### iptables                         
--A	--append	                        Hozzáadás: Hozzáad egy szabályt a megadott lánc végéhez.
--I	--insert	                        Beszúrás: Beszúr egy szabályt a megadott lánc elejére (vagy a megadott sorszám elé).
--D	--delete	                        Törlés: Töröl egy szabályt (a pontos szabályleírással vagy sorszámmal).
--L	--list	                          Listázás: Kilistázza a szabályokat a megadott láncban/táblában.
--F	--flush	                          Összes törlése: Eltávolít minden szabályt a megadott láncból/táblából.
--P	--policy	                        Alapértelmezett politika: Beállítja a lánc alapértelmezett viselkedését (pl. DROP, ACCEPT).
--t	--table	                          Táblázat kiválasztása: Megadja, melyik táblán dolgozzon (ha elhagyjuk, alapértelmezett a filter).
-
+#### Megjeleníti a tűzfal aktuális állapotát (aktív vagy inaktív) és az összes érvényes szabályt.
+```
+sudo ufw status
+```
+#### Részletes állapotot mutat, beleértve az alapértelmezett bejövő és kimenő politikákat.
+```
+sudo ufw status verbose
+```
+#### Bekapcsolja a tűzfalat. Figyelem! Ezzel a parancssal azonnal életbe lépnek az összes beállított szabályok. 
+```
+sudo ufw                              
+enable
+```
+####  Ha nincs beállítva SSH-hozzáférés engedélyezése, kizárhatja magát a rendszerből. Kikapcsolja a tűzfalat.
+```
+sudo ufw disable
+```
+#### Visszaállítja a tűzfalat az alapértelmezett beállításokra, és töröl minden szabályt.
+```                         
+sudo ufw reset                        
+```
+#### iptables
+####
+#### Hozzáadás: Hozzáad egy szabályt a megadott lánc végéhez.
+```
+iptables -A
+```
+or
+```
+iptables --append
+```
+#### Beszúrás: Beszúr egy szabályt a megadott lánc elejére (vagy a megadott sorszám elé).
+```
+iptables -I
+```
+or
+```
+iptables --insert
+```
+#### Törlés: Töröl egy szabályt (a pontos szabályleírással vagy sorszámmal).                   
+```
+iptables -D	
+```
+or
+```
+iptables --delete
+```
+#### Listázás: Kilistázza a szabályokat a megadott láncban/táblában.
+```
+iptables -L
+```
+or
+```
+iptables --list
+```
+#### Összes törlése: Eltávolít minden szabályt a megadott láncból/táblából.           
+```
+iptables -F
+```
+or
+```
+iptables --flush
+```
+#### Alapértelmezett politika: Beállítja a lánc alapértelmezett viselkedését (pl. DROP, ACCEPT).
+```
+iptables -P
+```
+or
+```
+iptables --policy
+```
+#### Táblázat kiválasztása: Megadja, melyik táblán dolgozzon (ha elhagyjuk, alapértelmezett a filter).
+```      
+iptables -t
+```
+or
+```
+iptables --table
+```	                          
 #### apt, pacman, yum, rpm
 #### sudo
 #### cal
