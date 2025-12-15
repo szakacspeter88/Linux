@@ -1182,6 +1182,15 @@ or
 iptables --table
 ```	                          
 #### apt, pacman, yum, rpm
+
+#### Az apt a Debian, Ubuntu, Linux Mint és más Debian alapú disztribúciók szabványos és modern csomagkezelő rendszere. Maga az apt a háttérben dolgozó alacsony szintű eszközöket (főként a dpkg-t) kezeli, de sokkal felhasználóbarátabb, intelligensebb felületet biztosít.
+
+#### A yum a régebbi Red Hat alapú disztribúciók (RHEL, CentOS, Fedora) hagyományos csomagkezelője. A modern rendszerekben a yum-ot fokozatosan felváltotta a dnf (Dandified YUM), de a parancsok szintaxisa nagyon hasonló maradt.
+
+#### A pacman az Arch Linux és az Arch alapú disztribúciók (pl. Manjaro) alapvető csomagkezelője. A gyorsaságáról és az egyszerű parancsszintaxisáról ismert.
+
+#### Az rpm egy alacsony szintű csomagkezelő rendszer, amelyet a Red Hat alapú disztribúciók használnak (pl. Fedora, RHEL, CentOS). Míg a yum és a dnf az rpm fölé épül, és kezeli a függőségeket, az rpm parancs közvetlenül az egyes .rpm kiterjesztésű fájlok kezelésére szolgál.
+
 #### sudo
 #### cal
 #### alias
