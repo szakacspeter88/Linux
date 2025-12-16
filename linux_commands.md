@@ -1,4 +1,4 @@
-# Useful Linux Commands
+e# Useful Linux Commands
 
 
 
@@ -1285,26 +1285,26 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### Would you like to review some more basic filesystem commands, like chmod or chown?
 
 #### wheris
-#### Kapcsoló                 Jelentés (Cél)                      Leírás
-#### -b                            Bináris fájlok                      Csak a futtatható (bináris) fájlokat keresi.
-#### -m                            Kézikönyv lapok (man)               Csak a kézikönyv (man) lapokat keresi.
-#### -s                            Forrásfájlok                        Csak a forráskód fájlokat keresi.
-#### -u                            Szokatlan bejegyzések               Olyan parancsokat keres, amelyeknél a megadott típusú 
-####                                                                   (pl. -m-mel csak man-lap) bejegyzés hiányzik. 
-####                                                                   Például: whereis -m -u * az aktuális könyvtárban azokat a
-####                                                                   fájlokat mutatja, amelyekhez nincs man-lap."
-#### -B                            Bináris keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
-####                                                                   ahol a bináris fájlokat keresi. 
-####                                                                   Ezt a kapcsolót a -f kapcsolónak kell követnie.
-#### -M                            Man-lap keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
-####                                                                   ahol a kézikönyv lapokat keresi.
-####                                                                   Ezt a kapcsolót a -f kapcsolónak kell követnie.
-#### -S                            Forrás keresési útvonal             Meghatározza vagy korlátozza a könyvtárakat,
-####                                                                   ahol a forrásfájlokat keresi.
-####                                                                   Ezt a kapcsolót a -f kapcsolónak kell követnie.
-#### -f                            Fájlnév kezdetének jelzése          Megszakítja a -B, -M vagy -S kapcsolókkal megadott
-####                                                                   könyvtárlistát, és jelzi, hogy a rákövetkező argumentumok
-####                                                                   már a keresendő fájlnevek.
+#### Switch                                             Meaning (Target)                                                   Description
+#### -b                                                 Binary Files                                                       Searches only executable (binary) files.
+#### -m                                                 Manual Pages (man)                                                 Searches only manual (man) pages.
+#### -s                                                 Source Files                                                       Searches only source code files.
+#### -u                                                 Unusual Entries                                                    Searches for commands that are missing an entry of the specified type
+####                                                                                                                       (e.g. -m for only man pages).
+####                                                                                                                       For example: whereis -m -u * shows the
+####                                                                                                                       files in the current directory that do not have a man page."
+#### -B                                                                                                                    Binary search path Specifies or limits the directories
+####                                                                                                                       where to search for binary files.
+####                                                                                                                       This switch must be followed by the -f switch.
+#### -M                                                 Man page search path                                               Specifies or limits the directories
+####                                                                                                                       where to search for manual pages.
+####                                                                                                                       This switch must be followed by the -f switch.
+#### -S                                                 Source search path                                                 Specifies or limits the directories
+####                                                                                                                       where to search for source files.
+####                                                                                                                       This switch must be followed by the -f switch.
+#### -f                                                 Start of filename flag                                             Terminates the directory list specified with the -B, -M, or -S switches
+####                                                                                                                       and indicates that the arguments that follow
+####                                                                                                                       are already filenames to be searched.
 #### whatis
 #### The whatis command in the Linux operating system is used to display a short, one-line description of a given command or program. This description is taken from the database of manual (man) pages. Essentially, it queries the database used by the man command and returns only the name of the command and a short description (the contents of the NAME section of the man page), without opening the full manual page.
 
@@ -1360,7 +1360,8 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 ####                                                                         before the account is permanently disabled.
 #### -N                              --no-user-group                         Prevents the command from creating a group with the same name
 ####                                                                         as the user's primary group.
-#### passwd
+
+## passwd
 #### The passwd command is the basic tool for changing passwords for user accounts in the Linux operating system. The command manages the entry of a user's encrypted password in the /etc/shadow file, and also allows administrators to set or change passwords for other users, and to manage password policies (such as expiration dates)
 #### Switch                            Full name                     Eligibility                     Description
 #### -l,                               --lock                        root                            Disables (locks) the user's password. This prevents
