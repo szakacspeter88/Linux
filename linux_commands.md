@@ -1,4 +1,4 @@
-e# Useful Linux Commands
+# Useful Linux Commands
 
 
 
