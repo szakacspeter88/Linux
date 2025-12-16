@@ -917,12 +917,12 @@ chown -c
 #### Only makes the change if the current owner and group of the file match the specified one.
 
 --                          
-from=JELENLEGI_TULAJ:
-JELENLEGI_CSOP
+from=CURRENT_OWNER:
+CURRENT_GROUP
 
 #### It takes the owner and group of another file as a sample and sets them on the target file.
 --                              
-reference=REFERENCIA_FÁJL
+reference=REFERENCE_FILE
 
 #### ipconfig
 #### Displays basic network configuration information: IPv4 and IPv6 addresses, subnet mask, and default gateway for each adapter.
@@ -976,7 +976,7 @@ traceroute -n
 ```
 traceroute -I
 ```
-#### Use TCP protocol (TCP mode): TCP uses SYN packets (like most web communication). Useful for testing firewalls on      a specific port (e.g. HTTP port 80).
+#### Use TCP protocol (TCP mode): TCP uses SYN packets (like most web communication). Useful for testing firewalls on a specific port (e.g. HTTP port 80).
 ```                               
 traceroute -T
 ```                             
@@ -1194,39 +1194,34 @@ iptables --table
 
 #### sudo 
 
-sudo (SuperUser DO) is a key command in Linux and Unix-like operating systems. Its purpose is to allow an authorized user to temporarily execute commands with the privileges of the root (administrator) user.
-
-1. The Role of the System Administrator (Root)
-
-In Linux/Unix systems, root is the highest-privileged user. Root can do anything on the system: install software, modify system files, and even crash the system.
-
-2. The Security Problem
-
-Most users do not log in directly as root for everyday work because:
-Security: If a program is run as root and is malicious or buggy, it can cause unlimited damage to the system.
-Avoidable errors: It is more difficult to make an accidental error (e.g. deleting an important system file) if the user is working with limited privileges.
-
-3. The sudo Solution
-
-Sudo overcomes this problem:
-Temporary elevation: Allows users to gain root privileges only for the command preceded by sudo, if necessary
-Auditability: The use of sudo is logged, so it is known exactly which user ran an administrative command and when
-Authentication: To use sudo, the user must enter their own password, not the root password (this depends on a configuration setting, but usually works this way)
-Example: The apt update command only updates the package list, but the apt install command modifies system files, so it must be preceded by sudo
+#### sudo (SuperUser DO) is a key command in Linux and Unix-like operating systems. Its purpose is to allow an authorized user to temporarily execute commands with the privileges of the root (administrator) user.
+#### 1. The Role of the System Administrator (Root)
+#### In Linux/Unix systems, root is the highest-privileged user. Root can do anything on the system: install software, modify system files, and even crash the system.
+#### 2. The Security Problem
+#### Most users do not log in directly as root for everyday work because:
+#### Security: If a program is run as root and is malicious or buggy, it can cause unlimited damage to the system.
+#### Avoidable errors: It is more difficult to make an accidental error (e.g. deleting an important system file) if the user is working with limited privileges.
+#### 3. The sudo Solution
+#### Sudo overcomes this problem:
+#### Temporary elevation: Allows users to gain root privileges only for the command preceded by sudo, if necessary
+#### Auditability: The use of sudo is logged, so it is known exactly which user ran an administrative command and when
+#### Authentication: To use sudo, the user must enter their own password, not the root password (this depends on a configuration setting, but usually works this way)
+#### Example: The apt update command only updates the package list, but the apt install command modifies system files, so it must be preceded by sudo
 
 #### cal
 #### The cal command is used in Linux/Unix systems to display the calendar on the command line.
-This is a very simple but useful utility that allows you to quickly view the calendar for the current month, 
-a specific month, or even an entire year, right in the terminal.
+#### This is a very simple but useful utility that allows you to quickly view the calendar for the current month, 
+#### a specific month, or even an entire year, right in the terminal.
 ```
 cal
 ```
 Switch                Description                                                                                      Example
--3,                   Displays the previous, current, and next month together                                          cal -3
+-3                    Displays the previous, current, and next month together                                          cal -3
 -A N                  Displays the current month and the following N months (After)                                    cal -A 2
 -B N                  Displays the current month and the N months before it (Before)                                   cal -B 1
--y,                   Displays the calendar for the current year (same as cal without the YEAR parameter).             cal -y
--j,                   Displays the year/month in Julian Calendar format, i.e. the days                                 cal -j                                number from 1 to 365 (or 366).
+-y                    Displays the calendar for the current year (same as cal without the YEAR parameter).             cal -y
+-j                    Displays the year/month in Julian Calendar format, i.e. the days                                 cal -j
+                      number from 1 to 365 (or 366).
                                                                                                                        
 
 #### alias
@@ -1251,139 +1246,138 @@ or
 #### dd
 #### The dd command is an extremely powerful and versatile utility in Linux/Unix systems, primarily used for bit-accurate copying and converting of files, partitions, or entire media.
 The command's name originally stood for "Copy and Convert", which is derived from an early operating system (JCL) term, rather than the terms "disk dump" or "disk duplicate", although its function is related to these.
-
 ```
 dd
 ```
 #### The essence and dangers of the dd command
 #### 1. Raw Data Transfer (Bit-precise Copy)
-dd copies a raw data stream from the source (Input File, if=) to the destination (Output File, of=). This means that it does not care about the file system structure (unlike the cp command). This makes it suitable for:
-Cloning entire disks: You can simply copy the entire contents of one hard drive to another, sector by sector.
-Creating bootable USB drives: Often used to burn ISO disk images to a USB drive.
-Creating backups: You can create a backup of an entire partition to a file.
-2. Conversion
-The command can also convert (transform) data during copying. For example:
-From ASCII to EBCDIC or vice versa (old).
-Converting from lowercase to uppercase.
-Jump from the beginning of the file to the specified number of bytes (skipping the header).
-Dangers of the DD Command
-dd is often called the "disk destroyer". Because it directly manipulates physical devices and does not ask for confirmation, a simple typo in the of= (Output File) parameter can be fatal:
-For example: If you mistype the target partition and type of=/dev/sdb instead of of=/dev/sda, you could overwrite your entire main system drive.
-Key dd switches (parameters)
-The dd command does not use the traditional -k or --switch format, but key-value pairs.
-Parameter              FullName                       Description
-if=FILE,               Input File                     The input source (file, device, partition).
-of=FILE                Output File                    The output destination (file, device, partition).
-bs=BYTES               Block Size                     Sets the input and output block sizes (e.g. 1M is 1 
-                                                      megabyte). Important for speed.
-count=N                                               Copies only N blocks (of the block size specified by bs).
+#### dd copies a raw data stream from the source (Input File, if=) to the destination (Output File, of=). This means that it does not care about the file system structure (unlike the cp command). This makes it suitable for:
+#### Cloning entire disks: You can simply copy the entire contents of one hard drive to another, sector by sector.
+#### Creating bootable USB drives: Often used to burn ISO disk images to a USB drive.
+#### Creating backups: You can create a backup of an entire partition to a file.
+#### 2. Conversion
+#### The command can also convert (transform) data during copying. For example:
+#### From ASCII to EBCDIC or vice versa (old).
+#### Converting from lowercase to uppercase.
+#### Jump from the beginning of the file to the specified number of bytes (skipping the header).
+#### Dangers of the DD Command
+#### dd is often called the "disk destroyer". Because it directly manipulates physical devices and does not ask for confirmation, a simple typo in the of= (Output File) parameter can be fatal:
+#### For example: If you mistype the target partition and type of=/dev/sdb instead of of=/dev/sda, you could overwrite your entire main system drive.
+#### Key dd switches (parameters)
+#### The dd command does not use the traditional -k or --switch format, but key-value pairs.
+#### Parameter              FullName                       Description
+#### if=FILE,               Input File                     The input source (file, device, partition).
+#### of=FILE                Output File                    The output destination (file, device, partition).
+#### bs=BYTES               Block Size                     Sets the input and output block sizes (e.g. 1M is 1 
+####                                                       megabyte). Important for speed.
+#### count=N                                               Copies only N blocks (of the block size specified by bs).
 
-skip=N                                                Skip the first N input blocks.
-seek=N                                                Skip the first N output blocks 
-                                                      (from the beginning of the target file).
-conv=CONV              Convert                        Special conversion options (e.g. notrunc, sync).
+#### skip=N                                                Skip the first N input blocks.
+#### seek=N                                                Skip the first N output blocks 
+####                                                       (from the beginning of the target file).
+#### conv=CONV              Convert                        Special conversion options (e.g. notrunc, sync).
 #### Common Usage Example
-To make an Ubuntu ISO image bootable on a USB drive:
+#### To make an Ubuntu ISO image bootable on a USB drive:
 ```
 sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 ```
 #### (Where sdX is the target USB drive, not its partition!) 
-Would you like to review some more basic filesystem commands, like chmod or chown?
+#### Would you like to review some more basic filesystem commands, like chmod or chown?
 
 #### wheris
 #### Kapcsoló                 Jelentés (Cél)                      Leírás
--b                            Bináris fájlok                      Csak a futtatható (bináris) fájlokat keresi.
--m                            Kézikönyv lapok (man)               Csak a kézikönyv (man) lapokat keresi.
--s                            Forrásfájlok                        Csak a forráskód fájlokat keresi.
--u                            Szokatlan bejegyzések               Olyan parancsokat keres, amelyeknél a megadott típusú 
-                                                                  (pl. -m-mel csak man-lap) bejegyzés hiányzik. 
-                                                                  Például: whereis -m -u * az aktuális könyvtárban azokat a
-                                                                  fájlokat mutatja, amelyekhez nincs man-lap."
--B                            Bináris keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
-                                                                  ahol a bináris fájlokat keresi. 
-                                                                  Ezt a kapcsolót a -f kapcsolónak kell követnie.
--M                            Man-lap keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
-                                                                  ahol a kézikönyv lapokat keresi.
-                                                                  Ezt a kapcsolót a -f kapcsolónak kell követnie.
--S                            Forrás keresési útvonal             Meghatározza vagy korlátozza a könyvtárakat,
-                                                                  ahol a forrásfájlokat keresi.
-                                                                  Ezt a kapcsolót a -f kapcsolónak kell követnie.
--f                            Fájlnév kezdetének jelzése          Megszakítja a -B, -M vagy -S kapcsolókkal megadott
-                                                                  könyvtárlistát, és jelzi, hogy a rákövetkező argumentumok
-                                                                  már a keresendő fájlnevek.
+#### -b                            Bináris fájlok                      Csak a futtatható (bináris) fájlokat keresi.
+#### -m                            Kézikönyv lapok (man)               Csak a kézikönyv (man) lapokat keresi.
+#### -s                            Forrásfájlok                        Csak a forráskód fájlokat keresi.
+#### -u                            Szokatlan bejegyzések               Olyan parancsokat keres, amelyeknél a megadott típusú 
+####                                                                   (pl. -m-mel csak man-lap) bejegyzés hiányzik. 
+####                                                                   Például: whereis -m -u * az aktuális könyvtárban azokat a
+####                                                                   fájlokat mutatja, amelyekhez nincs man-lap."
+#### -B                            Bináris keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
+####                                                                   ahol a bináris fájlokat keresi. 
+####                                                                   Ezt a kapcsolót a -f kapcsolónak kell követnie.
+#### -M                            Man-lap keresési útvonal            Meghatározza vagy korlátozza a könyvtárakat, 
+####                                                                   ahol a kézikönyv lapokat keresi.
+####                                                                   Ezt a kapcsolót a -f kapcsolónak kell követnie.
+#### -S                            Forrás keresési útvonal             Meghatározza vagy korlátozza a könyvtárakat,
+####                                                                   ahol a forrásfájlokat keresi.
+####                                                                   Ezt a kapcsolót a -f kapcsolónak kell követnie.
+#### -f                            Fájlnév kezdetének jelzése          Megszakítja a -B, -M vagy -S kapcsolókkal megadott
+####                                                                   könyvtárlistát, és jelzi, hogy a rákövetkező argumentumok
+####                                                                   már a keresendő fájlnevek.
 #### whatis
 #### The whatis command in the Linux operating system is used to display a short, one-line description of a given command or program. This description is taken from the database of manual (man) pages. Essentially, it queries the database used by the man command and returns only the name of the command and a short description (the contents of the NAME section of the man page), without opening the full manual page.
 
-Switch                          Meaning (Purpose)                             Description
--w                              Wildcard (replacer characters)                Allows you to use wildcard characters
-                                                                              (*, ?) for searching. This switch allows you to search
-                                                                              for example, any command that starts with the word                                                                                ""mount"".
--r                              Regular expressions                           It treats the search pattern as a regular
-                                                                              expression.
--l                              Skip localization                             By default, whatis also tries to find man pages
-                                                                              written in the local language. This switch 
-                                                                              disables this behavior.
-**-s                            Restricting sections                          Only in the specified man-page sections (e.g. 1, 8, 3)
-list                                                                          The sections of the man pages represent different categories                                                                    
-                                                                              (1=general commands, 8=system 
-                                                                              administration commands, etc.)
+#### Switch                          Meaning (Purpose)                             Description
+#### -w                              Wildcard (replacer characters)                Allows you to use wildcard characters
+####                                                                               (*, ?) for searching. This switch allows you to search
+####                                                                               for example, any command that starts with the word ""mount"".
+#### -r                              Regular expressions                           It treats the search pattern as a regular
+####                                                                               expression.
+#### -l                              Skip localization                             By default, whatis also tries to find man pages
+####                                                                               written in the local language. This switch 
+####                                                                               disables this behavior.
+#### **-s                            Restricting sections                          Only in the specified man-page sections (e.g. 1, 8, 3)
+#### list                                                                          The sections of the man pages represent different categories                                                                    
+####                                                                               (1=general commands, 8=system 
+####                                                                               administration commands, etc.)
 #### top
 #### The top command is one of the most important tools in the Linux operating system, which displays the current status of the system in real time, interactively.
 
-Switch                                Meaning                                       Description
--d sec                                Delay (Refresh time)                          Specifies the screen refresh interval in seconds. 
-                                                                                    (Default: 3.0 seconds). E.g.: top -d 1
--p PID                                PID monitoring                                Only those marked by the specified process identifier(s) (PID) 
-                                                                                    monitors processes. Eg: top -p 1234
--u user                               User filtering                                It only displays processes belonging to that user.
-                                                                                    Ex.: top -u chef
--n num                                Number of iterations                          Specifies how many times to refresh the screen before exiting.
-                                                                                    E.g.: top -n 1 (displays only once, then exits)
--H                                    Show threads                                  Displays individual threads instead of processes.
-                                                                                    (Important for more detailed analysis).
--b                                    Batch mode                                    Non-interactive, batch mode. This mode is ideal
-                                                                                    for redirecting top output to a file
-                                                                                    or for use in scripts.
+#### Switch                                Meaning                                       Description
+#### -d sec                                Delay (Refresh time)                          Specifies the screen refresh interval in seconds. 
+####                                                                                     (Default: 3.0 seconds). E.g.: top -d 1
+#### -p PID                                PID monitoring                                Only those marked by the specified process identifier(s) (PID) 
+####                                                                                     monitors processes. Eg: top -p 1234
+#### -u user                               User filtering                                It only displays processes belonging to that user.
+####                                                                                     Ex.: top -u chef
+#### -n num                                Number of iterations                          Specifies how many times to refresh the screen before exiting.
+####                                                                                     E.g.: top -n 1 (displays only once, then exits)
+#### -H                                    Show threads                                  Displays individual threads instead of processes.
+####                                                                                     (Important for more detailed analysis).
+#### -b                                    Batch mode                                    Non-interactive, batch mode. This mode is ideal
+####                                                                                     for redirecting top output to a file
+####                                                                                     or for use in scripts.
 #### useradd
 #### The useradd (also known as adduser in some distributions) command in the Linux operating system is used to create a new user account. This command performs all the basic configuration steps required to add a user: it adds the user to the system, creates an encrypted entry for the user's password (although setting the password requires a separate command, see below), creates the user's home directory, and sets the default shell.
-Switch                          Full name                               Description
--m                              --create-home                           Creates the user's home directory. This is the most commonly used switch,
-                                                                        as most cases require a home directory. (This is the default behavior on some distributions.)
--d dir                          --home dir                              Specifies the path to the user's home directory instead of the usual /home/username.
--g group                        --gid group                             Specifies the user's primary group. (by group name or GID).
-                                                                        This group will be the user's default group.
--G groups                       --groups groups                         Specifies the secondary groups (separated by commas) to which the user will belong.
--s shell                        --shell shell                           Specifies the user's default shell (e.g. /bin/bash, /bin/zsh,
-                                                                        or /sbin/nologin for accounts used only for services).
--u uid                          --uid uid                               Specifies the user's unique identifier (UID).
-                                                                        Usually assigned automatically by the system, 
-                                                                        but sometimes it must be set manually
-                                                                        (e.g. for network shares).
--c comment                      --comment comment                       Adds a comment (such as the user's full name or description) to the account,
-                                                                        which appears in the /etc/passwd file.
--e date                         --expiredate date                       Specifies when the user account expires (in yyyy-mm-dd format).
--f days                         --inactive days                         Specifies the number of days of inactivity after password expiration
-                                                                        before the account is permanently disabled.
--N                              --no-user-group                         Prevents the command from creating a group with the same name
-                                                                        as the user's primary group.
+#### Switch                          Full name                               Description
+#### -m                              --create-home                           Creates the user's home directory. This is the most commonly used switch,
+####                                                                         as most cases require a home directory. (This is the default behavior on some distributions.)
+#### -d dir                          --home dir                              Specifies the path to the user's home directory instead of the usual /home/username.
+#### -g group                        --gid group                             Specifies the user's primary group. (by group name or GID).
+####                                                                         This group will be the user's default group.
+#### -G groups                       --groups groups                         Specifies the secondary groups (separated by commas) to which the user will belong.
+#### -s shell                        --shell shell                           Specifies the user's default shell (e.g. /bin/bash, /bin/zsh,
+####                                                                         or /sbin/nologin for accounts used only for services).
+#### -u uid                          --uid uid                               Specifies the user's unique identifier (UID).
+####                                                                         Usually assigned automatically by the system, 
+####                                                                         but sometimes it must be set manually
+####                                                                         (e.g. for network shares).
+#### -c comment                      --comment comment                       Adds a comment (such as the user's full name or description) to the account,
+####                                                                         which appears in the /etc/passwd file.
+#### -e date                         --expiredate date                       Specifies when the user account expires (in yyyy-mm-dd format).
+#### -f days                         --inactive days                         Specifies the number of days of inactivity after password expiration
+####                                                                         before the account is permanently disabled.
+#### -N                              --no-user-group                         Prevents the command from creating a group with the same name
+####                                                                         as the user's primary group.
 #### passwd
 #### The passwd command is the basic tool for changing passwords for user accounts in the Linux operating system. The command manages the entry of a user's encrypted password in the /etc/shadow file, and also allows administrators to set or change passwords for other users, and to manage password policies (such as expiration dates)
-Switch                            Full name                     Eligibility                     Description
--l,                               --lock                        root                            Disables (locks) the user's password. This prevents
-                                                                                                the user from logging in with their password.
-                                                                                                The password is preceded by a ! in the /etc/shadow file.
--u                                --unlock                      root                            Unlocks (enables) a locked password. Restores the 
-                                                                                                password entry to its previous state.
--d                                --delete                      root                            Deletes the user's password. The user can log in without a password 
-                                                                                                (not recommended, only in special cases).
--e                                --expire                      root                            It will immediately expire the user's password.
-                                                                                                The user will be required to enter a new password the next time they log in.
--x days                           --maximum days                root                            Sets the maximum number of days that a password can be used
-                                                                                                (validity before expiration). If 0, no expiration.
--n days                           --minimum days                root                            Sets the minimum number of days until the password can be changed again.
--i days                           --inactive days               root                            Sets the number of days of activity after the password expires. 
-                                                                                                If this expires, the account will be permanently disabled.
--S                                --status                      anyone                          Displays the status of the user's password (last modified, minimum/maximum validity times, inactivity).
+#### Switch                            Full name                     Eligibility                     Description
+#### -l,                               --lock                        root                            Disables (locks) the user's password. This prevents
+####                                                                                                 the user from logging in with their password.
+####                                                                                                 The password is preceded by a ! in the /etc/shadow file.
+#### -u                                --unlock                      root                            Unlocks (enables) a locked password. Restores the 
+####                                                                                                 password entry to its previous state.
+#### -d                                --delete                      root                            Deletes the user's password. The user can log in without a password 
+####                                                                                                 (not recommended, only in special cases).
+#### -e                                --expire                      root                            It will immediately expire the user's password.
+####                                                                                                 The user will be required to enter a new password the next time they log in.
+#### -x days                           --maximum days                root                            Sets the maximum number of days that a password can be used
+####                                                                                                 (validity before expiration). If 0, no expiration.
+#### -n days                           --minimum days                root                            Sets the minimum number of days until the password can be changed again.
+#### -i days                           --inactive days               root                            Sets the number of days of activity after the password expires. 
+####                                                                                                 If this expires, the account will be permanently disabled.
+#### -S                                --status                      anyone                          Displays the status of the user's password (last modified, minimum/maximum validity times, inactivity).
 
 
 # find
