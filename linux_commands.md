@@ -186,6 +186,13 @@ ln −i
 ln −v
 ```	
 
+
+
+
+
+
+
+
 # clear - clear terminal
 ```
 clear
@@ -194,6 +201,12 @@ clear
 ```
 clear -x
 ```
+
+
+
+
+
+
 # cat
 ####
 ```
@@ -220,6 +233,13 @@ cat -E
 cat -T
 ```
 
+
+
+
+
+
+
+
 # echo
 #### print on terminal
 ```
@@ -233,6 +253,13 @@ echo -n
 ```
 echo -e
 ```
+
+
+
+
+
+
+
 # less
 #### the command is an extremely useful tool in Linux/Unix systems that allows you to page through files (or the output of other commands) in a page-by-page, interactive manner in the terminal, without having to load the entire file into memory (like the vi or nano editors do).
 ```
@@ -255,7 +282,12 @@ less -S
 less -F
 ```
 
-# man
+
+
+
+
+
+## man
 #### manual
 ```
 man
@@ -279,8 +311,14 @@ man -w
 #### allows you to specify which section to search for the command in (sections)
 ```
 man −s
-```	
-# uname
+```
+
+
+
+
+
+  
+## uname
 #### the uname (unix name) command in Linux/Unix systems is used to display system-related information (such as kernel name, network hostname, kernel version, hardware type, etc.)
 ```
 uname
@@ -313,13 +351,24 @@ uname -m
 ```
 uname -o
 ```
-# whoami
+
+
+
+
+
+
+## whoami
 #### the whoami command is one of the simplest and most specific Linux/Unix commands. It does one thing: it displays the effective username of the current user (the logged in user who issued the command)
 ```
 whoami
 ```
 
-# tar
+
+
+
+
+
+## tar
 ####
 ```
 tar
@@ -340,7 +389,13 @@ tar -t
 ```
 tar -u
 ```
-# grep
+
+
+
+
+
+
+## grep
 #### the grep (Global Regular Expression Print) command is the most important tool for text searching on Linux/Unix systems, the command scans files or standard input (e.g. the output of another command) and prints lines that match a specified pattern (regular expression)
 ```
 grep
@@ -378,7 +433,13 @@ grep -w
 grep -E
 ```
 
-# head
+
+
+
+
+
+
+## head
 #### the head command in Linux/Unix systems is used to print the first few lines (by default the first 10 lines) of a file (or standard input), this command is useful for quickly reviewing the contents of files without loading the entire file
 ```
 head
@@ -396,7 +457,13 @@ head -c
 head -v
 ```
 
-# tail
+
+
+
+
+
+
+## tail
 #### the tail command, as the opposite of head, is used in Linux/Unix systems to print the last few lines (10 by default) of files, which is especially useful for viewing log files
 ```
 tail
@@ -413,6 +480,14 @@ tail -f
 ```
 tail -c
 ```
+
+
+
+
+
+
+
+
 ## diff
 #### the diff command compares the contents of two text files line by line and displays the minimum set of edits (add, delete, modify) that can be used to transform the first file into the second file.
 ```
@@ -450,6 +525,14 @@ diff -q
 ```
 diff -y
 ```
+
+
+
+
+
+
+
+
 ## cmp
 #### the cmp (compare) command compares two files byte by byte and only reports the location and line of the first difference where the contents of the two files differ, or if one file is a prefix of the other
 ```
@@ -472,6 +555,13 @@ cmp -l
 ```
 cmp -n
 ```
+
+
+
+
+
+
+
 ## comm
 #### The comm command displays the common and different lines between two pre-sorted text files in three columns.
 ```
@@ -494,6 +584,14 @@ comm    -3 file1 file2: Shows only lines that are different in the two files (sh
 
 #(don't really undestand this btw.)
 
+
+
+
+
+
+
+
+
 ## export
 #### the export command is used to make a shell variable available (export it) to **child processes** (e.g., scripts, programs) launched from the current shell, thus turning it into an environment variable
 ```
@@ -512,6 +610,11 @@ export -n
 ```
 export -f
 ```
+
+
+
+
+
 ## zip
 #### The zip command is an extremely versatile tool for compressing files and managing archives. 
 Below I summarize the most important and commonly used switches (options) that can be used to perform most tasks.
@@ -558,6 +661,12 @@ zip -q
 ```
 zip -@
 ```
+
+
+
+
+
+
 ## unzip
 #### The unzip command is a basic tool for extracting (decompressing) the contents of .zip files on Linux/Unix systems.
 ```
@@ -595,6 +704,12 @@ unzip -x
 ```
 unzip -P
 ```
+
+
+
+
+
+
 ## ssh
 #### Secure Shell (SSH) is a critical network protocol used for secure data communication between two network devices. In Linux, we can securely connect to remote machines using the ssh command.
 ```
@@ -670,6 +785,11 @@ ssh -vvv
 ```
 ssh -vvv user@host
 ```
+
+
+
+
+
 ## service
 #### The service command is a service management tool used in Linux systems. As I mentioned earlier, 
 the service command does not have traditional lettered switches (such as -a or -p) like other Linux commands. 
@@ -698,6 +818,13 @@ service [name_of_system_service] status
 ```
 sudo service [name_of_system_service] reload
 ```
+
+
+
+
+
+
+
 ## ps
 #### The ps (process status) command is a basic tool in Linux and other Unix-like operating systems that displays the current status of currently running processes.
 The output of the command is a snapshot of the processes on the system.
@@ -759,8 +886,14 @@ ps aux -ww
 ```
 #*** Don't really understand this ps things
 
+
+
+
+
+
+
+## kill and killall
 #### kill and killall
-####
 ```
 kill
 ```
@@ -792,6 +925,13 @@ or
 ```
 kill --wait
 ```
+
+
+
+
+
+
+
 ## df
 #### The df (disk free) command on Linux/Unix systems is used to display the free disk space and usage of mounted file systems (partitions, network shares, etc.).
 ```
@@ -844,6 +984,13 @@ or
 ```
 df --type=TÍPUS
 ```
+
+
+
+
+
+
+
 ## mount
 #### The basic function of the mount command in Linux/Unix systems is to mount (or attach) a file system on a storage device into the system's file system hierarchy.
 In simpler terms: The mount command allows the computer's operating system to access data stored on a given storage medium (e.g., a hard disk partition, a USB flash drive, a CD, a network share).
@@ -901,7 +1048,12 @@ chmod --
 reference=FILE
 ```
 
-#### chown
+
+
+
+
+
+## chown
 #### Recursive mode: Change the owner and/or group of the specified directory and all subdirectories and files within it. This is the most important switch. 
 ```
 chwon -R
@@ -924,7 +1076,13 @@ CURRENT_GROUP
 --                              
 reference=REFERENCE_FILE
 
-#### ipconfig
+
+
+
+
+
+
+## ipconfig
 #### Displays basic network configuration information: IPv4 and IPv6 addresses, subnet mask, and default gateway for each adapter.
 ```
 ipconfig
@@ -960,7 +1118,11 @@ ipconfig /displaydns
 ipconfig /registerdns                  
 ```
 
-#### traceroute                
+
+
+
+
+## traceroute                
 #### The traceroute (or tracert in Windows) command is used to show the path an IP packet takes from a source machine to a destination machine. It essentially lists each router (hop) in the network path between two points and measures the round trip time. This is an essential tool for troubleshooting network problems and identifying the source of latency.
 
 ```
@@ -993,7 +1155,14 @@ traceroute -q N
 traceroute -m MAX_TTL
 ```
 
-#### wget
+
+
+
+
+
+
+
+## wget
 #### This is its most important feature. wget can run in the background and continue downloading even if the user logs out of the system (for example, via SSH). This makes it ideal for starting large files or long-running recursive downloads in a server environment.
 ```
 wget
@@ -1101,8 +1270,14 @@ wget --directory-prefix=DIR
 or
 ```
 wget -P DIR        
-```                  
-#### ufw
+```
+
+
+
+
+
+                  
+## ufw
 #### Displays the current status of the firewall (active or inactive) and all valid rules.
 ```
 sudo ufw status
@@ -1124,7 +1299,13 @@ sudo ufw disable
 ```                         
 sudo ufw reset                        
 ```
-#### iptables
+
+
+
+
+
+
+## iptables
 #### iptables is a command-line tool in Linux operating systems used to configure a firewall and network packet filtering framework based on a kernel module called netfilter.
 #### Append: Adds a rule to the end of the specified chain.
 ```
@@ -1182,6 +1363,12 @@ or
 ```
 iptables --table
 ```	                          
+
+
+
+
+
+
 ## apt, pacman, yum, rpm
 
 #### Apt is the standard and modern package management system for Debian, Ubuntu, Linux Mint, and other Debian-based distributions. Apt itself handles the low-level tools (mainly dpkg) that work in the background, but provides a much more user-friendly, intelligent interface.
@@ -1191,6 +1378,12 @@ iptables --table
 #### Pacman is the default package manager for Arch Linux and Arch-based distributions (e.g. Manjaro). It is known for its speed and simple command syntax.
 
 #### rpm is a low-level package management system used by Red Hat-based distributions (e.g. Fedora, RHEL, CentOS). While yum and dnf are built on top of rpm and manage dependencies, the rpm command is used to directly manage individual files with the .rpm extension.
+
+
+
+
+
+
 
 ## sudo 
 
@@ -1208,6 +1401,11 @@ iptables --table
 #### Authentication: To use sudo, the user must enter their own password, not the root password (this depends on a configuration setting, but usually works this way)
 #### Example: The apt update command only updates the package list, but the apt install command modifies system files, so it must be preceded by sudo
 
+
+
+
+
+
 ## cal
 #### The cal command is used in Linux/Unix systems to display the calendar on the command line.
 #### This is a very simple but useful utility that allows you to quickly view the calendar for the current month, 
@@ -1223,6 +1421,10 @@ Switch                Description                                               
 -j                    Displays the year/month in Julian Calendar format, i.e. the days                                 cal -j
                       number from 1 to 365 (or 366).
                                                                                                                        
+
+
+
+
 
 ## alias
 #### The command is all about efficiency and convenience. It is used to replace frequently used, long, or difficult-to-type commands, reducing the chance of typing errors and speeding up the workflow.
@@ -1243,6 +1445,13 @@ or
 ```
 # alias ll='ls -l'
 ```
+
+
+
+
+
+
+
 ## dd
 #### The dd command is an extremely powerful and versatile utility in Linux/Unix systems, primarily used for bit-accurate copying and converting of files, partitions, or entire media.
 The command's name originally stood for "Copy and Convert", which is derived from an early operating system (JCL) term, rather than the terms "disk dump" or "disk duplicate", although its function is related to these.
@@ -1284,6 +1493,13 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### (Where sdX is the target USB drive, not its partition!) 
 #### Would you like to review some more basic filesystem commands, like chmod or chown?
 
+
+
+
+
+
+
+
 ## wheris
 #### Switch                                             Meaning (Target)                                                   Description
 #### -b                                                 Binary Files                                                       Searches only executable (binary) files.
@@ -1305,6 +1521,12 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### -f                                                 Start of filename flag                                             Terminates the directory list specified with the -B, -M, or -S switches
 ####                                                                                                                       and indicates that the arguments that follow
 ####                                                                                                                       are already filenames to be searched.
+
+
+
+
+
+
 ## whatis
 #### The whatis command in the Linux operating system is used to display a short, one-line description of a given command or program. This description is taken from the database of manual (man) pages. Essentially, it queries the database used by the man command and returns only the name of the command and a short description (the contents of the NAME section of the man page), without opening the full manual page.
 
@@ -1321,7 +1543,12 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### list                                                                          The sections of the man pages represent different categories                                                                    
 ####                                                                               (1=general commands, 8=system 
 ####                                                                               administration commands, etc.)
-#### top
+
+
+
+
+
+## top
 #### The top command is one of the most important tools in the Linux operating system, which displays the current status of the system in real time, interactively.
 
 #### Switch                                Meaning                                       Description
@@ -1338,7 +1565,14 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### -b                                    Batch mode                                    Non-interactive, batch mode. This mode is ideal
 ####                                                                                     for redirecting top output to a file
 ####                                                                                     or for use in scripts.
-#### useradd
+
+
+
+
+
+
+
+## useradd
 #### The useradd (also known as adduser in some distributions) command in the Linux operating system is used to create a new user account. This command performs all the basic configuration steps required to add a user: it adds the user to the system, creates an encrypted entry for the user's password (although setting the password requires a separate command, see below), creates the user's home directory, and sets the default shell.
 #### Switch                          Full name                               Description
 #### -m                              --create-home                           Creates the user's home directory. This is the most commonly used switch,
@@ -1360,6 +1594,13 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 ####                                                                         before the account is permanently disabled.
 #### -N                              --no-user-group                         Prevents the command from creating a group with the same name
 ####                                                                         as the user's primary group.
+
+
+
+
+
+
+
 
 ## passwd
 #### The passwd command is the basic tool for changing passwords for user accounts in the Linux operating system. The command manages the entry of a user's encrypted password in the /etc/shadow file, and also allows administrators to set or change passwords for other users, and to manage password policies (such as expiration dates)
@@ -1453,4 +1694,4 @@ Kész
 
   1 hét Deadline
   
-  
+  ## Sort parancs kimaradt comm és export között
