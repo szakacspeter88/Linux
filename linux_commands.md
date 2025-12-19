@@ -1439,11 +1439,17 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
     Azok a commandok amik fel lettek téve a gitHUBra,
     Fontosabb kapcsolóit kijegyzetelni
 
-  2. Feladat
-    Máté ad konkrét fileokat amikre rá kell keresni a find paranccsal
+Kész
 
   3. Feladat
+    Máté ad konkrét fileokat amikre rá kell keresni a find paranccsal
+
+Még nem kaoptam fileneveket
+
+  5. Feladat
     Második oszlopot átnézni a TOP 50 linux parancsból, és kijegyzetelni a fontosabb kapcsolókat
+
+Kész
 
   1 hét Deadline
   
