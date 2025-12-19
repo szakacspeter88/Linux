@@ -1182,7 +1182,7 @@ or
 ```
 iptables --table
 ```	                          
-#### apt, pacman, yum, rpm
+## apt, pacman, yum, rpm
 
 #### Apt is the standard and modern package management system for Debian, Ubuntu, Linux Mint, and other Debian-based distributions. Apt itself handles the low-level tools (mainly dpkg) that work in the background, but provides a much more user-friendly, intelligent interface.
 
@@ -1192,7 +1192,7 @@ iptables --table
 
 #### rpm is a low-level package management system used by Red Hat-based distributions (e.g. Fedora, RHEL, CentOS). While yum and dnf are built on top of rpm and manage dependencies, the rpm command is used to directly manage individual files with the .rpm extension.
 
-#### sudo 
+## sudo 
 
 #### sudo (SuperUser DO) is a key command in Linux and Unix-like operating systems. Its purpose is to allow an authorized user to temporarily execute commands with the privileges of the root (administrator) user.
 #### 1. The Role of the System Administrator (Root)
@@ -1208,7 +1208,7 @@ iptables --table
 #### Authentication: To use sudo, the user must enter their own password, not the root password (this depends on a configuration setting, but usually works this way)
 #### Example: The apt update command only updates the package list, but the apt install command modifies system files, so it must be preceded by sudo
 
-#### cal
+## cal
 #### The cal command is used in Linux/Unix systems to display the calendar on the command line.
 #### This is a very simple but useful utility that allows you to quickly view the calendar for the current month, 
 #### a specific month, or even an entire year, right in the terminal.
@@ -1224,7 +1224,7 @@ Switch                Description                                               
                       number from 1 to 365 (or 366).
                                                                                                                        
 
-#### alias
+## alias
 #### The command is all about efficiency and convenience. It is used to replace frequently used, long, or difficult-to-type commands, reducing the chance of typing errors and speeding up the workflow.
 #### Example
 ```
@@ -1243,7 +1243,7 @@ or
 ```
 # alias ll='ls -l'
 ```
-#### dd
+## dd
 #### The dd command is an extremely powerful and versatile utility in Linux/Unix systems, primarily used for bit-accurate copying and converting of files, partitions, or entire media.
 The command's name originally stood for "Copy and Convert", which is derived from an early operating system (JCL) term, rather than the terms "disk dump" or "disk duplicate", although its function is related to these.
 ```
@@ -1284,7 +1284,7 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### (Where sdX is the target USB drive, not its partition!) 
 #### Would you like to review some more basic filesystem commands, like chmod or chown?
 
-#### wheris
+## wheris
 #### Switch                                             Meaning (Target)                                                   Description
 #### -b                                                 Binary Files                                                       Searches only executable (binary) files.
 #### -m                                                 Manual Pages (man)                                                 Searches only manual (man) pages.
@@ -1305,7 +1305,7 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### -f                                                 Start of filename flag                                             Terminates the directory list specified with the -B, -M, or -S switches
 ####                                                                                                                       and indicates that the arguments that follow
 ####                                                                                                                       are already filenames to be searched.
-#### whatis
+## whatis
 #### The whatis command in the Linux operating system is used to display a short, one-line description of a given command or program. This description is taken from the database of manual (man) pages. Essentially, it queries the database used by the man command and returns only the name of the command and a short description (the contents of the NAME section of the man page), without opening the full manual page.
 
 #### Switch                          Meaning (Purpose)                             Description
