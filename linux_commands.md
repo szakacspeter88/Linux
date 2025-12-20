@@ -1631,11 +1631,11 @@ Here is the essence, briefly:
 
 find [where] [what] [action]
 
-    [where]: The starting directory (e.g., . for the current location, / for the entire system).
+  [where]: The starting directory (e.g., . for the current location, / for the entire system).
 
-    [what]: The search criteria (name, size, type, date).
+  [what]: The search criteria (name, size, type, date).
 
-    [action]: What to do with the result (list it, delete it, or pass it to another command).
+  [action]: What to do with the result (list it, delete it, or pass it to another command).
 
 2. Most Important Switches (with examples)
 
@@ -1655,7 +1655,6 @@ The find command doesn't just search; it can act immediately using the -exec swi
 
 Example: Find all .tmp files and delete them instantly: find /tmp -name "*.tmp" -delete
 
-Would you like me to show you a specific example of how to search for a piece of text inside all files using the find command?
 
 Here is the command that finds the 10 largest files on your system:
 
