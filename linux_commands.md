@@ -1621,6 +1621,46 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 ####                                                                                                 If this expires, the account will be permanently disabled.
 #### -S                                --status                      anyone                          Displays the status of the user's password (last modified, minimum/maximum validity times, inactivity).
 
+# find
+#### Here is the concise explanation of the find command translated into English:
+
+The find command is one of the most powerful search tools in Linux (Arch, Kali, Ubuntu, etc.), used to locate files and directories based on various conditions.
+
+Here is the essence, briefly:
+1. The Basic Formula
+
+find [where] [what] [action]
+
+    [where]: The starting directory (e.g., . for the current location, / for the entire system).
+
+    [what]: The search criteria (name, size, type, date).
+
+    [action]: What to do with the result (list it, delete it, or pass it to another command).
+
+2. Most Important Switches (with examples)
+
+    By Name: find . -name "config.txt" (Search for an exact name). find . -iname "*.jpg" (Search by extension, case-insensitive).
+
+    By Type: find . -type f (Files only). find . -type d (Directories only).
+
+    By Size: find . -size +100M (Files larger than 100 MB).
+
+    By Time: find . -mtime -1 (Files modified within the last 24 hours).
+
+    By Permissions: find . -perm 777 (Search for files readable/writable by everyone – a security risk!).
+
+3. Why is it better than Windows search?
+
+The find command doesn't just search; it can act immediately using the -exec switch.
+
+Example: Find all .tmp files and delete them instantly: find /tmp -name "*.tmp" -delete
+
+Would you like me to show you a specific example of how to search for a piece of text inside all files using the find command?
+
+Here is the command that finds the 10 largest files on your system:
+
+```sudo find / -type f -exec du -h {} + 2>/dev/null | sort -rh | head -n 10```
+
 
 # find
   
