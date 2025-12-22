@@ -592,6 +592,97 @@ comm    -3 file1 file2: Shows only lines that are different in the two files (sh
 
 
 
+
+#### The sort command is a powerful utility used to arrange the lines of a text file in a specific order. By default, it sorts alphabetically, but it offers many options to refine how data is processed.
+#### Basic Syntax
+
+#### sort [options] [filename]
+#### Most Common Options
+
+```
+sort -n
+```                             
+#### Sorts numbers by their actual value (e.g., 2 comes before 10).
+```
+sort -r
+```
+#### Reverses the result (descending order).
+```
+sort -u
+```
+#### Removes duplicate lines from the output.
+```
+sort -k
+```
+#### Sorts based on a specific column (field).
+```
+sort -t
+```
+#### Defines the delimiter between columns (e.g., a comma).
+```
+sort -M
+```
+#### Recognizes month names (Jan, Feb, etc.).  
+```
+sort -o
+```
+#### Saves the result to a file instead of printing to the screen.
+
+#### Practical Examples
+#### 1. Sorting Numbers
+
+#### If you use a plain sort on numbers, "10" will appear before "2" because it starts with "1". The -n flag fixes this:
+#### Bash
+
+```
+sort -n numbers.txt
+```
+
+#### 2. Sorting by a Specific Column
+
+#### If you have a list where the first column is a name and the second is an age, use -k to sort by age (the 2nd column):
+#### Bash
+
+```
+sort -k 2 data.txt
+```
+
+#### 3. Handling CSV Files
+
+#### If your data is separated by commas, use the -t option to define the delimiter:
+#### Bash
+
+```
+sort -t ',' -k 3 list.csv
+```
+
+#### 4. Saving the Result
+
+#### By default, sort only displays the result in the terminal. To save it to a new file, use the -o flag:
+#### Bash
+
+```
+sort list.txt -o sorted_list.txt
+```
+
+#### Using "Pipes" with Sort
+
+#### The sort command is often combined with other commands. For example, to see files in a directory sorted by size (the 5th column in ls -l):
+#### Bash
+
+```
+ls -l | sort -nk 5
+```
+
+
+
+
+
+
+
+
+
+
 ## export
 #### the export command is used to make a shell variable available (export it) to **child processes** (e.g., scripts, programs) launched from the current shell, thus turning it into an environment variable
 ```
