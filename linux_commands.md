@@ -1382,11 +1382,6 @@ sudo ufw disable
 sudo ufw reset                        
 ```
 
-
-
-
-
-
 ## iptables
 #### iptables is a command-line tool in Linux operating systems used to configure a firewall and network packet filtering framework based on a kernel module called netfilter.
 #### Append: Adds a rule to the end of the specified chain.
@@ -1446,7 +1441,8 @@ or
 iptables --table
 ```	                          
 <details>
-  <summary>📦 <b>Package Managers</b></summary>
+  
+<summary>📦 <b>Package Managers</b></summary>
 
 * **APT** (🚀 Advanced 📦 Package 🛠️ Tool): Debian, Ubuntu, Linux Mint, Kali.
 * **Pacman** (📦 PACkage 👨‍💼 MANager): Arch Linux, Manjaro, EndeavourOS.
