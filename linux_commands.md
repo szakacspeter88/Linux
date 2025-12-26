@@ -3,14 +3,17 @@
 <details>
 <summary>
 # ls - list files
+  
 ```
 ls
 ```
 ##### list all files with all attributes human readable
+  
 ```
 ls -hal
 ```
 #### list file inodes
+  
 ```
 ls -i
 ```
