@@ -1453,10 +1453,10 @@ iptables --table
 </details>
 
 <details> <summary>📦 <b>Package Managers</b> 
-APT (🚀 Advanced 📦 Package 🛠️ Tool): Debian, Ubuntu, Linux Mint, Kali.
-Pacman (📦 PACkage 👨‍💼 MANager): Arch Linux, Manjaro, EndeavourOS.
-DNF / YUM (🍩 Dandified 🔄 Updater): Fedora, RHEL, CentOS, AlmaLinux.
-Zypper🤐: openSUSE és SUSE Linux Enterprise.
+#### APT (🚀 Advanced 📦 Package 🛠️ Tool): Debian, Ubuntu, Linux Mint, Kali.
+#### Pacman (📦 PACkage 👨‍💼 MANager): Arch Linux, Manjaro, EndeavourOS.
+#### DNF / YUM (🍩 Dandified 🔄 Updater): Fedora, RHEL, CentOS, AlmaLinux.
+#### Zypper🤐: openSUSE és SUSE Linux Enterprise.
   
 </summary>
 
