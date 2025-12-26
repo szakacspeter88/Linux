@@ -1734,6 +1734,8 @@ Here is the command that finds the 10 largest files on your system:
 
 </details>
 
+<details>
+  
 # find
   
   -type : fájltípus
@@ -1772,7 +1774,7 @@ Here is the command that finds the 10 largest files on your system:
   
   -exec : Executes a shell command
   
-  
+  </details>
 
   Fájl keresése:
   find . -iname "filename"
@@ -1788,22 +1790,7 @@ Here is the command that finds the 10 largest files on your system:
 
   # Szent Házi feladat
   
-  1. Feladat
-    Azok a commandok amik fel lettek téve a gitHUBra,
-    Fontosabb kapcsolóit kijegyzetelni
-
-Kész
 
   3. Feladat
     Máté ad konkrét fileokat amikre rá kell keresni a find paranccsal
 
-Még nem kaoptam fileneveket
-
-  5. Feladat
-    Második oszlopot átnézni a TOP 50 linux parancsból, és kijegyzetelni a fontosabb kapcsolókat
-
-Kész
-
-  1 hét Deadline
-  
-  ## Sort parancs kimaradt comm és export között
