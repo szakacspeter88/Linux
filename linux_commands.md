@@ -1439,9 +1439,24 @@ iptables --table
 Here is the English version of the accordion, using the professional and emoji-enhanced definitions we discussed. I have polished the text to be concise and impactful.
 Markdown
 
-<details>
-  
-<summary>📦 <b>Linux Package Managers (🚀APT, ᗧPacman, 🍩DNF, 🤐Zypper)</b></summary>
+</details>
+
+<details> <summary>📦 <b>Linux Package Managers (🚀APT, ᗧPacman, 🍩DNF, 🤐Zypper)</b></summary>
+
+🚀 APT (Advanced Package Tool)
+
+Standard for Debian/Ubuntu. It handles low-level tools like dpkg with a user-friendly interface.
+ᗧ Pacman (PACkage MANager)
+
+The heart of Arch Linux. Fast, lightweight, and uses simple syntax.
+🍩 DNF / YUM (Dandified YUM)
+
+The modern (DNF) and traditional (YUM) managers for Red Hat-based systems.
+📦 RPM (Red Hat Package Manager)
+
+The low-level engine behind DNF/YUM, handling .rpm files directly.
+
+</details>
 
 ## apt, pacman, yum, rpm
 
