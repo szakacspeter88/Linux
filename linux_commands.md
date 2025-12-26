@@ -1358,11 +1358,7 @@ wget -P DIR
 </details>
 
 <details> <summary>🔥🧱 <b>ufw & iptables</b> - firewall management</summary>
-
-
-
-
-                  
+                 
 ## ufw
 #### Displays the current status of the firewall (active or inactive) and all valid rules.
 ```
@@ -1449,14 +1445,13 @@ or
 ```
 iptables --table
 ```	                          
+<details>
+  <summary>📦 <b>Package Managers</b></summary>
 
-</details>
-
-<details> <summary>📦 <b>Package Managers</b> 
-#### APT (🚀 Advanced 📦 Package 🛠️ Tool): Debian, Ubuntu, Linux Mint, Kali.
-#### Pacman (📦 PACkage 👨‍💼 MANager): Arch Linux, Manjaro, EndeavourOS.
-#### DNF / YUM (🍩 Dandified 🔄 Updater): Fedora, RHEL, CentOS, AlmaLinux.
-#### Zypper🤐: openSUSE és SUSE Linux Enterprise.
+* **APT** (🚀 Advanced 📦 Package 🛠️ Tool): Debian, Ubuntu, Linux Mint, Kali.
+* **Pacman** (📦 PACkage 👨‍💼 MANager): Arch Linux, Manjaro, EndeavourOS.
+* **DNF** (🍩 Dandified YUM): Fedora, RHEL, CentOS, AlmaLinux.
+* **Zypper** 🤐: openSUSE és SUSE Linux Enterprise.
   
 </summary>
 
