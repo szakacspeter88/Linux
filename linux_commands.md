@@ -1441,18 +1441,7 @@ Markdown
 
 <details>
   
-<summary>📦 <b>Linux Package Managers (APT, Pacman, DNF, Zypper)</b></summary>
-
-### 🚀 APT (Advanced Package *Tool)
-
-### ᗧ Pacman (**PAC**kage **MAN**ager)
-
-### 🍩 DNF / YUM (Dandified YUM)
-
-### 🤐 Zypper (The Zipper)
-
-
-</details>
+<summary>📦 <b>Linux Package Managers (🚀APT, ᗧPacman, 🍩DNF, 🤐Zypper)</b></summary>
 
 ## apt, pacman, yum, rpm
 
