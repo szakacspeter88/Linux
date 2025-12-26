@@ -1451,7 +1451,6 @@ The modern (DNF) and traditional (YUM) managers for Red Hat-based systems.
 
 The low-level engine behind DNF/YUM, handling .rpm files directly.
 
-</details>
 
 ## apt, pacman, yum, rpm
 
