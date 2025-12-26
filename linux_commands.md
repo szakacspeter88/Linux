@@ -1,7 +1,7 @@
 # Useful Linux Commands
 
-
-
+<details>
+<summary>
 # ls - list files
 ```
 ls
@@ -19,6 +19,7 @@ ls -i
 ```
 ls --color
 ```
+</summary>
 
 # pwd - print work directory
 ```
