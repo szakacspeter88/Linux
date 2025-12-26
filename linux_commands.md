@@ -1440,29 +1440,17 @@ Here is the English version of the accordion, using the professional and emoji-e
 Markdown
 
 <details>
+  
 <summary>📦 <b>Linux Package Managers (APT, Pacman, DNF, Zypper)</b></summary>
 
-### 🚀 APT (**A**dvanced **P**ackage **T**ool)
-* **Distros:** Debian, Ubuntu, Linux Mint, Kali.
-* **Key Feature:** The most widely used manager, known for human-readable commands.
-
----
+### 🚀 APT (Advanced Package *Tool)
 
 ### ᗧ Pacman (**PAC**kage **MAN**ager)
-* **Distros:** Arch Linux, Manjaro, EndeavourOS.
-* **Key Feature:** Lightning-fast and uses concise flags (e.g., `-Syu`). Features the "ILoveCandy" easter egg.
 
----
-
-### 🍩 DNF / YUM (**D**andified **Y**UM)
-* **Distros:** Fedora, RHEL, CentOS, AlmaLinux.
-* **Key Feature:** The "Dandified" successor to YUM with an intelligent dependency solver.
-
----
+### 🍩 DNF / YUM (Dandified YUM)
 
 ### 🤐 Zypper (The Zipper)
-* **Distros:** openSUSE, SUSE Linux Enterprise.
-* **Key Feature:** Known for its powerful SAT-solver and high-quality error reporting.
+
 
 </details>
 
