@@ -25,6 +25,8 @@ ls --color
 
 </summary>
 
+<details> <summary>📍 <b>pwd</b> - print work directory</summary>
+  
 # pwd - print work directory
 ```
 pwd
@@ -39,6 +41,10 @@ pwd -L
 pwd -P
 ```
 
+</details>
+
+<details> <summary>🚀 <b>cd</b> - change directory</summary>
+
 # cd - change directory
 ```
 cd
@@ -52,6 +58,10 @@ The −L switch (Logical Mode) instructs the shell to follow the default, logica
 cd -L
 ```
 
+</details>
+
+<details> <summary>🏗️ <b>mkdir</b> - make directory</summary>
+  
 # mkdir - make directory
 #### create library hierarchy (parent)
 ```
@@ -66,6 +76,11 @@ mkdir -v
 ```
 mkdir -m
 ```
+
+</details>
+
+<details> <summary>🔄 <b>mv</b> - move / rename</summary>
+  
 # mv - move / rename
 ```
 mv
@@ -91,6 +106,10 @@ mv -u
 ```
 mv -b
 ```
+
+</details>
+
+<details> <summary>📋 <b>cp</b> - copy</summary>
 
 # cp - copy
 ```
@@ -127,6 +146,10 @@ cp -a
 cp -u
 ```
 
+</details>
+
+<details> <summary>🗑️ <b>rm</b> - remove</summary>
+
 # rm - remove
 ```
 rm
@@ -149,6 +172,11 @@ rm -f
 rm -v
 ```
 
+</details>
+
+<details> <summary>📄 <b>touch</b> - make file / update timestamp</summary>
+
+  
 # touch - make file
 #### only the access timestamp is modified. The modification timestamp remains untouched (atime)
 ```
@@ -170,6 +198,11 @@ touch -t
 ```
 touch -r
 ```
+
+</details>
+
+<details> <summary>🔗 <b>ln</b> - hard / soft link</summary>
+
 # ln - hard / soft link
 ```
 ln
@@ -191,13 +224,14 @@ ln −i
 ln −v
 ```	
 
+</details>
 
+<details> <summary>🧹 <b>clear</b> - clear terminal</summary>
 
+  </details>
 
-
-
-
-
+<details> <summary>🐱 <b>cat</b> - concatenate and print files</summary>
+  
 # clear - clear terminal
 ```
 clear
@@ -206,11 +240,6 @@ clear
 ```
 clear -x
 ```
-
-
-
-
-
 
 # cat
 ####
@@ -237,13 +266,9 @@ cat -E
 ```
 cat -T
 ```
+</details>
 
-
-
-
-
-
-
+<details> <summary>🗣️ <b>echo</b> - display a line of text</summary>
 
 # echo
 #### print on terminal
@@ -259,11 +284,9 @@ echo -n
 echo -e
 ```
 
+</details>
 
-
-
-
-
+<details> <summary>📖 <b>less</b> - file pager</summary>
 
 # less
 #### the command is an extremely useful tool in Linux/Unix systems that allows you to page through files (or the output of other commands) in a page-by-page, interactive manner in the terminal, without having to load the entire file into memory (like the vi or nano editors do).
@@ -287,10 +310,9 @@ less -S
 less -F
 ```
 
+</details>
 
-
-
-
+<details> <summary>📚 <b>man</b> - system reference manuals</summary>
 
 ## man
 #### manual
@@ -318,10 +340,9 @@ man -w
 man −s
 ```
 
+</details>
 
-
-
-
+<details> <summary>💻 <b>uname</b> - system information</summary>
   
 ## uname
 #### the uname (unix name) command in Linux/Unix systems is used to display system-related information (such as kernel name, network hostname, kernel version, hardware type, etc.)
@@ -357,10 +378,9 @@ uname -m
 uname -o
 ```
 
+</details>
 
-
-
-
+details> <summary>👤 <b>whoami</b> - display current user</summary>
 
 ## whoami
 #### the whoami command is one of the simplest and most specific Linux/Unix commands. It does one thing: it displays the effective username of the current user (the logged in user who issued the command)
@@ -368,10 +388,9 @@ uname -o
 whoami
 ```
 
+</details>
 
-
-
-
+<details> <summary>📦 <b>tar</b> - tape archiver</summary>
 
 ## tar
 ####
@@ -395,10 +414,9 @@ tar -t
 tar -u
 ```
 
+</details>
 
-
-
-
+<details> <summary>🔍 <b>grep</b> - pattern searching</summary>
 
 ## grep
 #### the grep (Global Regular Expression Print) command is the most important tool for text searching on Linux/Unix systems, the command scans files or standard input (e.g. the output of another command) and prints lines that match a specified pattern (regular expression)
@@ -438,11 +456,9 @@ grep -w
 grep -E
 ```
 
+</details>
 
-
-
-
-
+<details> <summary>⬆️ <b>head</b> - output the first part of files</summary>
 
 ## head
 #### the head command in Linux/Unix systems is used to print the first few lines (by default the first 10 lines) of a file (or standard input), this command is useful for quickly reviewing the contents of files without loading the entire file
@@ -462,11 +478,9 @@ head -c
 head -v
 ```
 
+</details>
 
-
-
-
-
+<details> <summary>⬇️ <b>tail</b> - output the last part of files</summary>
 
 ## tail
 #### the tail command, as the opposite of head, is used in Linux/Unix systems to print the last few lines (10 by default) of files, which is especially useful for viewing log files
@@ -486,12 +500,7 @@ tail -f
 tail -c
 ```
 
-
-
-
-
-
-
+</details>
 
 ## diff
 #### the diff command compares the contents of two text files line by line and displays the minimum set of edits (add, delete, modify) that can be used to transform the first file into the second file.
