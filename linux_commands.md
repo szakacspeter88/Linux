@@ -1441,7 +1441,7 @@ Markdown
 
 </details>
 
-<details> <summary>📦 <b>Linux Package Managers (🚀APT, ᗧPacman, 🍩DNF, 🤐Zypper)</b></summary>
+<summary>📦 <b>Linux Package Managers (🚀APT, ᗧPacman, 🍩DNF, 🤐Zypper)</b></summary>
 
 🚀 APT (Advanced Package Tool)
 
