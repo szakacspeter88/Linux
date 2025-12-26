@@ -502,6 +502,8 @@ tail -c
 
 </details>
 
+<details> <summary>⚖️ <b>diff</b> - compare files line by line</summary>
+  
 ## diff
 #### the diff command compares the contents of two text files line by line and displays the minimum set of edits (add, delete, modify) that can be used to transform the first file into the second file.
 ```
@@ -540,12 +542,9 @@ diff -q
 diff -y
 ```
 
+</details>
 
-
-
-
-
-
+<details> <summary>🔢 <b>cmp</b> - byte-by-byte comparison</summary>
 
 ## cmp
 #### the cmp (compare) command compares two files byte by byte and only reports the location and line of the first difference where the contents of the two files differ, or if one file is a prefix of the other
@@ -570,11 +569,9 @@ cmp -l
 cmp -n
 ```
 
+</details>
 
-
-
-
-
+<details> <summary>📊 <b>comm</b> - compare two sorted files</summary>
 
 ## comm
 #### The comm command displays the common and different lines between two pre-sorted text files in three columns.
@@ -598,14 +595,9 @@ comm    -3 file1 file2: Shows only lines that are different in the two files (sh
 
 #(don't really undestand this btw.)
 
+</details>
 
-
-
-
-
-
-
-
+<details> <summary>🗄️ <b>sort</b> - sort lines of text files</summary>
 
 #### The sort command is a powerful utility used to arrange the lines of a text file in a specific order. By default, it sorts alphabetically, but it offers many options to refine how data is processed.
 #### Basic Syntax
@@ -688,14 +680,9 @@ sort list.txt -o sorted_list.txt
 ls -l | sort -nk 5
 ```
 
+</details>
 
-
-
-
-
-
-
-
+<details> <summary>📤 <b>export</b> - set environment variables</summary>
 
 ## export
 #### the export command is used to make a shell variable available (export it) to **child processes** (e.g., scripts, programs) launched from the current shell, thus turning it into an environment variable
@@ -716,9 +703,9 @@ export -n
 export -f
 ```
 
+</details>
 
-
-
+<details> <summary>🤐 <b>zip / unzip</b> - file compression</summary>
 
 ## zip
 #### The zip command is an extremely versatile tool for compressing files and managing archives. 
@@ -810,10 +797,9 @@ unzip -x
 unzip -P
 ```
 
+</details>
 
-
-
-
+<details> <summary>🌐 <b>ssh</b> - secure shell</summary>
 
 ## ssh
 #### Secure Shell (SSH) is a critical network protocol used for secure data communication between two network devices. In Linux, we can securely connect to remote machines using the ssh command.
@@ -891,9 +877,9 @@ ssh -vvv
 ssh -vvv user@host
 ```
 
+</details>
 
-
-
+<details> <summary>⚙️ <b>service / ps</b> - process & service management</summary>
 
 ## service
 #### The service command is a service management tool used in Linux systems. As I mentioned earlier, 
@@ -991,11 +977,9 @@ ps aux -ww
 ```
 #*** Don't really understand this ps things
 
+</details>
 
-
-
-
-
+<details> <summary>⚔️ <b>kill / killall</b> - terminate processes</summary>
 
 ## kill and killall
 #### kill and killall
@@ -1031,11 +1015,9 @@ or
 kill --wait
 ```
 
+</details>
 
-
-
-
-
+<details> <summary>💾 <b>df / mount</b> - storage management</summary>
 
 ## df
 #### The df (disk free) command on Linux/Unix systems is used to display the free disk space and usage of mounted file systems (partitions, network shares, etc.).
@@ -1090,11 +1072,9 @@ or
 df --type=TÍPUS
 ```
 
+</details>
 
-
-
-
-
+<details> <summary>📂 <b>mount</b> - attach a file system</summary>
 
 ## mount
 #### The basic function of the mount command in Linux/Unix systems is to mount (or attach) a file system on a storage device into the system's file system hierarchy.
@@ -1130,7 +1110,12 @@ mount -L
 #### UUID,Mount by UUID. Instead of the device, you can specify the unique identifier (UUID) of that file system. This is the most reliable method.,mount -U 1234-ABCD /mnt/length                    
 ```
 mount -U
-```                              
+```
+
+</details>
+
+<details> <summary>🔑 <b>chmod / chown</b> - permissions & ownership</summary>
+  
 ## chmod
 #### The chmod (change mode) command is used in Linux/Unix operating systems to change the access permissions (rights) of files and directories.
 This command is essential for system security and user access control, as it determines who can do what with a given file or directory.
@@ -1153,10 +1138,9 @@ chmod --
 reference=FILE
 ```
 
+</details>
 
-
-
-
+<details> <summary>🔑 <b>chown</b> - change file owner and group</summary>
 
 ## chown
 #### Recursive mode: Change the owner and/or group of the specified directory and all subdirectories and files within it. This is the most important switch. 
@@ -1181,11 +1165,9 @@ CURRENT_GROUP
 --                              
 reference=REFERENCE_FILE
 
+</details>
 
-
-
-
-
+<details> <summary>📡 <b>ipconfig / ip</b> - network config</summary>
 
 ## ipconfig
 #### Displays basic network configuration information: IPv4 and IPv6 addresses, subnet mask, and default gateway for each adapter.
@@ -1223,9 +1205,7 @@ ipconfig /displaydns
 ipconfig /registerdns                  
 ```
 
-
-
-
+</details>
 
 ## traceroute                
 #### The traceroute (or tracert in Windows) command is used to show the path an IP packet takes from a source machine to a destination machine. It essentially lists each router (hop) in the network path between two points and measures the round trip time. This is an essential tool for troubleshooting network problems and identifying the source of latency.
