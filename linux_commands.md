@@ -1207,6 +1207,8 @@ ipconfig /registerdns
 
 </details>
 
+<details> <summary>🌐 <b>traceroute</b> - trace network path</summary>
+  
 ## traceroute                
 #### The traceroute (or tracert in Windows) command is used to show the path an IP packet takes from a source machine to a destination machine. It essentially lists each router (hop) in the network path between two points and measures the round trip time. This is an essential tool for troubleshooting network problems and identifying the source of latency.
 
@@ -1240,12 +1242,9 @@ traceroute -q N
 traceroute -m MAX_TTL
 ```
 
+</details>
 
-
-
-
-
-
+<details> <summary>📥 <b>wget</b> - non-interactive network downloader</summary>
 
 ## wget
 #### This is its most important feature. wget can run in the background and continue downloading even if the user logs out of the system (for example, via SSH). This makes it ideal for starting large files or long-running recursive downloads in a server environment.
@@ -1356,7 +1355,9 @@ or
 ```
 wget -P DIR        
 ```
+</details>
 
+<details> <summary>🔥🧱 <b>ufw & iptables</b> - firewall management</summary>
 
 
 
@@ -1449,10 +1450,9 @@ or
 iptables --table
 ```	                          
 
+</details>
 
-
-
-
+<details> <summary>📦 <b>Package Managers</b> (apt, pacman, dnf)</summary>
 
 ## apt, pacman, yum, rpm
 
@@ -1464,11 +1464,9 @@ iptables --table
 
 #### rpm is a low-level package management system used by Red Hat-based distributions (e.g. Fedora, RHEL, CentOS). While yum and dnf are built on top of rpm and manage dependencies, the rpm command is used to directly manage individual files with the .rpm extension.
 
+</details>
 
-
-
-
-
+<details> <summary>⚡ <b>sudo</b> - execute as superuser</summary>
 
 ## sudo 
 
@@ -1486,10 +1484,9 @@ iptables --table
 #### Authentication: To use sudo, the user must enter their own password, not the root password (this depends on a configuration setting, but usually works this way)
 #### Example: The apt update command only updates the package list, but the apt install command modifies system files, so it must be preceded by sudo
 
+</details>
 
-
-
-
+<details> <summary>📅 <b>cal</b> - terminal calendar</summary>
 
 ## cal
 #### The cal command is used in Linux/Unix systems to display the calendar on the command line.
@@ -1506,10 +1503,9 @@ Switch                Description                                               
 -j                    Displays the year/month in Julian Calendar format, i.e. the days                                 cal -j
                       number from 1 to 365 (or 366).
                                                                                                                        
+</details>
 
-
-
-
+<details> <summary>🏷️ <b>alias</b> - create command shortcuts</summary>
 
 ## alias
 #### The command is all about efficiency and convenience. It is used to replace frequently used, long, or difficult-to-type commands, reducing the chance of typing errors and speeding up the workflow.
@@ -1531,11 +1527,9 @@ or
 # alias ll='ls -l'
 ```
 
+</details>
 
-
-
-
-
+<details> <summary>⚠️ <b>dd</b> - disk destroyer / convert and copy</summary>
 
 ## dd
 #### The dd command is an extremely powerful and versatile utility in Linux/Unix systems, primarily used for bit-accurate copying and converting of files, partitions, or entire media.
@@ -1578,12 +1572,9 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### (Where sdX is the target USB drive, not its partition!) 
 #### Would you like to review some more basic filesystem commands, like chmod or chown?
 
+</details>
 
-
-
-
-
-
+<details> <summary>📍 <b>whereis</b> - locate the binary, source, and manual-page files</summary>
 
 ## wheris
 #### Switch                                             Meaning (Target)                                                   Description
@@ -1607,10 +1598,9 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 ####                                                                                                                       and indicates that the arguments that follow
 ####                                                                                                                       are already filenames to be searched.
 
+</details>
 
-
-
-
+<details> <summary>🏷️ <b>whatis</b> - display one-line manual page descriptions</summary>
 
 ## whatis
 #### The whatis command in the Linux operating system is used to display a short, one-line description of a given command or program. This description is taken from the database of manual (man) pages. Essentially, it queries the database used by the man command and returns only the name of the command and a short description (the contents of the NAME section of the man page), without opening the full manual page.
@@ -1629,9 +1619,9 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 ####                                                                               (1=general commands, 8=system 
 ####                                                                               administration commands, etc.)
 
+</details>
 
-
-
+<details> <summary>📊 <b>top</b> - display Linux processes (Real-time)</summary>
 
 ## top
 #### The top command is one of the most important tools in the Linux operating system, which displays the current status of the system in real time, interactively.
@@ -1651,11 +1641,9 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 ####                                                                                     for redirecting top output to a file
 ####                                                                                     or for use in scripts.
 
+</details>
 
-
-
-
-
+<details> <summary>👤 <b>useradd</b> - create a new user</summary>
 
 ## useradd
 #### The useradd (also known as adduser in some distributions) command in the Linux operating system is used to create a new user account. This command performs all the basic configuration steps required to add a user: it adds the user to the system, creates an encrypted entry for the user's password (although setting the password requires a separate command, see below), creates the user's home directory, and sets the default shell.
@@ -1680,12 +1668,9 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### -N                              --no-user-group                         Prevents the command from creating a group with the same name
 ####                                                                         as the user's primary group.
 
+</details>
 
-
-
-
-
-
+<details> <summary>🔑 <b>passwd</b> - change user password</summary>
 
 ## passwd
 #### The passwd command is the basic tool for changing passwords for user accounts in the Linux operating system. The command manages the entry of a user's encrypted password in the /etc/shadow file, and also allows administrators to set or change passwords for other users, and to manage password policies (such as expiration dates)
@@ -1705,6 +1690,10 @@ sudo dd if=/home/felhasznalo/ubuntu.iso of=/dev/sdX bs=4M status=progress
 #### -i days                           --inactive days               root                            Sets the number of days of activity after the password expires. 
 ####                                                                                                 If this expires, the account will be permanently disabled.
 #### -S                                --status                      anyone                          Displays the status of the user's password (last modified, minimum/maximum validity times, inactivity).
+
+</details>
+
+<details> <summary>🔎 <b>find</b> - search for files in a directory hierarchy</summary>
 
 # find
 #### Here is the concise explanation of the find command translated into English:
@@ -1745,6 +1734,7 @@ Here is the command that finds the 10 largest files on your system:
 
 ```sudo find / -type f -exec du -h {} + 2>/dev/null | sort -rh | head -n 10```
 
+</details>
 
 # find
   
