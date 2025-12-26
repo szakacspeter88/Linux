@@ -1734,8 +1734,7 @@ Here is the command that finds the 10 largest files on your system:
 
 </details>
 
-<details>
-  
+<summary>🔎 <b>find</b> - search for files in a directory hierarchy explanation 2</summary>
 # find
   
   -type : fájltípus
