@@ -1452,7 +1452,13 @@ iptables --table
 
 </details>
 
-<details> <summary>📦 <b>Package Managers</b> (apt, pacman, dnf)</summary>
+<details> <summary>📦 <b>Package Managers</b> 
+APT (🚀 Advanced 📦 Package 🛠️ Tool): Debian, Ubuntu, Linux Mint, Kali.
+Pacman (📦 PACkage 👨‍💼 MANager): Arch Linux, Manjaro, EndeavourOS.
+DNF / YUM (🍩 Dandified 🔄 Updater): Fedora, RHEL, CentOS, AlmaLinux.
+Zypper🤐: openSUSE és SUSE Linux Enterprise.
+  
+</summary>
 
 ## apt, pacman, yum, rpm
 
@@ -1466,7 +1472,7 @@ iptables --table
 
 </details>
 
-<details> <summary>⚡ <b>sudo</b> - execute as superuser</summary>
+<details> <summary>🦸‍♂️👤🏗️ <b>sudo</b> - execute as superuser</summary>
 
 ## sudo 
 
