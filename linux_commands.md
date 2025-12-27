@@ -1734,7 +1734,8 @@ Here is the command that finds the 10 largest files on your system:
 
 </details>
 
-<summary>🔎 <b>find</b> - search for files in a directory hierarchy explanation 2</summary>
+<details> <summary>🔍 <b>A find parancs használata (Összefoglaló)</b></summary>
+  
 # find
   
   -type : fájltípus
@@ -1762,7 +1763,7 @@ Here is the command that finds the 10 largest files on your system:
    Example: 
     find . -type f -size +10M : Finds all files that are greater than 10M
       
-    find . -type f -size -2G : Less than 2 Gigabytes
+  find . -type f -size -2G : Less than 2 Gigabytes
 
   -mtime : Modification Time
    Example:
@@ -1787,7 +1788,7 @@ Here is the command that finds the 10 largest files on your system:
   Mappa keresése:
   find . -type d -iname '*string*'
 
-  # Szent Házi feladat
+ 
   
 
   3. Feladat
