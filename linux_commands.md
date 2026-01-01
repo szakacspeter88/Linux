@@ -1783,7 +1783,7 @@ Here is the command that finds the 10 largest files on your system:
   find . -iname "*name" (lefuttatva)
 
   Fájl keresése ( csak az adott mappában, almappákban nem ):
-  find . -maxdepth 1 -iname '*name'
+  find . -maxdepth 1 -iname '*name' (nem müködött)
 
   Mappa keresése:
   find . -type d -iname '*string*'
