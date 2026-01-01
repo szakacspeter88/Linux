@@ -1779,7 +1779,7 @@ Here is the command that finds the 10 largest files on your system:
   Fájl keresése:
   find . -iname "filename" (megoldva)
   
-  Fájl keresése ( töredék névvel ):
+  Fájl keresése ( töredék névvel ): (lefuttatva)
   find . -iname "*name"
 
   Fájl keresése ( csak az adott mappában, almappákban nem ):
