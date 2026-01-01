@@ -1777,7 +1777,7 @@ Here is the command that finds the 10 largest files on your system:
   </details>
 
   Fájl keresése:
-  find . -iname "filename"
+  find . -iname "filename" (megoldva)
   
   Fájl keresése ( töredék névvel ):
   find . -iname "*name"
