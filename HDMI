@@ -1,0 +1,73 @@
+Az autorandr egy kiváló eszköz Arch Linuxon, mert képes elmenteni a kijelzők aktuális állapotát 
+(felbontás, elhelyezkedés, frissítési gyakoriság), és automatikusan betölteni azt, amint csatlakoztatja a Digitus extendert.
+
+Így állíthatja be lépésről lépésre:
+1. Telepítés
+
+Ha még nem tette meg, telepítse a csomagot:
+Bash
+
+```
+sudo pacman -S autorandr
+```
+
+2. Profilok elmentése
+
+Az autorandr úgy működik, hogy „pillanatképeket” készít a monitorbeállításokról.
+A: "Alap" profil (Extender nélkül)
+
+    Húzza ki a Digitus HDMI adót.
+
+    Állítsa be a kijelzőt úgy, ahogy alapértelmezetten használni szeretné (pl. csak a laptop saját kijelzője).
+
+    Mentse el ezt a profilt:
+    Bash
+
+    autorandr --save mobil
+
+B: "Extender" profil (Vezeték nélküli HDMI-vel)
+
+    Dugja be a Digitus adót, és várja meg, amíg felépül a kapcsolat.
+
+    Állítsa be a képet a grafikus felületen (vagy xrandr-ral), például: a külső monitor legyen a főképernyő vagy kiterjesztett asztal 1080p felbontáson.
+
+    Mentse el ezt a profilt:
+    Bash
+
+    autorandr --save digitus
+
+3. Automatikus váltás tesztelése
+
+Most próbálja ki manuálisan, hogy működik-e a váltás:
+Bash
+
+autorandr --change
+
+Az eszköz megvizsgálja a csatlakoztatott hardvereket, és a hozzá passzoló elmentett profilt alkalmazza.
+4. Automatizálás (hogy ne kelljen parancsot gépelni)
+
+Ahhoz, hogy a váltás magától megtörténjen a csatlakoztatás pillanatában, két lehetősége van a használt környezettől függően:
+Ha X11-et használ (pl. i3, Openbox, XFCE):
+
+Az autorandr tartalmaz egy "udev" szabályt, de érdemes engedélyezni a felhasználói szolgáltatást:
+Bash
+
+systemctl --user enable autorandr.service
+systemctl --user start autorandr.service
+
+Ha a rendszer indulásakor szeretné ellenőrizni:
+
+Adja hozzá az .xinitrc fájljához vagy az asztali környezet automatikusan induló programjai közé a következőt:
+Bash
+
+autorandr --change &
+
+5. Hasznos parancsok
+
+    Profilok listázása: autorandr
+
+    Aktuális profil megtekintése: autorandr --current
+
+    Alapértelmezett profil beállítása: Ha több profil is illene a helyzetre, az autorandr --default <profilnév> paranccsal adhat prioritást.
+
+Egy fontos megjegyzés a Digitus eszközökhöz: Mivel ezek az eszközök néha "szellem-kijelzőként" viselkednek (akkor is úgy tesznek, mintha ott lenne a monitor, ha a vevő oldal ki van kapcsolva), előfordulhat, hogy az autorandr akkor is a "digitus" profilra vált, ha a távoli TV épp ki van kapcsolva, de az adó áram alatt van. Ilyenkor egyszerűen csak húzza ki az USB tápkábelt az adóból.
