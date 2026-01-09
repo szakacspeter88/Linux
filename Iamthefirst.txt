@@ -1,0 +1,1 @@
+https://github.com/pneumus/Linux/blob/master/arch/_install/_base_system/1_desktop_environment.md
