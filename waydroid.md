@@ -1,3 +1,132 @@
+Installing and running Waydroid on Arch Linux is not complicated, but since Arch is a "rolling release" distribution, there are a few specific steps to keep in mind (especially regarding kernel and network settings).
+
+Here is a step-by-step guide:
+
+1. Prerequisites: The Right Kernel
+
+Waydroid requires the ashmem and binder modules. For most Arch users, the easiest solution is to use the linux-zen kernel, which includes these by default.
+
+Installation:
+
+Bash
+```
+sudo pacman -S linux-zen linux-zen-headers
+```
+Important: Reboot your computer and select the ZEN kernel from the GRUB/boot menu!
+2. Installing Waydroid
+
+Waydroid is available via the AUR (Arch User Repository). Use an AUR helper like yay or paru:
+Bash
+```
+yay -S waydroid
+```
+3. Initialization (Downloading Images)
+
+Before starting, you need to download the Android system files. You can choose between the plain version (Vanilla) or the version with Google Services (GAPPS):
+Bash
+```
+sudo waydroid init
+```
+(If you want GAPPS, use sudo waydroid init -s GAPPS).
+4. Starting the Service
+
+Waydroid uses a background process (container). You must start this before running the application:
+Bash
+```
+sudo systemctl start waydroid-container
+```
+(To make it run automatically at boot: sudo systemctl enable waydroid-container)
+5. Launching Waydroid
+
+You can now launch the application from your menu or the terminal:
+Bash
+```
+waydroid show-full-ui
+```
+Common Issues and Solutions
+
+No Network: If Android has no internet, run the following command to enable IP forwarding (firewall settings): 
+```
+sudo sysctl net.ipv4.ip_forward=1
+```
+
+Graphics Issues (NVIDIA): Waydroid primarily works well with Intel and AMD. On NVIDIA, it currently only runs with software rendering or specific patches, as Waydroid is built on Wayland.
+
+ARM Applications: Many mobile apps (e.g., Instagram, games) are built for ARM architecture. To run these on an x86 PC, you need an "libndk" or "libhoudini" translator (I recommend the Waydroid-Script GitHub project).
+
+The Golden Rule: Waydroid must be started as a regular user, not root! The root user does not have access to the graphical interface (Wayland session), which causes DBus errors.
+
+Fixing Current Errors
+1. Fix "RuntimeError: mount"
+
+This error occurs because previous attempts as root "stuck" the environment. Clean it up:
+Bash
+```
+sudo waydroid session stop
+sudo systemctl restart waydroid-container
+waydroid session start
+
+2. Install waydroid-script Correctly
+
+If you get a "command not found" error, it's likely because makepkg was attempted as root. Do it with your own user:
+Bash
+
+cd /tmp
+git clone https://aur.archlinux.org/waydroid-script-git.git
+cd waydroid-script-git
+makepkg -si  # DO NOT use sudo before makepkg!
+```
+Alternatively, use yay to handle dependencies automatically:
+
+Bash
+```
+yay -S waydroid-script-git
+```
+3. Check Wayland Environment
+
+Waydroid only runs under Wayland. If you are using X11 (e.g., default KDE or XFCE with old settings), it won't start. Check with: echo $XDG_SESSION_TYPE If the result is x11, you must switch to a Wayland session or run it within a compositor like weston.
+Post-Installation: Enhancing Android
+
+Once waydroid-extras (the script) is installed, run it to add essential features:
+
+Bash
+```
+sudo waydroid-extras
+```
+Recommended options (Select with Space):
+
+libndk: Crucial for running ARM (mobile) apps on x86.
+
+widevine: Required for streaming services like Netflix.
+
+GAPPS or MicroG: For Play Store functionality.
+
+Final Clean Boot Sequence:
+
+If you encounter a "Module not found" or "loop" error, reboot your computer first (to fix kernel-module mismatches). Then run:
+Bash
+
+```
+sudo modprobe loop
+sudo systemctl restart waydroid-container
+waydroid session start &
+# Wait 15 seconds
+waydroid show-full-ui
+```
+
+If you see a black screen: Force software rendering:
+Bash
+
+```
+waydroid prop set persist.waydroid.gles_driver software
+sudo systemctl restart waydroid-container
+```
+
+Would you like me to help you generate a bash script to automate this entire cleanup and launch process?
+
+
+Hungarian translation:
+
 Waydroid telepítése és futtatása Arch Linuxon nem bonyolult, de mivel az Arch egy "rolling release" disztribúció, van néhány specifikus lépés, amire figyelni kell (különösen a kernel és a hálózati beállítások terén).
 
 Itt egy lépésről lépésre követhető útmutató:
