@@ -1,4 +1,4 @@
-Waydroid telepítése és futtatása Arch Linuxon nem bonyolult, de mivel az Arch egy "rolling release" disztribúció, van néhány specifikus lépés, amire figyelned kell (különösen a kernel és a hálózati beállítások terén).
+Waydroid telepítése és futtatása Arch Linuxon nem bonyolult, de mivel az Arch egy "rolling release" disztribúció, van néhány specifikus lépés, amire figyelni kell (különösen a kernel és a hálózati beállítások terén).
 
 Itt egy lépésről lépésre követhető útmutató:
 1. Előfeltételek: A megfelelő Kernel
@@ -11,7 +11,7 @@ Telepítés:
 sudo pacman -S linux-zen linux-zen-headers
 ```
     
-Fontos: Indítsd újra a gépet, és a GRUB/boot menüben válaszd a ZEN kernelt!
+Fontos: Indítsuk újra a gépet, és a GRUB/boot menüben válaszd a ZEN kernelt!
 
 2. A Waydroid telepítése
 
@@ -29,7 +29,7 @@ Mielőtt elindítanád, le kell töltened az Android rendszert tartalmazó fájl
 sudo waydroid init
 ```
 
-(Ha GAPPS-ot szeretnél, használd a sudo waydroid init -s GAPPS parancsot).
+(Ha GAPPS-ot szeretnél, használjuk a sudo waydroid init -s GAPPS parancsot).
 
 4. A szolgáltatás elindítása
 
@@ -39,10 +39,10 @@ A Waydroid egy háttérfolyamatot (konténert) használ. Ezt el kell indítanod 
 sudo systemctl start waydroid-container
 ```
 
-(Ha azt szeretnéd, hogy minden gépindításkor fusson: sudo systemctl enable waydroid-container)
+(Ha azt szeretnénk, hogy minden gépindításkor fusson: sudo systemctl enable waydroid-container)
 5. Waydroid indítása
 
-Most már indíthatod magát az alkalmazást a menüből vagy terminálból:
+Most már indíthatjuk magát az alkalmazást a menüből vagy terminálból:
 
 ```
 waydroid show-full-ui
@@ -50,7 +50,7 @@ waydroid show-full-ui
 
 Gyakori hibák és megoldások
 
-Hálózat hiánya: Ha az Androidon nincs internet, futtasd az alábbi parancsokat a tűzfal beállításához (IP forwarding):
+Hálózat hiánya: Ha az Androidon nincs internet, futtassuk az alábbi parancsokat a tűzfal beállításához (IP forwarding):
 
 ```
 sudo sysctl net.ipv4.ip_forward=1
@@ -60,7 +60,7 @@ Grafikus hiba (NVIDIA): A Waydroid elsősorban Intel és AMD kártyákkal műkö
 
 ARM alkalmazások: Sok mobil app (pl. Instagram, játékok) ARM architektúrára készült. Ahhoz, hogy ezek fussanak x86-os gépen, szükséged lesz egy "libndk" vagy "libhoudini" fordítóra (erre a Waydroid-Script nevű GitHub projektet javaslom).
 
-A legfontosabb szabály: A Waydroidot sima felhasználóként kell indítani, nem root-ként! A root felhasználónak nincs hozzáférése a grafikus felülethez (Wayland session), ezért kaptad a DBus hibákat.
+A legfontosabb szabály: A Waydroidot sima felhasználóként kell indítani, nem root-ként! A root felhasználónak nincs hozzáférése a grafikus felülethez (Wayland session), ezért kaphatunk a DBus hibákat.
 
 Itt a megoldás a jelenlegi állapotodra:
 1. Javítsd ki a "RuntimeError: mount" hibát
@@ -73,7 +73,7 @@ sudo systemctl restart waydroid-container
 waydroid session start
 ```
 
-(Ha a session start fut, nyiss egy új terminált a következő lépéshez.)
+(Ha a session start fut, nyissunk egy új terminált a következő lépéshez.)
 
 2. A waydroid-script telepítése helyesen
 
@@ -109,7 +109,7 @@ A naplód szerint az init sikeres volt (már letöltötte a képeket), a hiba ot
 
 1. A makepkg javítása
 
-Töröld a hibás jogosultságú mappát, majd próbáld újra saját felhasználóként:
+Töröld a hibás jogosultságú mappát, majd próbáljuk újra saját felhasználóként:
 
 ```
 sudo rm -rf /tmp/waydroid-script-git
@@ -128,7 +128,7 @@ sudo umount -l /var/lib/waydroid/rootfs
 sudo systemctl restart waydroid-container
 ```
 
-Ha ezután is hibát kapsz, ellenőrizd, hogy a zen kernelben vagy-e, mert a sima Arch kernelhez extra beállítások kellenek: uname -r (Ha nem látod benne a "zen" szót, indítsd újra a gépet a Zen kernellel).
+Ha ezután is hibát kapunk, ellenőrizzük, hogy a zen kernelben vagyunk-e, mert a sima Arch kernelhez extra beállítások kellenek: uname -r (Ha nem látjuk benne a "zen" szót, indítsd újra a gépet a Zen kernellel).
 3. Miért fontos a felhasználói mód?
 
 A Waydroid két részből áll, és a hibaüzeneteid nagy része ebből a félreértésből adódik:
@@ -139,7 +139,7 @@ Session,                    saját felhasználó,         A grafikus felület é
 
 Mit tegyél, ha a makepkg kész?
 
-Ha sikeresen felment a waydroid-script-git, akkor telepítsd az ARM fordítót, hogy ne csak a "vason" futó alkalmazások induljanak el:
+Ha sikeresen felment a waydroid-script-git, akkor telepítsük az ARM fordítót, hogy ne csak a "vason" futó alkalmazások induljanak el:
 
 ```
 sudo waydroid-script install libndk
@@ -147,20 +147,20 @@ sudo waydroid-script install libndk
 
 Ha a makepkg nem találja a függőségeket az alap Arch tárolókban. Ez azért van, mert a python-inquirerpy szintén egy AUR csomag, amit a pacman önmagában nem tud letölteni.
 
-Mivel már van yay telepítve a rendszereden, a legegyszerűbb, ha rábízod a teljes folyamatot. A yay automatikusan letölti a Waydroid-scriptet és az összes hiányzó függőségét is az AUR-ból.
+Mivel már van yay telepítve a rendszerünkön, a legegyszerűbb, ha rábízzuk a teljes folyamatot. A yay automatikusan letölti a Waydroid-scriptet és az összes hiányzó függőségét is az AUR-ból.
 1. A Waydroid-script telepítése (a helyes úton)
 
-Futtasd ezt a parancsot:
+Futtassuk ezt a parancsot:
 
 ```
 yay -S waydroid-script-git
 ```
 
-(Ha kérdezi, válaszd az alapértelmezett opciókat, és hagyd, hogy telepítse a python-inquirerpy, python-tqdm és lzip csomagokat.)
+(Ha kérdezi, válasszuk az alapértelmezett opciókat, és haggyuk, hogy telepítse a python-inquirerpy, python-tqdm és lzip csomagokat.)
 
 2. A "Mount" hiba javítása
 
-A korábbi RuntimeError miatt még mindig fennállhat a csatolási hiba. Futtasd az alábbiakat, hogy "tiszta lapot" kapjon a Waydroid:
+A korábbi RuntimeError miatt még mindig fennállhat a csatolási hiba. Futtassuk az alábbiakat, hogy "tiszta lapot" kapjon a Waydroid:
 
 ```
 # Állítsunk le minden futó folyamatot
@@ -184,30 +184,30 @@ sudo waydroid-script install libndk
 
 4. A Waydroid elindítása (Sima felhasználóként!)
 
-Végül próbáld meg elindítani a felületet:
+Végül próbáljuk meg elindítani a felületet:
 
 ```
 waydroid show-full-ui
 ```
 
-Fontos megjegyzés: Ha a waydroid show-full-ui parancsra még mindig a DBUS_SESSION_BUS_ADDRESS hibát kapod, az azt jelenti, hogy a terminálod nem látja a grafikus környezetedet. Ezt elkerülheted, ha nem a terminálba írod be, hanem a Start menüből / Alkalmazásindítóból kattintasz a "Waydroid" ikonra.
+Fontos megjegyzés: Ha a waydroid show-full-ui parancsra még mindig a DBUS_SESSION_BUS_ADDRESS hibát kapjuk, az azt jelenti, hogy a terminálunk nem látja a grafikus környezetet. Ezt elkerülhetjük, ha nem a terminálba írjuk be, hanem a Start menüből / Alkalmazásindítóból kattintunk a "Waydroid" ikonra.
 
 Ha a yay paranccsal nem sikerült feltelepíteni a scriptet, vagy ott is elakadt valamelyik függőségnél, akkor:
 
 két apró akadály maradt: 
-a waydroid-script még nincs a rendszereden, és a Wayland-kapcsolatot még sínre kell tennünk.
+a waydroid-script még nincs a rendszereünkön, és a Wayland-kapcsolatot még sínre kell tennünk.
 
-Mivel a makepkg korábban a függőségek miatt leállt, a parancs nem jött létre. Használjuk a yay-t, ami elintézi helyetted a függőségek (pl. python-inquirerpy) vadászatát is.
+Mivel a makepkg korábban a függőségek miatt leállt, a parancs nem jött létre. Használjuk a yay-t, ami elintézi helyettünk a függőségek (pl. python-inquirerpy) vadászatát is.
 
 1. A Script telepítése (yay-el)
 
-Futtasd ezt a parancsot, ez minden hiányzó darabot a helyére tesz:
+Futtassuk ezt a parancsot, ez minden hiányzó darabot a helyére tesz:
 
 ```
 yay -S waydroid-script-git
 ```
 
-(Ha kész, ellenőrizheted a which waydroid-script paranccsal, hogy megvan-e.)
+(Ha kész, ellenőrizhetjük a which waydroid-script paranccsal, hogy megvan-e.)
 2. Az ARM fordító (libndk) telepítése
 
 Ha a fenti parancs lefutott, most már működnie kell:
@@ -467,17 +467,17 @@ Ha a modul be van töltve, de még mindig nem megy, adjunk neki több eszközt:
 sudo zsh -c 'echo "options loop max_loop=256" > /etc/modprobe.d/loop.conf'
 ```
 
-Ezután indítsd újra a gépet.
+Ezután indítsuk újra a gépet.
 A "tiszta" indítási kísérlet (miután a fentiek megvannak):
 
-Ha a modprobe loop lefutott, csináld ezt:
+Ha a modprobe loop lefutott, csináljuk ezt:
 
-Szüntesd meg a beragadt csatolásokat:
+Szüntessük meg a beragadt csatolásokat:
 ```
 sudo umount -l /var/lib/waydroid/rootfs 2>/dev/null
 sudo waydroid container stop
 ```
-Indítsd újra a konténert:
+Indítsuk újra a konténert:
 ```
 sudo systemctl restart waydroid-container
 
@@ -493,19 +493,19 @@ waydroid show-full-ui
 
 Ha valami más verzió van fennt, akkor a terminál a sudo modprobe loop parancsra, valami frissitési hibaüzenetet ir ki:
 
-Ha a helyzet pl a következő: frissítetted a rendszert (vagy a kernelt), és a jelenleg futó kerneled verziója (6.18.2-arch2-1) már nem létezik a lemezen, mert a Pacman felülírta egy újabb verzióval. A rendszer ezért nem tudja betölteni a loop modult (vagy bármi mást), amíg újra nem indítod a gépet.
+Ha a helyzet pl a következő: frissítettük a rendszert (vagy a kernelt), és a jelenleg futó kernelünk verziója pl.: (6.18.2-arch2-1) már nem létezik a lemezen, mert a Pacman felülírta egy újabb verzióval. A rendszer ezért nem tudja betölteni a loop modult (vagy bármi mást), amíg újra nem indítod a gépet.
 
 A megoldás lépései:
 
-1. Indítsd újra a számítógépet! Ez a legfontosabb lépés. Újraindításkor az Arch a legfrissebb kernelt fogja betölteni, amihez már tartoznak modulok.
+1. Indítsuk újra a számítógépet! Ez a legfontosabb lépés. Újraindításkor az Arch a legfrissebb kernelt fogja betölteni, amihez már tartoznak modulok.
 
-2. Ellenőrizd a modult az újraindítás után: Ha újra beléptél, futtasd le újra:
+2. Ellenőrizzük a modult az újraindítás után: Ha újra beléptünk, futtassuk le újra:
 
 ```
 sudo modprobe loop
 ```
 
-Ha nem kapsz hibaüzenetet, akkor minden rendben.
+Ha nem kapunk hibaüzenetet, akkor minden rendben.
 
 3. Waydroid indítása: Most, hogy a loop modul aktív, a Waydroid már képes lesz felcsatolni (mount) az Android fájlrendszerét:
 
@@ -561,7 +561,7 @@ sudo systemctl restart waydroid-container
 waydroid session start &
 ```
 
-Várj kb. 15 másodpercet, amíg az Android konténer teljesen feláll a háttérben.
+Várjunk kb. 15 másodpercet, amíg az Android konténer teljesen feláll a háttérben.
 
 Ablak megnyitása:
 ```
@@ -569,7 +569,7 @@ waydroid show-full-ui
 ```
 Mi van, ha még mindig fekete a kép?
 
-Ha az ablak megjelenik, de nem látsz semmit, akkor valószínűleg a videókártyád (pl. NVIDIA) és a Wayland nem barátkoznak. Ebben az esetben próbáld ki a szoftveres renderelést:
+Ha az ablak megjelenik, de nem látunk semmit, akkor valószínűleg a videókártyánk (pl. NVIDIA) és a Wayland nem barátkoznak. Ebben az esetben próbáld ki a szoftveres renderelést:
 
 
 ```
