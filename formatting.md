@@ -30,3 +30,7 @@ Select <b>New</b> to create New Partition and press <b>Enter</b> to accept the s
 Press <b>Write</b> to write the <b>New Partition</b>
 
 <img width="874" height="66" alt="image" src="https://github.com/user-attachments/assets/776e1aeb-67f4-4218-af6b-1d1b8cf8f16b" />
+
+Type <b>yes</b>
+
+<img width="796" height="37" alt="image" src="https://github.com/user-attachments/assets/e12c582c-4f67-4788-acce-e191beeb9513" />
