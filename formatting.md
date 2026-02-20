@@ -41,5 +41,18 @@ Select <b>Quit</b>
 
 Install the necessary Packages:
 
-    sudo pacman -Sy --no-confirm e2fsprogs # EXT4
-    
+    # EXT4
+    sudo pacman -Sy --no-confirm e2fsprogs 
+
+    # NTFS
+    sudo pacman -Sy --no-confirm ntfs-3g
+
+    # FAT32
+    sudo pacman -Sy --no-confirm dosfstools
+
+    # F2FS
+    sudo pacman -Sy --no-confirm f2fs-tools
+
+    # EXFAT
+    sudo pacman -Sy --noconfirm exfatprogs
+
