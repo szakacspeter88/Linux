@@ -9,14 +9,14 @@ Select your Drive ( i.e. sdb )
 
 Wipe your Drive
 
-    sudo pacman -Sy --no-confirm gdisk
+    sudo pacman -Sy --noconfirm gdisk
     sudo gdisk /dev/sdb
 
 Press x, z, y, y to wipe everything
 
 Create new GPT Partition Table
 
-    sudo pacman -Sy --no-confirm util-linux
+    sudo pacman -Sy --noconfirm util-linux
     sudo cfdisk /dev/sdb
 
 Select <b>gpt</b> Partition Table
@@ -42,16 +42,16 @@ Select <b>Quit</b>
 Install the necessary Packages:
 
     # EXT4
-    sudo pacman -Sy --no-confirm e2fsprogs 
+    sudo pacman -Sy --noconfirm e2fsprogs 
 
     # NTFS
-    sudo pacman -Sy --no-confirm ntfs-3g
+    sudo pacman -Sy --noconfirm ntfs-3g
 
     # FAT32
-    sudo pacman -Sy --no-confirm dosfstools
+    sudo pacman -Sy --noconfirm dosfstools
 
     # F2FS
-    sudo pacman -Sy --no-confirm f2fs-tools
+    sudo pacman -Sy --noconfirm f2fs-tools
 
     # EXFAT
     sudo pacman -Sy --noconfirm exfatprogs
