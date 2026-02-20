@@ -23,7 +23,7 @@ Select <b>gpt</b> Partition Table
 
 <img width="349" height="186" alt="image" src="https://github.com/user-attachments/assets/2c936e71-1e01-4423-a079-c557228d5cfe" />
 
-Select <b>New</b> Partition Table
+Select <b>New</b> to create New Partition and press <b>Enter</b> to accept the size
 
 <img width="904" height="162" alt="image" src="https://github.com/user-attachments/assets/86432808-fe9b-4ff3-a7ca-6b0342c727dd" />
 
