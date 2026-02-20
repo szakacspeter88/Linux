@@ -15,17 +15,17 @@ Select your Drive ( i.e. sdb )
 
 Set your <b>DRIVE</b> value
 
-    DRIVE=sdb
+    DRIVE=$DRIVE
 
 Wipe your Drive
 
-    sudo gdisk /dev/sdb
+    sudo gdisk /dev/$DRIVE
 
 Press x, z, y, y to wipe everything
 
 Create new GPT Partition Table
 
-    sudo cfdisk /dev/sdb
+    sudo cfdisk /dev/$DRIVE
 
 Select <b>gpt</b> Partition Table
 
@@ -51,21 +51,21 @@ Format your <b>Partition</b>
 
 Ext4
 
-    sudo mkfs.ext4 /dev/sdb
+    sudo mkfs.ext4 /dev/$DRIVE
 
 exFAT
 
-    sudo mkfs.exfat /dev/sdb
+    sudo mkfs.exfat /dev/$DRIVE
 
 FAT32
 
-    sudo mkfs.fat -F 32 /dev/sdb
+    sudo mkfs.fat -F 32 /dev/$DRIVE
 
 NTFS
 
-    sudo mkfs.ntfs -Q /dev/sdb
+    sudo mkfs.ntfs -Q /dev/$DRIVE
 
 F2FS
 
-    sudo mkfs.f2fs /dev/sdb
+    sudo mkfs.f2fs /dev/$DRIVE
 
