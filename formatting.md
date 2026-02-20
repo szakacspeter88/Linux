@@ -41,4 +41,5 @@ Select <b>Quit</b>
 
 Install the necessary Packages:
 
-    sudo pacman -Sy --no-confirm 
+    sudo pacman -Sy --no-confirm e2fsprogs # EXT4
+    
