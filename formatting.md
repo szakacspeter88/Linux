@@ -19,3 +19,7 @@ Create new GPT Partition Table
 
     sudo pacman -Sy --no-confirm util-linux
     sudo cfdisk /dev/sdb
+
+Select <b>gpt</b> Partition Table
+
+<img width="349" height="186" alt="image" src="https://github.com/user-attachments/assets/2c936e71-1e01-4423-a079-c557228d5cfe" />
