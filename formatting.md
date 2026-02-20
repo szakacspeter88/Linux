@@ -17,5 +17,5 @@ Press x, z, y, y to wipe everything
 
 Create new GPT Partition Table
 
-    sudo pacman -Sy util-linux
+    sudo pacman -Sy --no-confirm util-linux
     sudo cfdisk /dev/sdb
