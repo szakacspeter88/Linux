@@ -56,3 +56,25 @@ Install the necessary Packages:
     # EXFAT
     sudo pacman -Sy --noconfirm exfatprogs
 
+Format your <b>Partition</b>
+
+Ext4
+
+    sudo mkfs.ext4 /dev/sdb
+
+exFAT
+
+    sudo mkfs.exfat /dev/sdb
+
+FAT32
+
+    sudo mkfs.fat -F 32 /dev/sdb
+
+NTFS
+
+    sudo mkfs.ntfs -Q /dev/sdb
+
+F2FS
+
+    sudo mkfs.f2fs /dev/sdb
+
