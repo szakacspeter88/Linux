@@ -15,7 +15,7 @@ Select your Drive ( i.e. sdb )
 
 Set your <b>DRIVE</b> value
 
-    DRIVE=$DRIVE
+    DRIVE=sdb
 
 Wipe your Drive
 
