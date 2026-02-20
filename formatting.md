@@ -13,6 +13,10 @@ Watch your partitions
 Select your Drive ( i.e. sdb )
 <img width="815" height="191" alt="image" src="https://github.com/user-attachments/assets/654fc477-1f19-46e7-87cf-6be661d42949" />
 
+Set your <b>DRIVE</b> value
+
+    DRIVE=sdb
+
 Wipe your Drive
 
     sudo gdisk /dev/sdb
