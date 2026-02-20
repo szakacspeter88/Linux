@@ -34,3 +34,7 @@ Press <b>Write</b> to write the <b>New Partition</b>
 Type <b>yes</b>
 
 <img width="796" height="37" alt="image" src="https://github.com/user-attachments/assets/e12c582c-4f67-4788-acce-e191beeb9513" />
+
+Select <b>Quit</b>
+
+<img width="845" height="61" alt="image" src="https://github.com/user-attachments/assets/c927b28d-13e4-44fe-a098-76e85a2101af" />
