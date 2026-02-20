@@ -1,5 +1,10 @@
 # Formatting
 
+Install necessary Packages 
+
+    sudo pacman -Sy --noconfirm gdisk util-linux e2fsprogs ntfs-3g dosfstools f2fs-tools exfatprogs 
+    
+
 Watch your partitions
 
     lsblk
@@ -9,14 +14,12 @@ Select your Drive ( i.e. sdb )
 
 Wipe your Drive
 
-    sudo pacman -Sy --noconfirm gdisk
     sudo gdisk /dev/sdb
 
 Press x, z, y, y to wipe everything
 
 Create new GPT Partition Table
 
-    sudo pacman -Sy --noconfirm util-linux
     sudo cfdisk /dev/sdb
 
 Select <b>gpt</b> Partition Table
@@ -38,23 +41,6 @@ Type <b>yes</b>
 Select <b>Quit</b>
 
 <img width="845" height="61" alt="image" src="https://github.com/user-attachments/assets/c927b28d-13e4-44fe-a098-76e85a2101af" />
-
-Install the necessary Packages:
-
-    # EXT4
-    sudo pacman -Sy --noconfirm e2fsprogs 
-
-    # NTFS
-    sudo pacman -Sy --noconfirm ntfs-3g
-
-    # FAT32
-    sudo pacman -Sy --noconfirm dosfstools
-
-    # F2FS
-    sudo pacman -Sy --noconfirm f2fs-tools
-
-    # EXFAT
-    sudo pacman -Sy --noconfirm exfatprogs
 
 Format your <b>Partition</b>
 
