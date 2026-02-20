@@ -38,3 +38,7 @@ Type <b>yes</b>
 Select <b>Quit</b>
 
 <img width="845" height="61" alt="image" src="https://github.com/user-attachments/assets/c927b28d-13e4-44fe-a098-76e85a2101af" />
+
+Install the necessary Packages:
+
+    sudo pacman -Sy --no-confirm 
