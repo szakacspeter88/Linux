@@ -14,3 +14,8 @@ Wipe your Drive
     sudo gdisk /dev/sdb
 
 Press x, z, y, y to wipe everything
+
+Create new GPT Partition Table
+
+    sudo pacman -Sy util-linux
+    sudo cfdsik /dev/sdb
