@@ -2,7 +2,8 @@
 
 Install necessary Packages 
 
-    sudo pacman -Sy --noconfirm gdisk util-linux e2fsprogs ntfs-3g dosfstools f2fs-tools exfatprogs 
+    sudo pacman -Sy --noconfirm gdisk util-linux e2fsprogs ntfs-3g  
+    sudo pacman -Sy --noconfirm dosfstools f2fs-tools exfatprogs
     
 
 Watch your partitions
