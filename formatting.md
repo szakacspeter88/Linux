@@ -27,3 +27,6 @@ Select <b>New</b> to create New Partition and press <b>Enter</b> to accept the s
 
 <img width="904" height="162" alt="image" src="https://github.com/user-attachments/assets/86432808-fe9b-4ff3-a7ca-6b0342c727dd" />
 
+Press <b>Write</> to write the <b>New Partition</b>
+
+<img width="874" height="66" alt="image" src="https://github.com/user-attachments/assets/776e1aeb-67f4-4218-af6b-1d1b8cf8f16b" />
