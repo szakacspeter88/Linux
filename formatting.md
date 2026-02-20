@@ -9,7 +9,7 @@ Select your Drive ( i.e. sdb )
 
 Wipe your Drive
 
-    sudo pacman -Sy gdisk
+    sudo pacman -Sy --no-confirm gdisk
     sudo gdisk /dev/sdb
 
 Press x, z, y, y to wipe everything
